@@ -1,0 +1,192 @@
+p {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+	background-color: #f3e5f5;
+}
+
+body.with-header {
+	padding-top: 120px;
+}
+
+.logo {
+	width: 200px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	background-color: blue;
+}
+
+.top-section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: radial-gradient(circle, #f8f9fb 30%, transparent 80%);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.shoe-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+	gap: 10px;
+	padding: 10px;
+}
+
+.shoe-pic {
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+}
+
+.shoe-pic img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.2s ease;
+}
+
+.shoe-pic img:hover {
+	transform: scale(1.05);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-container {
+	text-align: center;
+}
+
+#review-submit {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#review-submit:hover {
+        background-color: #3700b3;
+}
+
+/* Toggle Button */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100%;
+  background-color: #f8f9fb;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  padding: 60px 20px 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.category-list,
+.submenu {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.category-list li {
+  cursor: pointer;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  transition: background-color 0.2s;
+}
+
+.category-list li:hover {
+  background-color: #e0d7f3;
+}
+
+.has-submenu .submenu {
+  display: none;
+  margin-left: 15px;
+}
+
+.submenu {
+  display: none;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.has-submenu.open .submenu {
+  display: block;
+}
+
+.has-submenu {
+  cursor: pointer;
+  position: relative;
+}
+
+.has-submenu .arrow {
+  float: right;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  color: #4a148c;
+}
+
+.has-submenu.open .arrow {
+  transform: rotate(90deg);
+}
