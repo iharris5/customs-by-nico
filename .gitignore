@@ -1,0 +1,42 @@
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node or frontend tools (if you use them later)
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+
+# JetBrains IDEs (e.g., WebStorm)
+.idea/
+
+# VS Code
+.vscode/
+
+# Python/Jupyter (in case you're using notebooks nearby)
+__pycache__/
+*.py[cod]
+*.ipynb
+
+# SQLite or DBs (just in case)
+*.db
+
+# OS metadata and hidden files
+*.swp
+*.swo
+
+# Don't include personal test media files accidentally
+*.mp4
+*.mov
+*.avi
+
+# Temporary backups
+*~
+
