@@ -38,8 +38,6 @@ body.with-header {
     padding: 10px 0;
     text-align: center;
     z-index: 1000;
-    border-top: 2px solid #6200ea;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 .shoe-container {
