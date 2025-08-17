@@ -53,10 +53,10 @@ body.with-header {
 		grid-template-columns: repeat(2, 1fr);
 	}
 	.top-section {
-		background: radial-gradient(circle, #f8f9fb 50%, transparent 80%);
+		background: radial-gradient(circle, #f8f9fb 50%, transparent 90%);
 	}
 	.bottom-section {
-		background: radial-gradient(circle, #f8f9fb 50%, transparent 80%);
+		background: radial-gradient(circle, #f8f9fb 50%, transparent 90%);
 	}
 }
 
