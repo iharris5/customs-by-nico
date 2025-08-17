@@ -89,6 +89,8 @@ body.with-header {
 }
 
 #review-submit {
+    position: fixed;
+    bottom: 0;
     display: inline-block;
     margin: 20px auto;
     padding: 10px 20px;
