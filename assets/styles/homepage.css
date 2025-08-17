@@ -52,6 +52,12 @@ body.with-header {
 	.shoe-container {
 		grid-template-columns: repeat(2, 1fr);
 	}
+	.top-section {
+		background: radial-gradient(circle, #f8f9fb 50%, transparent 80%);
+	}
+	.bottom-section {
+		background: radial-gradient(circle, #f8f9fb 50%, transparent 80%);
+	}
 }
 
 .shoe-pic {
