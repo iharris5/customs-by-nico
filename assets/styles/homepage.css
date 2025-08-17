@@ -30,6 +30,16 @@ body.with-header {
     padding: 10px 0;
 }
 
+.bottom-section {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: radial-gradient(circle, #f8f9fb 30%, transparent 80%);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
 .shoe-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -89,10 +99,6 @@ body.with-header {
 }
 
 #review-submit {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     display: inline-block;
     padding: 10px 20px;
     background-color: #6200ea;
@@ -104,7 +110,6 @@ body.with-header {
     font-size: 16px;
     text-align: center;
     transition: background-color 0.3s ease;
-    z-index: 1000;
 }
 
 #review-submit:hover {
