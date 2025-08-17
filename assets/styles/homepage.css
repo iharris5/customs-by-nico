@@ -91,6 +91,8 @@ body.with-header {
 #review-submit {
     position: fixed;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: inline-block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -103,6 +105,7 @@ body.with-header {
     font-size: 16px;
     text-align: center;
     transition: background-color 0.3s ease;
+    z-index: 1000;
 }
 
 #review-submit:hover {
