@@ -48,6 +48,12 @@ body.with-header {
 	padding: 10px;
 }
 
+@media (max-width: 800px) {
+	.shoe-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
 .shoe-pic {
 	width: 100%;
 	height: 250px;
