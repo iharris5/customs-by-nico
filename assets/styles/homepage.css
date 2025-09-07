@@ -62,8 +62,8 @@ body.with-header {
 	#anime-tags.show {
         	display: flex;
         	flex-direction: column;
-        	max-height: 300px;
-       		overflow-y: auto;
+        	max-height: none;
+       		overflow: visible;
         	padding-right: 5px;
     	}
 
