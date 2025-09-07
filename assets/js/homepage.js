@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         	filterWrapper.style.display = 'block';
 	    } else {
         	filterWrapper.style.display = 'none';
-        	tagsContainer.style.display = 'none';
+        	tagsContainer.classList.remove('show');
 	    }
 	    let filteredImages = images.filter(img => filter === 'all' || img.category === filter);
 	    if (filter === 'anime-cartoons' && tag !== 'all') {
