@@ -169,9 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     document.getElementById('show-anime-tags').addEventListener('click', () => {
         const tags = document.getElementById('anime-tags');
-        tags.style.display = tags.style.display === 'none' ? 'flex' : 'none';
-        tags.style.flexWrap = 'wrap';
-        tags.style.gap = '10px';
+        tags.classList.toggle('show');
     });
 
     document.querySelectorAll('.anime-tag').forEach(button => {
