@@ -5,15 +5,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const images = [
 	    { image_url: 'assets/views/main/images/IMG_1421.jpeg' },
-	    { image_url: 'assets/views/main/images/IMG_2355.jpeg' },
+	    { image_url: 'assets/views/main/images/IMG_2355.jpeg', category: 'anime-cartoons' },
     	    { image_url: 'assets/views/main/images/IMG_3409.jpeg' },
             { image_url: 'assets/views/main/images/IMG_3553.jpeg' },
-	    { image_url: 'assets/views/main/images/IMG_3575.jpeg' },
+	    { image_url: 'assets/views/main/images/IMG_3575.jpeg' category: 'anime-cartoons' },
 	    { image_url: 'assets/views/main/images/IMG_3951.jpeg' },
             { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime-cartoons' },
-            { image_url: 'assets/views/main/images/IMG_6056.jpeg' },
+            { image_url: 'assets/views/main/images/IMG_6056.jpeg' category: 'colorways'},
             { image_url: 'assets/views/main/images/IMG_6161.jpeg' },
-            { image_url: 'assets/views/main/images/IMG_9383.jpeg' }
+            { image_url: 'assets/views/main/images/IMG_9383.jpeg' category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_9082_Original.JPEG', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_8968.jpg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_1490.jpg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_2647.jpg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_2698.jpg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_8451.jpg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_7310.jpg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_1482.jpg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_1626.jpg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_1566.jpeg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_1567.jpeg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/BlackAndWhite.JPG', category: 'colorways'},
+	     { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways'}
     ];
 
     displayImages();
