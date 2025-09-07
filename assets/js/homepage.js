@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'baby-shoes'},
             { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime-cartoons'},
             { image_url: 'assets/views/main/images/IMG_6056.jpeg', category: 'colorways'},
-            { image_url: 'assets/views/main/images/IMG_6161.jpeg', category: 'floral' },
             { image_url: 'assets/views/main/images/IMG_9383.jpeg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_8558.jpg', category: 'anime-cartoons'},
 	    { image_url: 'assets/views/main/images/IMG_9082_Original.JPEG', category: 'colorways'},
