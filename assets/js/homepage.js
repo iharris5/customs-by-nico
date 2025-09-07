@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_2355.jpeg', category: 'anime-cartoons' },
     	    { image_url: 'assets/views/main/images/IMG_3409.jpeg' },
             { image_url: 'assets/views/main/images/IMG_3553.jpeg' },
-	    { image_url: 'assets/views/main/images/IMG_3575.jpeg' category: 'anime-cartoons' },
+	    { image_url: 'assets/views/main/images/IMG_3575.jpeg', category: 'anime-cartoons' },
 	    { image_url: 'assets/views/main/images/IMG_3951.jpeg' },
             { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime-cartoons' },
-            { image_url: 'assets/views/main/images/IMG_6056.jpeg' category: 'colorways'},
+            { image_url: 'assets/views/main/images/IMG_6056.jpeg', category: 'colorways'},
             { image_url: 'assets/views/main/images/IMG_6161.jpeg' },
-            { image_url: 'assets/views/main/images/IMG_9383.jpeg' category: 'colorways'},
+            { image_url: 'assets/views/main/images/IMG_9383.jpeg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_9082_Original.JPEG', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_8968.jpg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_1490.jpg', category: 'colorways'},
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_1566.jpeg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_1567.jpeg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/BlackAndWhite.JPG', category: 'colorways'},
-	     { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways'}
+	    { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways'}
     ];
 
     displayImages();
