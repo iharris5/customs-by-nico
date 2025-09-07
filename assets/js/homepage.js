@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_8101.jpg', category: 'schools-sports'},
 	    { image_url: 'assets/views/main/images/IMG_0534.jpg', category: 'floral'},
 	    { image_url: 'assets/views/main/images/IMG_6477.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text'},
 	    { image_url: 'assets/views/main/images/IMG_1985.jpg', category: 'schools-sports'},
 	    { image_url: 'assets/views/main/images/IMG_7648.jpg', category: 'cleats'},
 	    { image_url: 'assets/views/main/images/IMG_9464.jpg', category: 'schools-sports'},
