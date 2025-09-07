@@ -58,10 +58,6 @@ body.with-header {
 	.bottom-section {
 		background: radial-gradient(circle, #f8f9fb 50%, transparent 90%);
 	}
-
-	#anime-tags .custom-nico-btn {
-		margin-bottom: 10px;
-	}
 }
 
 .shoe-pic {
@@ -149,6 +145,11 @@ body.with-header {
 	opacity: 0;
 	transition: all 0.4s ease;
 }
+
+#anime-tags .custom-nico-btn {
+        margin-bottom: 10px;
+}
+
 
 #anime-tags.show {
 	max-height: 500px;
