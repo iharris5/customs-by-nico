@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     	    { image_url: 'assets/views/main/images/IMG_3409.jpeg' },
             { image_url: 'assets/views/main/images/IMG_3553.jpeg' },
 	    { image_url: 'assets/views/main/images/IMG_3575.jpeg', category: 'anime-cartoons' },
-	    { image_url: 'assets/views/main/images/IMG_3951.jpeg' },
+	    { image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'anime-cartoons' },
             { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime-cartoons' },
             { image_url: 'assets/views/main/images/IMG_6056.jpeg', category: 'colorways'},
             { image_url: 'assets/views/main/images/IMG_6161.jpeg' },
@@ -32,7 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_1985.jpg', category: 'schools-sports'},
 	    { image_url: 'assets/views/main/images/IMG_9464.jpg', category: 'schools-sports'},
 	    { image_url: 'assets/views/main/images/IMG_8114.jpg', category: 'schools-sports'},
-	    { image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports'}
+	    { image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports'},
+	    { image_url: 'assets/views/main/images/IMG_3288.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats'},
+	    { image_url: 'assets/views/main/images/IMG_7846.jpg', category: 'cleats'},
+	    { image_url: 'assets/views/main/images/IMG_7648.jpg', category: 'cleats'}
     ];
 
     displayImages();
