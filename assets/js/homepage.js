@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_1626.jpg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_1566.jpeg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_1567.jpeg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/BlackAndWhite.JPG', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_8454.jpg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways'}
     ];
 
