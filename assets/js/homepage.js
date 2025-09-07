@@ -5,59 +5,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const images = [
 	    { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular'},
-	    { image_url: 'assets/views/main/images/IMG_2355.jpeg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_2355.jpeg', category: 'anime-cartoons', tags: ['jojo']},
     	    { image_url: 'assets/views/main/images/IMG_3409.jpeg', category: 'baby-shoes'},
             { image_url: 'assets/views/main/images/IMG_3553.jpeg', category: 'floral'},
 	    { image_url: 'assets/views/main/images/IMG_3575.jpeg', category: 'custom-text'},
 	    { image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'baby-shoes'},
-            { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime-cartoons'},
+            { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime-cartoons', tags: ['one-piece']},
             { image_url: 'assets/views/main/images/IMG_6056.jpeg', category: 'colorways'},
             { image_url: 'assets/views/main/images/IMG_9383.jpeg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_8558.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_8558.jpg', category: 'anime-cartoons', tags: ['blue-exorcist']},
 	    { image_url: 'assets/views/main/images/IMG_9082_Original.JPEG', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_6161.JPG', category: 'floral'},
 	    { image_url: 'assets/views/main/images/IMG_8968.jpg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_3082_Original.JPEG', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_3082_Original.JPEG', category: 'anime-cartoons', tags: ['jojo']},
 	    { image_url: 'assets/views/main/images/IMG_1490.jpg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_6077_Original.JPEG', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_6077_Original.JPEG', category: 'anime-cartoons', tags: ['jojo']},
 	    { image_url: 'assets/views/main/images/IMG_2647.jpg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_7846.jpg', category: 'cleats'},
 	    { image_url: 'assets/views/main/images/IMG_2698.jpg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_5932_Original.JPEG', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_5932_Original.JPEG', category: 'anime-cartoons', tags: ['demon-slayer']},
 	    { image_url: 'assets/views/main/images/IMG_8451.jpg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_8059.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_8059.jpg', category: 'anime-cartoons', tags: ['one-piece']},
 	    { image_url: 'assets/views/main/images/IMG_7310.jpg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_4295.jpg', category: 'floral'},
-	    { image_url: 'assets/views/main/images/IMG_8100.jpg', category: 'anime-cartoons'},
-	    { image_url: 'assets/views/main/images/IMG_6770_Original.JPEG', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_8100.jpg', category: 'anime-cartoons', tags: ['naruto']},
+	    { image_url: 'assets/views/main/images/IMG_6770_Original.JPEG', category: 'anime-cartoons', tags: ['jojo']},
 	    { image_url: 'assets/views/main/images/IMG_1482.jpg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_1626.jpg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_7920.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_7920.jpg', category: 'anime-cartoons', tags: ['jojo']},
 	    { image_url: 'assets/views/main/images/IMG_1566.jpeg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_7970.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_7970.jpg', category: 'anime-cartoons', tags: ['hunter']},
 	    { image_url: 'assets/views/main/images/IMG_2364.jpg', category: 'floral'},
 	    { image_url: 'assets/views/main/images/IMG_1567.jpeg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_5384.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_5384.jpg', category: 'anime-cartoons', tags: ['one-piece']},
 	    { image_url: 'assets/views/main/images/IMG_8454.jpg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_9430.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_9430.jpg', category: 'anime-cartoons', tags: ['jojo']},
 	    { image_url: 'assets/views/main/images/IMG_7641.jpg', category: 'schools-sports'},
-	    { image_url: 'assets/views/main/images/IMG_9446.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_9446.jpg', category: 'anime-cartoons', tags: ['jojo']},
 	    { image_url: 'assets/views/main/images/IMG_8101.jpg', category: 'schools-sports'},
 	    { image_url: 'assets/views/main/images/IMG_0534.jpg', category: 'floral'},
-	    { image_url: 'assets/views/main/images/IMG_6477.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_6477.jpg', category: 'anime-cartoons', tags: ['hunter']},
 	    { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text'},
 	    { image_url: 'assets/views/main/images/IMG_1985.jpg', category: 'schools-sports'},
 	    { image_url: 'assets/views/main/images/IMG_7648.jpg', category: 'cleats'},
 	    { image_url: 'assets/views/main/images/IMG_9464.jpg', category: 'schools-sports'},
-	    { image_url: 'assets/views/main/images/IMG_7955.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_7955.jpg', category: 'anime-cartoons', tags: ['vinland']},
 	    { image_url: 'assets/views/main/images/IMG_8114.jpg', category: 'schools-sports'},
-	    { image_url: 'assets/views/main/images/IMG_1008.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_1008.jpg', category: 'anime-cartoons', tags: ['fullmetal']},
 	    { image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports'},
-	    { image_url: 'assets/views/main/images/IMG_3288.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_3288.jpg', category: 'anime-cartoons', tags: ['lilo-stitch']},
 	    { image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'baby-shoes'},
 	    { image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats'},
-	    { image_url: 'assets/views/main/images/IMG_7598.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_7598.jpg', category: 'anime-cartoons', tags: ['hunter']},
 	    { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes'}
     ];
 
@@ -65,20 +65,33 @@ document.addEventListener("DOMContentLoaded", function () {
     setupCategoryFiltering();
     setupSidebarToggle();
 
-    function displayImages(filter = 'all') {
+    function displayImages(filter = 'all', tag = 'all') {
 	    container.innerHTML = '';
 
-            images.forEach(img => {
-                if (filter === 'all' || img.category === filter) {
-			const div = document.createElement('div');
-                	div.className = 'shoe-pic';
-                	const image = document.createElement('img');
-                	image.src = img.image_url;
-                	image.alt = 'NicoShoe';
-                	div.appendChild(image);
-                	container.appendChild(div);
-	    	}
-	    
+	    const filterWrapper = document.getElementById('anime-filter-wrapper');
+	    const tagsContainer = document.getElementById('anime-tags');
+
+	    if (filter === 'anime-cartoons') {
+        	filterWrapper.style.display = 'block';
+	    } else {
+        	filterWrapper.style.display = 'none';
+        	tagsContainer.style.display = 'none';
+	    }
+	    let filteredImages = images.filter(img => filter === 'all' || img.category === filter);
+	    if (filter === 'anime-cartoons' && tag !== 'all') {
+        	filteredImages = filteredImages.filter(img =>
+			img.tags && img.tags.includes(tag)
+		);
+	    }
+
+            filteredImages.forEach(img => {
+		const div = document.createElement('div');
+                div.className = 'shoe-pic';
+                const image = document.createElement('img');
+                image.src = img.image_url;
+                image.alt = 'NicoShoe';
+                div.appendChild(image);
+                container.appendChild(div);
             });
 
             setupLightbox();
@@ -153,4 +166,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const sidebar = document.getElementById('sidebar');
         sidebar.classList.remove('open');
     }
+    
+    document.getElementById('show-anime-tags').addEventListener('click', () => {
+        const tags = document.getElementById('anime-tags');
+        tags.style.display = tags.style.display === 'none' ? 'flex' : 'none';
+        tags.style.flexWrap = 'wrap';
+        tags.style.gap = '10px';
+    });
+
+    document.querySelectorAll('.anime-tag').forEach(button => {
+        button.addEventListener('click', () => {
+            const tag = button.getAttribute('data-tag');
+            displayImages('anime-cartoons', tag);
+        });
+    });
 });
