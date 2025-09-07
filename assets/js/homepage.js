@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_6770_Original.JPEG', category: 'anime-cartoons'},
 	    { image_url: 'assets/views/main/images/IMG_1482.jpg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_1626.jpg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/IMG_7290.jpg', category: 'anime-cartoons'},
+	    { image_url: 'assets/views/main/images/IMG_7920.jpg', category: 'anime-cartoons'},
 	    { image_url: 'assets/views/main/images/IMG_1566.jpeg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_7970.jpg', category: 'anime-cartoons'},
 	    { image_url: 'assets/views/main/images/IMG_2364.jpg', category: 'floral'},
