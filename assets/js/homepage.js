@@ -26,7 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_1566.jpeg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_1567.jpeg', category: 'colorways'},
 	    { image_url: 'assets/views/main/images/IMG_8454.jpg', category: 'colorways'},
-	    { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways'}
+	    { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways'},
+	    { image_url: 'assets/views/main/images/IMG_7641.jpg', category: 'schools-sports'},
+	    { image_url: 'assets/views/main/images/IMG_8101.jpg', category: 'schools-sports'},
+	    { image_url: 'assets/views/main/images/IMG_1985.jpg', category: 'schools-sports'},
+	    { image_url: 'assets/views/main/images/IMG_9464.jpg', category: 'schools-sports'},
+	    { image_url: 'assets/views/main/images/IMG_8114.jpg', category: 'schools-sports'},
+	    { image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports'}
     ];
 
     displayImages();
