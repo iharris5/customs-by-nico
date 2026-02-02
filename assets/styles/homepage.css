@@ -43,6 +43,12 @@ body.with-header {
 	object-fit: cover;
 }
 
+.content {
+	position: relative;
+	z-index: 2;
+	margin-top: -120px;
+}
+
 .bottom-section {
     position: fixed;
     bottom: 0;
