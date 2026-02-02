@@ -31,6 +31,7 @@ body.with-header {
 .banner-container {
 	width: 100%;
 	position: fixed;
+	top: 120px;
 	height: 300px;
 	z-index: -10;
 	overflow: hidden;
@@ -61,6 +62,7 @@ body.with-header {
         background-color: #e1dfdb;
         padding: 2rem;
 	overflow: hidden;
+	margin-top: 300px;
 }
 
 .bottom-section {
