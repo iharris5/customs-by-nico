@@ -46,7 +46,7 @@ body.with-header {
 .content {
 	position: relative;
 	z-index: 10;
-	margin-top: -120px;
+	margin-top: -150px;
 	background-color: #f3e5f5;
 	padding: 2rem;
 }
