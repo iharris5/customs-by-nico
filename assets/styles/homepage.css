@@ -1,5 +1,5 @@
 p {
-    text-align: center;
+    text-align: right;
     font-family: 'Merriweather', serif;
     font-weight: 700;
     font-style: normal;
@@ -7,7 +7,7 @@ p {
 }
 
 .welcome-message {
-	text-align: center;
+	text-align: right;
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
 	font-style: normal;
@@ -26,6 +26,11 @@ body.with-header {
 	width: 40px;
 	height: 40px;
 	margin: 0 auto 0 30px;
+}
+
+#bigger-logo {
+	width: 236px;
+	height: 236px;
 }
 
 .top-section {
