@@ -16,7 +16,6 @@ body.with-header {
 .logo {
 	width: 100px;
 	height: auto;
-	display: block;
 	margin: 0 auto;
 }
 
@@ -31,6 +30,7 @@ body.with-header {
 
 .banner-container {
 	width: 100%;
+	position: absolute;
 }
 
 .bottom-section {
