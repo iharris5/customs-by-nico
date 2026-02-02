@@ -18,14 +18,13 @@ body.with-header {
 	height: auto;
 	display: block;
 	margin: 0 auto;
-	background-color: blue;
 }
 
 .top-section {
     position: fixed;
     top: 0;
     width: 100%;
-    background: radial-gradient(circle, #f8f9fb 30%, transparent 80%);
+    background: black;
     z-index: 1000;
     padding: 10px 0;
 }
