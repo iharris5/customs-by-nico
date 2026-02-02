@@ -1,6 +1,9 @@
 p {
     text-align: center;
-    font-family: 'Playfair Display', Arial;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
 }
 
 .welcome-message {
@@ -8,6 +11,7 @@ p {
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
 	font-style: normal;
+	font-size: 29px;
 }
 
 body {
