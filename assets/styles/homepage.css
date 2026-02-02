@@ -48,6 +48,7 @@ body.with-header {
 	z-index: 10;
 	margin-top: -120px;
 	background-color: #f3e5f5;
+	padding: 2rem;
 }
 
 .bottom-section {
