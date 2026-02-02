@@ -31,7 +31,6 @@ body.with-header {
 .banner-container {
 	width: 100%;
 	position: fixed;
-	margin-top: -120px;
 	height: 300px;
 	z-index: -10;
 	overflow: hidden;
@@ -50,6 +49,10 @@ body.with-header {
         width: 100%;
         height: 100%;
         object-fit: cover;
+}
+
+.banner-spacer {
+	height: 300px;
 }
 
 .content {
