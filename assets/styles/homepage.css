@@ -6,7 +6,7 @@ p {
 }
 
 body {
-	background-color: #f3e5f5;
+	background-color: #e1dfdb;
 }
 
 body.with-header {
@@ -55,7 +55,6 @@ body.with-header {
 .content {
         position: relative;
         z-index: 10;
-        margin-top: -120px;
         background-color: #e1dfdb;
         padding: 2rem;
 	overflow: hidden;
