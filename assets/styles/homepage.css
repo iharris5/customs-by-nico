@@ -30,8 +30,8 @@ body.with-header {
 
 .banner-container {
 	width: 100%;
-	position: sticky;
-	top: 0px;
+	position: relative;
+	margin-top: -120px;
 	height: 300px;
 	z-index: 1;
 	overflow: hidden;
@@ -45,7 +45,7 @@ body.with-header {
 
 .content {
 	position: relative;
-	z-index: 2;
+	z-index: 10;
 	margin-top: -120px;
 	background-color: #f3e5f5;
 }
