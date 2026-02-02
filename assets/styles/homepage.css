@@ -29,6 +29,10 @@ body.with-header {
     padding: 10px 0;
 }
 
+.banner-container {
+	width: 100%;
+}
+
 .bottom-section {
     position: fixed;
     bottom: 0;
