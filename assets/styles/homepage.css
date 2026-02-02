@@ -10,17 +10,19 @@ p {
 	display: flex;
 	align-items: center;
 	gap: 30px;
+	margin-left: auto;
+	margin-right: 40px;
 	max-width: 1100px;
-	margin: 0 auto;
 }
 
 .intro-text {
 	display: flex;
 	flex-direction: column;
+	text-align: left;
 }
 
 .intro-text p {
-	text-align: right;
+	text-align: left;
 }
 
 .welcome-message {
