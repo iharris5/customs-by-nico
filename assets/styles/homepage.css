@@ -6,6 +6,23 @@ p {
     font-size: 16px;
 }
 
+.welcome-container {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.intro-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.intro-text p {
+	text-align: right;
+}
+
 .welcome-message {
 	text-align: right;
 	font-family: 'Playfair Display', serif;
