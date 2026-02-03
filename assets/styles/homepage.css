@@ -66,14 +66,14 @@ body.with-header {
 }
 
 .logo {
-	max-width: 40px;
-	height: auto;
+	width: 40px;
+	height: 40px;
 	margin: 0 auto 0 auto;
 }
 
 #bigger-logo {
-	height: 365px;
-	width: 365px;
+	height: auto;
+	max-width: 365px;
 	margin-right: 105px;
 	margin-left: -80px;
 }
