@@ -72,6 +72,7 @@ body.with-header {
 }
 
 #bigger-logo {
+	width: 100%;
 	height: auto;
 	max-width: 365px;
 	margin-right: 105px;
