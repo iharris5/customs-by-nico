@@ -11,7 +11,7 @@ p {
 	align-items: center;
 	gap: 30px;
 	margin-left: auto;
-	margin-right: 150px;
+	margin-right: 200px;
 	max-width: 1050px;
 	align-items: flex-start;
 }
@@ -25,6 +25,7 @@ p {
 .intro-text p {
 	text-align: left;
 	line-height: 1.6;
+	margin-top: 10px;
 }
 
 .welcome-message {
