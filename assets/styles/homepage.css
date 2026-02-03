@@ -48,6 +48,7 @@ body.with-header {
 }
 
 #bigger-logo {
+	height: 100%;
 	width: 100%;
 	display: block;
 }
