@@ -48,8 +48,9 @@ body.with-header {
 }
 
 #bigger-logo {
-	height: 400px;
-	width: 400px;
+	height: 365px;
+	width: 365px;
+	margin-right: 20px;
 }
 
 .top-section {
