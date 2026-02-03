@@ -6,6 +6,12 @@ p {
     font-size: 16.5px;
 }
 
+h1 {
+	font-family: 'Merriweather', serif;
+	font-style: normal;
+	color: white;
+}
+
 .welcome-container {
 	display: flex;
 	align-items: center;
