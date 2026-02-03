@@ -77,7 +77,6 @@ body.with-header {
 }
 
 #bigger-logo {
-	margin-left: 20px;
 	width: clamp(200px, 30vw, 365px);
 	height: auto;
 }
