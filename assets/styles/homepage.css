@@ -24,6 +24,7 @@ p {
 
 .intro-text p {
 	text-align: left;
+	line-height: 1.6;
 }
 
 .welcome-message {
