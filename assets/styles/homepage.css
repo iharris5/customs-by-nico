@@ -19,6 +19,7 @@ p {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
+	justify-content: top;
 }
 
 .intro-text p {
