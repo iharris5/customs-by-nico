@@ -37,6 +37,12 @@ p {
 	align-items: flex-start;
 }
 
+.logo-slot {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
 .intro-text {
 	display: flex;
 	flex-direction: column;
@@ -72,11 +78,8 @@ body.with-header {
 }
 
 #bigger-logo {
-	width: 100%;
+	width: clamp(200px, 30vw, 365px);
 	height: auto;
-	max-width: 365px;
-	margin-right: 105px;
-	margin-left: -80px;
 }
 
 .top-section {
@@ -333,3 +336,31 @@ body.with-header {
 .has-submenu.open .arrow {
   transform: rotate(90deg);
 }
+
+@media (max-width: 700px) {
+  .welcome-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: auto;
+  }
+
+  .logo-slot {
+	  width: 100%;
+  }
+
+  .intro-text {
+    align-items: center;
+  }
+
+  .intro-text p,
+  .welcome-message {
+    text-align: center;
+  }
+
+   #bigger-logo {
+    margin-bottom: 20px;
+  }
+}
+
+
