@@ -109,6 +109,11 @@ p {
     display: none;
 }
 
+.more-menu .dropdown li {
+	display: block !important;
+	color: white;
+}
+
 .hamburger, .menu-toggle {
 	display: none;
 	font-size: 30px;
