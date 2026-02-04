@@ -207,9 +207,12 @@ body.with-header {
 }
 
 .socials-container {
+	text-align: center;
+}
+
+.social-logos {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	gap: 10px;
 }
 
