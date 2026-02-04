@@ -218,10 +218,18 @@ body.with-header {
 }
 
 .social-logo {
-	width: 44px;
-	height: 44px;
+	width: 64px;
+	height: 64px;
 	background-color: #5f6368;
 	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-logo img {
+	height: 44px;
+	width: 44px;
 }
 
 body {
