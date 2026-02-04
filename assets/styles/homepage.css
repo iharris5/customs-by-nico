@@ -121,38 +121,24 @@ body.with-header {
 }
 
 @media (max-width: 1000px) {
+  .nav-list li[data-section="most-popular"],
+  .nav-list li[data-section="create"],
   .nav-list li[data-section="about"] {
     display: none;
   }
 
   .more-menu {
-    display: block;
+	  display: block;
   }
 }
 
-@media (max-width: 850px) {
-  .nav-list li[data-section="create"] {
-    display: none;
-  }
-}
-
-@media (max-width: 700px) {
-  .nav-list li[data-section="popular"] {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .main-nav {
     display: none;
   }
 
   .hamburger {
     display: block;
-  }
-
-  .menu-toggle {
-	  display: block;
   }
 }
 
