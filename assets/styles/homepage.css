@@ -35,15 +35,15 @@ p {
 
 .header-left .brand-name {
     color: white;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
     margin: 0;
 }
 
 .main-nav {
     display: flex;
-    gap: 25px;
+    margin-left: auto;
     align-items: center;
 }
 
