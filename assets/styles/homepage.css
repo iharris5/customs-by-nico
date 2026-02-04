@@ -206,6 +206,10 @@ body.with-header {
 	margin-top: 40px;
 }
 
+.socials-container {
+	justify-content: center;
+}
+
 body {
 	background-color: #e1dfdb;
 }
