@@ -13,13 +13,62 @@
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     </head>
     <body id="top" class="with-header">
-	<section class="top-section">
-		<div class="top-brand">
-		<a href="#top" class="brand-link"><img src="assets/views/main/images/Real_Logo.png" alt="CustomsByNico" class="logo">
-		<p class="brand-name">CustomsByNico</p>
-		</a>
-		</div>
-	</section>
+	<header class="top-section site-header">
+    		<div class="header-inner">
+
+        	<!-- Left side -->
+        	<div class="header-left">
+            	<span class="menu-toggle" id="menu-toggle">☰</span>
+
+            	<a href="#top" class="brand-link">
+                	<img src="assets/views/main/images/Real_Logo.png" alt="CustomsByNico" class="logo">
+                	<p class="brand-name">CustomsByNico</p>
+            	</a>
+        	</div>
+
+        	<!-- Right side nav -->
+        	<nav class="main-nav">
+            		<ul class="nav-list">
+
+                	<li data-section="home">Home</li>
+
+                	<li class="has-dropdown" data-section="painted">
+                    	Hand Painted Customs
+                    	<ul class="dropdown">
+                        	<li data-category="colorways">Colorways</li>
+                        	<li data-category="cleats">Cleats</li>
+                        	<li data-category="anime-cartoons">Anime & Cartoons</li>
+                        	<li data-category="schools-sports">Schools & Sports</li>
+                        	<li data-category="floral">Floral</li>
+                        	<li data-category="custom-text">Custom Text</li>
+                        	<li data-category="baby-shoes">Baby Shoes</li>
+                    	</ul>
+                </li>
+
+                <li data-category="most-popular" data-section="popular">
+                    Most Popular
+                </li>
+
+                <li data-section="create">
+                    Create Your Own
+                </li>
+
+                <li data-section="about">
+                    About Us
+                </li>
+
+                <!-- More dropdown (initially empty, filled by CSS/JS rules) -->
+                <li class="has-dropdown more-menu">
+                    More
+                    <ul class="dropdown"></ul>
+                </li>
+
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
 	<section class="banner-container">
 	<img src="assets/views/main/images/CustomsByNico.png" alt="NicoBanner" class="banner">
 	</section>
@@ -40,21 +89,24 @@
 	<div class="sidebar" id="sidebar">
 		<span class="close-btn" id="close-btn">&times;</span>
   		<ul class="category-list">
-    			<li data-category="all">All Customs</li>
+    			<li data-category="home">Home</li>
     			<li data-category="most-popular">Most Popular</li>
     			<li data-category="colorways">Colorways</li>
     			<li data-category="cleats">Cleats</li>
-    			<li class="has-submenu" id="themes-toggle">Themes
+    			<li class="has-submenu" id="themes-toggle">Hand Painted Customs
 				<span class="arrow">&#x27A4;</span>
       				<ul class="submenu">
         				<li data-category="anime-cartoons">Anime & Cartoons</li>
         				<li data-category="schools-sports">Schools & Sports</li>
-      				</ul>
-    			</li>
-			<li data-category="floral">Floral</li>
-			<li data-category="custom-text">Custom Text</li>
-			<li data-category="baby-shoes">Baby Shoes</li>
-  		</ul>
+					<li data-category="floral">Floral</li>
+					<li data-category="custom-text">Custom Text</li>
+					<li data-category="baby-shoes">Baby Shoes</li>
+  				</ul>
+			</li>
+
+			<li data-section="create">Create Your Own</li>
+			<li data-section="about">About Us</li>
+		</ul>
 	</div>
 	
 	<div id="anime-filter-wrapper" style="display:none; margin: 20px;">

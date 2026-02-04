@@ -18,6 +18,48 @@ document.addEventListener("DOMContentLoaded", function () {
   	brandLink.addEventListener('click', showIntro);
     }
 
+    const paintedDropdown = document.querySelector(
+  '[data-section="painted"] .dropdown'
+    );
+
+    const categories = [
+      'anime-cartoons',
+      'floral',
+      'colorways',
+      'baby-shoes',
+      'cleats',
+      'schools-sports',
+      'custom-text'
+    ];
+
+    categories.forEach(cat => {
+      const li = document.createElement('li');
+      li.textContent = cat.replace('-', ' ');
+      li.addEventListener('click', () => {
+        showShoes();
+        displayImages(cat);
+      });
+      paintedDropdown.appendChild(li);
+    });
+
+    const moreMenu = document.querySelector('.more-menu .dropdown');
+    const movableItems = document.querySelectorAll(
+      '[data-section="about"], [data-section="create"], [data-section="popular"]'
+    );
+
+    movableItems.forEach(item => {
+      moreMenu.appendChild(item.cloneNode(true));
+    });
+
+    function setActive(section) {
+      document.querySelectorAll('.nav-list li')
+        .forEach(li => li.classList.remove('active'));
+
+      const active = document.querySelector(`[data-section="${section}"]`);
+      if (active) active.classList.add('active');
+    }
+
+
     const container = document.getElementById('shoe-container');
 
     const images = [

@@ -12,6 +12,73 @@ p {
     margin-left: 30px;    
 }
 
+.main-nav {
+	display: flex;
+}
+
+.nav-list {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.nav-list li {
+	cursor: pointer;
+	position: relative;
+}
+
+.nav-list li.active {
+	border-bottom: 2px solid white;
+}
+
+.has-dropdown .dropdown {
+	display: none;
+	position: absolute;
+	top: 100%;
+	background: black;
+	padding: 10px;
+}
+
+.has-dropdown:hover .dropdown {
+	display: block;
+}
+
+.more-menu {
+	display: none;
+}
+
+@media (max-width: 1000px) {
+  .nav-list li[data-section="about"] {
+    display: none;
+  }
+
+  .more-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav-list li[data-section="create"] {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-list li[data-section="popular"] {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
 .brand-link {
 	display: flex;
 	align-items: center;
