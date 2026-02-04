@@ -122,7 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes'}
     ];
 
-	setupCategoryFiltering();
     	setupSidebarToggle();
 	
 	function displayImages(filter = 'all', tag = 'all') {
