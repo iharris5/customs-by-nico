@@ -239,6 +239,7 @@ body.with-header {
 }
 
 .reviews-title {
+    text-align: center;
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     margin-bottom: 30px;
