@@ -22,19 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	    });
     }
 
-    const paintedDropdown = document.querySelector('[data-section="handpainted"] .dropdown');
-    const paintedCategories = ['anime-cartoons','floral','colorways','baby-shoes','cleats','schools-sports','custom-text'];
-    paintedCategories.forEach(cat => {
-        const li = document.createElement('li');
-        li.textContent = cat.replace('-', ' ');
-	li.setAttribute('data-category', cat);
-        li.addEventListener('click', () => {
-     	    showShoes();
-            displayImages(cat);
-        });
-        paintedDropdown.appendChild(li);
-    });
-
     // More dropdown
     const moreMenuDropdown = document.querySelector('.more-menu .dropdown');
     const movableItems = document.querySelectorAll('[data-section="about"], [data-section="create"], [data-section="most-popular"]');
@@ -51,6 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         moreMenuDropdown.appendChild(clone);
     });
+
+    const navHome = document.getElementById('nav-home');
+	if (navHome) {
+    	navHome.addEventListener('click', () => {
+        	showIntro();
+    	});
+    }
 
     const mostPopularBtn = document.querySelector('[data-section="most-popular"]');
     if (mostPopularBtn) {
