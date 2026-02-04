@@ -135,6 +135,10 @@ body.with-header {
     z-index: 1000;
 }
 
+#shoe-container {
+	display: none;
+}
+
 .shoe-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -342,6 +346,7 @@ body.with-header {
     align-items: center;
     text-align: center;
     margin-right: auto;
+    gap: 30px;
   }
 
   .logo-slot {

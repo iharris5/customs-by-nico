@@ -1,6 +1,23 @@
 console.log('calling homepage');
 
 document.addEventListener("DOMContentLoaded", function () {
+    let hasRenderedShoes = false;
+
+    function showShoes() {
+	    document.getElementById('intro-section').style.display = 'none';
+	    container.style.display = 'grid';
+    }
+
+    function showIntro() {
+	    document.getElementById('intro-section').style.display = 'block';
+	    container.style.display = 'none';
+    }
+
+    const brandLink = document.querySelector('.brand-link');
+    if (brandLink) {
+  	brandLink.addEventListener('click', showIntro);
+    }
+
     const container = document.getElementById('shoe-container');
 
     const images = [
@@ -61,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes'}
     ];
 
-    displayImages();
     setupCategoryFiltering();
     setupSidebarToggle();
 
@@ -102,6 +118,12 @@ document.addEventListener("DOMContentLoaded", function () {
         categories.forEach(cat => {
             cat.addEventListener('click', () => {
                 const selected = cat.getAttribute('data-category');
+		showShoes();
+
+		if (!hasRenderedShoes) {
+			hasRenderedShoes = true;
+		}
+
                 displayImages(selected);
                 closeSidebar(); // close sidebar after selecting
             });
@@ -175,6 +197,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.anime-tag').forEach(button => {
         button.addEventListener('click', () => {
             const tag = button.getAttribute('data-tag');
+	    showShoes();
+
+	    if (!hasRenderedShoes) {
+		hasRenderedShoes = true;
+	    }
+
             displayImages('anime-cartoons', tag);
         });
     });
