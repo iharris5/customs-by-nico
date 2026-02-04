@@ -204,7 +204,6 @@ body.with-header {
 	font-style: normal;
 	font-size: 32px;
 	margin-top: 40px;
-	margin-bottom: 30px;
 }
 
 .socials-container {
@@ -212,6 +211,7 @@ body.with-header {
 }
 
 .social-logos {
+	margin-top: 30px;
 	display: flex;
 	justify-content: center;
 	gap: 10px;
