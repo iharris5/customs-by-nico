@@ -73,10 +73,11 @@ p {
 	border-bottom: 2px solid white;
 }
 
-.caret {
+.nav-item .caret {
 	margin-left: 5px;
 	font-size: 12px;
 	display: inline-block;
+	vertical-align: middle;
 }
 
 .has-dropdown .dropdown {
