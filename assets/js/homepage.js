@@ -26,14 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const moreMenuDropdown = document.querySelector('.more-menu .dropdown');
     const movableItems = document.querySelectorAll('[data-section="about"], [data-section="create"], [data-section="most-popular"]');
 
-    let moreBuilt = false;
-
-    if (!moreBuilt) {
-      movableItems.forEach(item => {
-        moreMenuDropdown.appendChild(item);
-      });
-      moreBuilt = true;
-    }
+    movableItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.addEventListener('click', () => {
+            const section = clone.getAttribute('data-section');
+            if(section === 'most-popular') displayImages('most-popular');
+            else if(section === 'create') displayImages('create');
+            else if(section === 'about') displayImages('about');
+            showShoes();
+            closeSidebar();
+        });
+        moreMenuDropdown.appendChild(clone);
+    });
 
     const navHome = document.getElementById('nav-home');
 	if (navHome) {
