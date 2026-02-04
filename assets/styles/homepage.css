@@ -210,6 +210,11 @@ body.with-header {
 	text-align: center;
 }
 
+.social-logo {
+	width: 44px;
+	height: 44px;
+}
+
 body {
 	background-color: #e1dfdb;
 }
