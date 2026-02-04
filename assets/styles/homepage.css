@@ -6,45 +6,118 @@ p {
     font-size: 16.5px;
 }
 
-.top-brand {
+.site-header {
+    background: black;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-inner {
     display: flex;
-    align-items: center;        
-    margin-left: 30px;    
+    align-items: center;
+    justify-content: space-between; /* logo left, nav right */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-left .logo {
+    height: 50px; /* adjust to taste */
+}
+
+.header-left .brand-name {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 .main-nav {
-	display: flex;
+    display: flex;
+    gap: 25px;
+    align-items: center;
 }
 
 .nav-list {
-	display: flex;
-	gap: 20px;
-	align-items: center;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 25px;
 }
 
-.nav-list li {
-	cursor: pointer;
-	position: relative;
+.nav-item {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    padding: 5px 10px;
 }
 
-.nav-list li.active {
+.nav-item:hover {
+    color: #87CEEB; /* highlight */
+}
+
+.nav-item.active {
 	border-bottom: 2px solid white;
 }
 
+.caret {
+	margin-left: 5px;
+	font-size: 12px;
+	display: inline-block;
+}
+
 .has-dropdown .dropdown {
-	display: none;
-	position: absolute;
-	top: 100%;
-	background: black;
-	padding: 10px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: black;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 2000;
 }
 
 .has-dropdown:hover .dropdown {
-	display: block;
+    display: block;
+}
+
+.dropdown li {
+    color: white;
+    padding: 8px 15px;
+    white-space: nowrap;
+    list-style: none;
+}
+
+.dropdown li:hover {
+    background-color: #222;
 }
 
 .more-menu {
+    display: none;
+}
+
+.hamburger {
 	display: none;
+	font-size: 30px;
+	cursor: pointer;
+	color: white;
+}
+
+body.with-header {
+	padding-top: 80px;
 }
 
 @media (max-width: 1000px) {
@@ -133,10 +206,6 @@ body {
 	background-color: #e1dfdb;
 }
 
-body.with-header {
-	padding-top: 20px;
-}
-
 .logo {
 	width: 40px;
 	height: 40px;
@@ -163,15 +232,6 @@ body.with-header {
 	height: 300px;
 	z-index: -10;
 	overflow: hidden;
-}
-
-.top-section {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: black;
-    z-index: 1000;
-    padding: 10px 0;
 }
 
 .banner {
