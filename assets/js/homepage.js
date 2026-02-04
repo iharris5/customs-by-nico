@@ -22,11 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	    });
     }
 
-    const paintedDropdown = document.querySelector('[data-section="painted"] .dropdown');
+    const paintedDropdown = document.querySelector('[data-section="handpainted"] .dropdown');
     const paintedCategories = ['anime-cartoons','floral','colorways','baby-shoes','cleats','schools-sports','custom-text'];
     paintedCategories.forEach(cat => {
         const li = document.createElement('li');
         li.textContent = cat.replace('-', ' ');
+	li.setAttribute('data-category', cat);
         li.addEventListener('click', () => {
      	    showShoes();
             displayImages(cat);
