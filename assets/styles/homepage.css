@@ -19,7 +19,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between; /* logo left, nav right */
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
