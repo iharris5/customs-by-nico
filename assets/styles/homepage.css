@@ -211,10 +211,10 @@ body.with-header {
 }
 
 .social-logos {
-	padding-top: 40px;
+	padding-top: 50px;
 	display: flex;
 	justify-content: center;
-	gap: 15px;
+	gap: 16px;
 }
 
 .social-logo {
