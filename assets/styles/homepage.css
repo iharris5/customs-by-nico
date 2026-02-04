@@ -208,6 +208,7 @@ body.with-header {
 
 .socials-container {
 	text-align: center;
+	gap: 10px;
 }
 
 .social-logo {
@@ -215,7 +216,6 @@ body.with-header {
 	height: 44px;
 	background-color: #5f6368;
 	border-radius: 50%;
-	gap: 10px;
 }
 
 body {
