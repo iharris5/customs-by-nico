@@ -232,6 +232,39 @@ body.with-header {
 	width: 44px;
 }
 
+.reviews-section {
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.reviews-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.review-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;           /* allows horizontal scroll */
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.review-slide {
+    flex: 0 0 auto;             /* prevent shrinking */
+    width: clamp(250px, 35%, 565px); /* min 250px, max 565px */
+    scroll-snap-align: start;
+}
+
+.review-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
 body {
 	background-color: #e1dfdb;
 }
