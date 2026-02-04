@@ -197,6 +197,14 @@ body.with-header {
 	font-size: 38px;
 }
 
+.follow-me {
+	text-align: center;
+	font-family: 'PlayFair Display', serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 34px;
+}
+
 body {
 	background-color: #e1dfdb;
 }
