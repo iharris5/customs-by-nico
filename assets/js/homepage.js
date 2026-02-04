@@ -3,6 +3,7 @@ console.log('calling homepage');
 document.addEventListener("DOMContentLoaded", function () {
     let hasRenderedShoes = false;
 
+    const container = document.getElementById('shoe-container');
     function showShoes() {
 	    document.getElementById('intro-section').style.display = 'none';
 	    container.style.display = 'grid';
@@ -13,54 +14,24 @@ document.addEventListener("DOMContentLoaded", function () {
 	    container.style.display = 'none';
     }
 
-    const brandLink = document.querySelector('.brand-link');
-    if (brandLink) {
-  	brandLink.addEventListener('click', showIntro);
-    }
+    const homeBtn = document.getElementById('home-btn');
+    homeBtn.addEventListener('click', showIntro);
 
-    const paintedDropdown = document.querySelector(
-  '[data-section="painted"] .dropdown'
-    );
-
-    const categories = [
-      'anime-cartoons',
-      'floral',
-      'colorways',
-      'baby-shoes',
-      'cleats',
-      'schools-sports',
-      'custom-text'
-    ];
-
-    categories.forEach(cat => {
-      const li = document.createElement('li');
-      li.textContent = cat.replace('-', ' ');
-      li.addEventListener('click', () => {
+    const mostPopularBtn = document.querySelector('[data-section="most-popular"]');
+    mostPopularBtn.addEventListener('click', () => {
         showShoes();
-        displayImages(cat);
-      });
-      paintedDropdown.appendChild(li);
+        displayImages('most-popular');
     });
 
-    const moreMenu = document.querySelector('.more-menu .dropdown');
-    const movableItems = document.querySelectorAll(
-      '[data-section="about"], [data-section="create"], [data-section="popular"]'
-    );
-
-    movableItems.forEach(item => {
-      moreMenu.appendChild(item.cloneNode(true));
+    const categories = document.querySelectorAll('[data-category]');
+    categories.forEach(cat => {
+        cat.addEventListener('click', () => {
+            const selected = cat.getAttribute('data-category');
+            showShoes();
+            displayImages(selected);
+            closeSidebar();
+        });
     });
-
-    function setActive(section) {
-      document.querySelectorAll('.nav-list li')
-        .forEach(li => li.classList.remove('active'));
-
-      const active = document.querySelector(`[data-section="${section}"]`);
-      if (active) active.classList.add('active');
-    }
-
-
-    const container = document.getElementById('shoe-container');
 
     const images = [
 	    { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular'},
@@ -120,131 +91,96 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes'}
     ];
 
-    setupCategoryFiltering();
-    setupSidebarToggle();
+	function displayImages(filter = 'all', tag = 'all') {
+        container.innerHTML = '';
 
-    function displayImages(filter = 'all', tag = 'all') {
-	    container.innerHTML = '';
+        const filterWrapper = document.getElementById('anime-filter-wrapper');
+        const tagsContainer = document.getElementById('anime-tags');
 
-	    const filterWrapper = document.getElementById('anime-filter-wrapper');
-	    const tagsContainer = document.getElementById('anime-tags');
+        if (filter === 'anime-cartoons') filterWrapper.style.display = 'block';
+        else {
+            filterWrapper.style.display = 'none';
+            tagsContainer.classList.remove('show');
+        }
 
-	    if (filter === 'anime-cartoons') {
-        	filterWrapper.style.display = 'block';
-	    } else {
-        	filterWrapper.style.display = 'none';
-        	tagsContainer.classList.remove('show');
-	    }
-	    let filteredImages = images.filter(img => filter === 'all' || img.category === filter);
-	    if (filter === 'anime-cartoons' && tag !== 'all') {
-        	filteredImages = filteredImages.filter(img =>
-			img.tags && img.tags.includes(tag)
-		);
-	    }
+        let filteredImages = images.filter(img => filter === 'all' || img.category === filter);
+        if (filter === 'anime-cartoons' && tag !== 'all') {
+            filteredImages = filteredImages.filter(img =>
+                img.tags && img.tags.includes(tag)
+            );
+        }
 
-            filteredImages.forEach(img => {
-		const div = document.createElement('div');
-                div.className = 'shoe-pic';
-                const image = document.createElement('img');
-                image.src = img.image_url;
-                image.alt = 'NicoShoe';
-                div.appendChild(image);
-                container.appendChild(div);
-            });
-
-            setupLightbox();
-    }
-
-    function setupCategoryFiltering() {
-        const categories = document.querySelectorAll('[data-category]');
-        categories.forEach(cat => {
-            cat.addEventListener('click', () => {
-                const selected = cat.getAttribute('data-category');
-		showShoes();
-
-		if (!hasRenderedShoes) {
-			hasRenderedShoes = true;
-		}
-
-                displayImages(selected);
-                closeSidebar(); // close sidebar after selecting
-            });
+        filteredImages.forEach(img => {
+            const div = document.createElement('div');
+            div.className = 'shoe-pic';
+            const image = document.createElement('img');
+            image.src = img.image_url;
+            image.alt = 'NicoShoe';
+            div.appendChild(image);
+            container.appendChild(div);
         });
+
+        setupLightbox();
     }
 
+    // Lightbox setup
     function setupLightbox() {
         document.querySelectorAll('.shoe-pic img').forEach(img => {
             img.addEventListener('click', () => {
                 const lightbox = document.getElementById('lightbox');
-                const lightboxImg = lightbox.querySelector('.lightbox-img');
-                lightboxImg.src = img.src;
+                lightbox.querySelector('.lightbox-img').src = img.src;
                 lightbox.style.display = 'flex';
             });
         });
 
         const closeBtn = document.querySelector('.lightbox .close');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                document.getElementById('lightbox').style.display = 'none';
-            });
-        }
+        closeBtn.addEventListener('click', () => {
+            document.getElementById('lightbox').style.display = 'none';
+        });
 
         const lightbox = document.getElementById('lightbox');
-        if (lightbox) {
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    lightbox.style.display = 'none';
-                }
-            });
-        }
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) lightbox.style.display = 'none';
+        });
     }
 
+    // Sidebar toggle
     function setupSidebarToggle() {
         const menuToggle = document.getElementById('menu-toggle');
         const sidebar = document.getElementById('sidebar');
         const closeBtn = document.getElementById('close-btn');
 
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.add('open');
-        });
+        menuToggle.addEventListener('click', () => sidebar.classList.add('open'));
+        closeBtn.addEventListener('click', () => sidebar.classList.remove('open'));
 
-        closeBtn.addEventListener('click', () => {
-            sidebar.classList.remove('open');
-        });
-	
-	const themesToggle = document.getElementById('themes-toggle');
-	themesToggle.addEventListener('click', (e) => {
-  		e.stopPropagation(); // To stop it from closing sidebar if needed
-  		themesToggle.classList.toggle('open');
-	});
-
-        // To close sidebar when clicking outside
         document.addEventListener('click', (e) => {
             if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
                 sidebar.classList.remove('open');
             }
         });
+
+        const themesToggle = document.getElementById('themes-toggle');
+        themesToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            themesToggle.classList.toggle('open');
+        });
     }
 
     function closeSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.remove('open');
+        document.getElementById('sidebar').classList.remove('open');
     }
-    
+
+    setupSidebarToggle();
+
+    // Anime tags toggle
     document.getElementById('show-anime-tags').addEventListener('click', () => {
-        const tags = document.getElementById('anime-tags');
-        tags.classList.toggle('show');
+        document.getElementById('anime-tags').classList.toggle('show');
     });
 
     document.querySelectorAll('.anime-tag').forEach(button => {
         button.addEventListener('click', () => {
             const tag = button.getAttribute('data-tag');
-	    showShoes();
-
-	    if (!hasRenderedShoes) {
-		hasRenderedShoes = true;
-	    }
-
+            showShoes();
             displayImages('anime-cartoons', tag);
         });
     });

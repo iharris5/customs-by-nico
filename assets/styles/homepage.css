@@ -50,7 +50,6 @@ p {
 .nav-list {
     display: flex;
     list-style: none;
-    align-items: center;
     padding: 0;
     margin: 0;
     gap: 25px;
