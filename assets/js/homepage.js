@@ -206,9 +206,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Anime tags toggle
-    document.getElementById('show-anime-tags').addEventListener('click', () => {
-        document.getElementById('anime-tags').classList.toggle('show');
-    });
+    const animeToggleBtn = document.getElementById('show-anime-tags');
+    if (animeToggleBtn) {
+        animeToggleBtn.addEventListener('click', () => {
+            document.getElementById('anime-tags').classList.toggle('show');
+        });
+    }
 
     document.querySelectorAll('.anime-tag').forEach(button => {
         button.addEventListener('click', () => {

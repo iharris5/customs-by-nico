@@ -326,10 +326,6 @@ body {
     z-index: 1000;
 }
 
-#shoe-container {
-	display: none;
-}
-
 .shoe-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
