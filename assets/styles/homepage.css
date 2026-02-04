@@ -109,7 +109,7 @@ p {
     display: none;
 }
 
-.hamburger {
+.hamburger, .menu-toggle {
 	display: none;
 	font-size: 30px;
 	cursor: pointer;
@@ -149,6 +149,10 @@ body.with-header {
 
   .hamburger {
     display: block;
+  }
+
+  .menu-toggle {
+	  display: block;
   }
 }
 

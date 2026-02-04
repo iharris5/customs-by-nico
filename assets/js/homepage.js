@@ -15,16 +15,52 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const homeBtn = document.getElementById('home-btn');
-    homeBtn.addEventListener('click', showIntro);
+    if(homeBtn) {
+	    homeBtn.addEventListener('click', (e) => {
+		    e.preventDefault();
+		    showIntro();
+	    });
+    }
 
-    const mostPopularBtn = document.querySelector('[data-section="most-popular"]');
-    mostPopularBtn.addEventListener('click', () => {
-        showShoes();
-        displayImages('most-popular');
+    const paintedDropdown = document.querySelector('[data-section="painted"] .dropdown');
+    const paintedCategories = ['anime-cartoons','floral','colorways','baby-shoes','cleats','schools-sports','custom-text'];
+    paintedCategories.forEach(cat => {
+        const li = document.createElement('li');
+        li.textContent = cat.replace('-', ' ');
+        li.addEventListener('click', () => {
+     	    showShoes();
+            displayImages(cat);
+        });
+        paintedDropdown.appendChild(li);
     });
 
-    const categories = document.querySelectorAll('[data-category]');
-    categories.forEach(cat => {
+    // More dropdown
+    const moreMenuDropdown = document.querySelector('.more-menu .dropdown');
+    const movableItems = document.querySelectorAll('[data-section="about"], [data-section="create"], [data-section="most-popular"]');
+
+    movableItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.addEventListener('click', () => {
+            const section = clone.getAttribute('data-section');
+            if(section === 'most-popular') displayImages('most-popular');
+            else if(section === 'create') displayImages('create');
+            else if(section === 'about') displayImages('about');
+            showShoes();
+            closeSidebar();
+        });
+        moreMenuDropdown.appendChild(clone);
+    });
+
+    const mostPopularBtn = document.querySelector('[data-section="most-popular"]');
+    if (mostPopularBtn) {
+	    mostPopularBtn.addEventListener('click', () => {
+        	showShoes();
+        	displayImages('most-popular');
+    	    });
+    }
+
+    const categoryButtons = document.querySelectorAll('[data-category]');
+    categoryButtons.forEach(cat => {
         cat.addEventListener('click', () => {
             const selected = cat.getAttribute('data-category');
             showShoes();
@@ -91,14 +127,18 @@ document.addEventListener("DOMContentLoaded", function () {
 	    { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes'}
     ];
 
+	setupCategoryFiltering();
+    	setupSidebarToggle();
+	
 	function displayImages(filter = 'all', tag = 'all') {
         container.innerHTML = '';
 
         const filterWrapper = document.getElementById('anime-filter-wrapper');
         const tagsContainer = document.getElementById('anime-tags');
 
-        if (filter === 'anime-cartoons') filterWrapper.style.display = 'block';
-        else {
+        if (filter === 'anime-cartoons') {
+		filterWrapper.style.display = 'block';
+	} else {
             filterWrapper.style.display = 'none';
             tagsContainer.classList.remove('show');
         }
@@ -125,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Lightbox setup
     function setupLightbox() {
-        document.querySelectorAll('.shoe-pic img').forEach(img => {
+	    document.querySelectorAll('.shoe-pic img').forEach(img => {
             img.addEventListener('click', () => {
                 const lightbox = document.getElementById('lightbox');
                 lightbox.querySelector('.lightbox-img').src = img.src;
@@ -169,8 +209,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeSidebar() {
         document.getElementById('sidebar').classList.remove('open');
     }
-
-    setupSidebarToggle();
 
     // Anime tags toggle
     document.getElementById('show-anime-tags').addEventListener('click', () => {
