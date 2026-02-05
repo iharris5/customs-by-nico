@@ -1,4 +1,3 @@
-/* --- General text --- */
 p {
     text-align: right;
     font-family: 'Merriweather', serif;
@@ -7,7 +6,6 @@ p {
     font-size: 16.5px;
 }
 
-/* --- Header --- */
 .site-header {
     background: black;
     padding: 10px 20px;
@@ -20,7 +18,7 @@ p {
 .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* logo left, nav right */
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -32,7 +30,7 @@ p {
 }
 
 .header-left .logo {
-    height: 50px;
+    height: 50px; /* adjust to taste */
 }
 
 .header-left .brand-name {
@@ -67,18 +65,18 @@ p {
 }
 
 .nav-item:hover {
-    color: #87CEEB;
+    color: #87CEEB; /* highlight */
 }
 
 .nav-item.active {
-    border-bottom: 2px solid white;
+	border-bottom: 2px solid white;
 }
 
 .nav-item .caret {
-    margin-left: 5px;
-    font-size: 12px;
-    display: inline-block;
-    vertical-align: middle;
+	margin-left: 5px;
+	font-size: 12px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .has-dropdown .dropdown {
@@ -112,22 +110,21 @@ p {
 }
 
 .more-menu .dropdown li {
-    display: block !important;
-    color: white;
+	display: block !important;
+	color: white;
 }
 
 .hamburger, .menu-toggle {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
+	display: none;
+	font-size: 30px;
+	cursor: pointer;
+	color: white;
 }
 
 body.with-header {
-    padding-top: 80px;
+	padding-top: 80px;
 }
 
-/* --- Responsive Header --- */
 @media (max-width: 1000px) {
   .nav-list li[data-section="most-popular"],
   .nav-list li[data-section="create"],
@@ -136,7 +133,7 @@ body.with-header {
   }
 
   .more-menu {
-      display: block;
+	  display: block;
   }
 }
 
@@ -150,95 +147,91 @@ body.with-header {
   }
 }
 
-/* --- Logo & Brand --- */
 .brand-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
 }
 
 .brand-name {
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: white;
-    margin: 0;
+	font-family: 'Merriweather', serif;
+    	font-weight: 700;
+    	font-size: 24px;
+    	color: white;
+    	margin: 0;
 }
 
-/* --- Intro Section --- */
 .welcome-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 90px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1050px;
+	display: flex;
+	align-items: flex-start;
+	gap: 90px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1050px;
 }
 
 .logo-slot {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+	flex: 1;
+	display: flex;
+	justify-content: center;
 }
 
 .intro-text {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
 }
 
 .intro-text p {
-    text-align: left;
-    line-height: 1.6;
-    margin-top: 10px;
+	text-align: left;
+	line-height: 1.6;
+	margin-top: 10px;
 }
 
 .welcome-message {
-    text-align: right;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 38px;
+	text-align: right;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 38px;
 }
 
-/* --- Socials --- */
 .follow-me {
-    text-align: center;
-    font-family: 'PlayFair Display', serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 32px;
-    margin-top: 40px;
+	text-align: center;
+	font-family: 'PlayFair Display', serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 32px;
+	margin-top: 40px;
 }
 
 .socials-container {
-    text-align: center;
+	text-align: center;
 }
 
 .social-logos {
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+	padding-top: 50px;
+	display: flex;
+	justify-content: center;
+	gap: 16px;
 }
 
 .social-logo {
-    width: 50px;
-    height: 50px;
-    background-color: #5f6368;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	width: 50px;
+	height: 50px;
+	background-color: #5f6368;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .social-logo img {
-    height: 44px;
-    width: 44px;
+	height: 44px;
+	width: 44px;
 }
 
-/* --- Reviews --- */
 .reviews-section {
     padding: 70px 20px 10px 20px;
     background-color: #e1dfdb;
@@ -246,6 +239,7 @@ body.with-header {
 }
 
 .reviews-title {
+    text-align: center;
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     padding-bottom: 40px;
@@ -254,14 +248,14 @@ body.with-header {
 .review-carousel {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
+    overflow-x: auto;           /* allows horizontal scroll */
     padding-bottom: 20px;
     scroll-snap-type: x mandatory;
 }
 
 .review-slide {
-    flex: 0 0 auto;
-    width: clamp(250px, 35%, 565px);
+    flex: 0 0 auto;             /* prevent shrinking */
+    width: clamp(250px, 35%, 565px); /* min 250px, max 565px */
     scroll-snap-align: start;
 }
 
@@ -272,83 +266,104 @@ body.with-header {
     object-fit: cover;
 }
 
-/* --- Body --- */
 body {
-    background-color: #e1dfdb;
+	background-color: #e1dfdb;
 }
 
-/* --- Logos --- */
 .logo {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 0 auto;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto 0 auto;
 }
 
 #bigger-logo {
-    width: clamp(200px, 30vw, 365px);
-    height: auto;
+	width: clamp(200px, 30vw, 365px);
+	height: auto;
 }
 
-/* --- Banner --- */
-.banner-container {
-    width: 100%;
+.top-section {
     position: fixed;
-    height: 300px;
-    z-index: -10;
-    overflow: hidden;
+    top: 0;
+    width: 100%;
+    background: black;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.banner-container {
+	width: 100%;
+	position: fixed;
+	height: 300px;
+	z-index: -10;
+	overflow: hidden;
 }
 
 .banner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
 }
 
 .banner-spacer {
-    height: 300px;
+	height: 300px;
 }
 
 .content {
-    position: relative;
-    z-index: 10;
-    background-color: #e1dfdb;
-    padding: 2rem;
-    overflow: hidden;
+        position: relative;
+        z-index: 10;
+        background-color: #e1dfdb;
+        padding: 2rem;
+	overflow: hidden;
 }
 
-/* --- Shoe container --- */
+.bottom-section {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
 .shoe-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-items: center;
-    gap: 15px;
-    padding: 20px;
-    background-color: #e1dfdb;
-    display: none; /* hidden until category is clicked */
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+	gap: 10px;
+	padding: 10px;
+	background-color: #e1dfdb;
+}
+
+@media (max-width: 800px) {
+	.shoe-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.top-section {
+		background: black;
+	}
+	.bottom-section {
+		background: black;
+	}
 }
 
 .shoe-pic {
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: #fff;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
 }
 
 .shoe-pic img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.2s ease;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.2s ease;
 }
 
 .shoe-pic img:hover {
-    transform: scale(1.05);
+	transform: scale(1.05);
 }
 
-/* --- Lightbox --- */
 .lightbox {
     display: none;
     position: fixed;
@@ -378,9 +393,8 @@ body {
     cursor: pointer;
 }
 
-/* --- Buttons --- */
 .btn-container {
-    text-align: center;
+	text-align: center;
 }
 
 .custom-nico-btn {
@@ -397,39 +411,39 @@ body {
 }
 
 .custom-purple {
-    background-color: #6200ea;
+	background-color: #6200ea;
 }
 
 .custom-purple:hover {
-    background-color: #3700b3;
+        background-color: #3700b3;
 }
 
 .custom-teal {
-    background-color: #87CEEB;
+	background-color: #87CEEB;
 }
 
 .custom-teal:hover {
-    background-color: #00BFFF;
+	background-color: #00BFFF;
 }
 
-/* --- Anime tags --- */
 #anime-tags {
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: all 0.4s ease;
+	overflow: hidden;
+	max-height: 0;
+	opacity: 0;
+	transition: all 0.4s ease;
 }
 
 #anime-tags .custom-nico-btn {
-    margin-bottom: 10px;
+        margin-bottom: 10px;
 }
+
 
 #anime-tags.show {
-    max-height: 500px;
-    opacity: 1;
+	max-height: 500px;
+	opacity: 1;
 }
 
-/* --- Sidebar --- */
+/* Toggle Button */
 .menu-toggle {
   position: fixed;
   top: 20px;
@@ -439,6 +453,7 @@ body {
   z-index: 1001;
 }
 
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -486,6 +501,12 @@ body {
   margin-left: 15px;
 }
 
+.submenu {
+  display: none;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
 .has-submenu.open .submenu {
   display: block;
 }
@@ -506,7 +527,6 @@ body {
   transform: rotate(90deg);
 }
 
-/* --- Responsive --- */
 @media (max-width: 700px) {
   .welcome-container {
     flex-direction: column;
@@ -517,7 +537,7 @@ body {
   }
 
   .logo-slot {
-      width: 100%;
+	  width: 100%;
   }
 
   .intro-text {
@@ -533,4 +553,5 @@ body {
     margin-bottom: 0px;
   }
 }
+
 
