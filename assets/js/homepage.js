@@ -33,6 +33,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Make all Home buttons behave like the logo
+    const navHome = document.getElementById('nav-home');
+    if (navHome && homeBtn) {
+        navHome.addEventListener('click', () => {
+            homeBtn.click();
+        });
+    }
+
+    document.querySelectorAll('[data-category="home"]').forEach(item => {
+        item.addEventListener('click', () => {
+            homeBtn.click();
+        });
+    });
+
+
     // ----- Category buttons (sidebar or nav) -----
     document.querySelectorAll('[data-category]').forEach(button => {
         button.addEventListener('click', () => {
