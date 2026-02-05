@@ -122,7 +122,7 @@ p {
 }
 
 body.with-header {
-	padding-top: 80px;
+	padding-top: 0;
 }
 
 @media (max-width: 1000px) {
@@ -291,6 +291,7 @@ body {
 }
 
 .banner-container {
+	top: 0;
 	width: 100%;
 	position: fixed;
 	height: 300px;
