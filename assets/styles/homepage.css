@@ -496,11 +496,11 @@ body {
   padding: 8px 10px;
   margin-bottom: 4px;
   color: #BDBDBD;
-  transition: background-color 0.2s;
+  transition: color 0.2s;
 }
 
 .category-list li:hover {
-  background-color: #e0d7f3;
+  color: white;
 }
 
 .has-submenu .submenu {
