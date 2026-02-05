@@ -124,39 +124,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     	setupSidebarToggle();
 	
-	function displayImages(filter = 'all', tag = 'all') {
-        console.log('displayImages called with:', filter);
-	container.innerHTML = '';
-
-        const filterWrapper = document.getElementById('anime-filter-wrapper');
-        const tagsContainer = document.getElementById('anime-tags');
-
-        if (filter === 'anime-cartoons') {
-		filterWrapper.style.display = 'block';
-	} else {
-            filterWrapper.style.display = 'none';
-            tagsContainer.classList.remove('show');
-        }
-
-        let filteredImages = images.filter(img => filter === 'all' || img.category === filter);
-        if (filter === 'anime-cartoons' && tag !== 'all') {
-            filteredImages = filteredImages.filter(img =>
-                img.tags && img.tags.includes(tag)
-            );
-        }
-
-        filteredImages.forEach(img => {
-            const div = document.createElement('div');
-            div.className = 'shoe-pic';
-            const image = document.createElement('img');
-            image.src = img.image_url;
-            image.alt = 'NicoShoe';
-            div.appendChild(image);
-            container.appendChild(div);
-        });
-
-        setupLightbox();
+	function displayImages(category) {
+                        const container = document.getElementById('image-container');
+    if (!container) {
+        console.error('No container found for images!');
+        return;
     }
+
+    // Clear previous images
+    container.innerHTML = '';
+
+    // Filter images by category
+    const filtered = images.filter(img => img.category === category);
+
+    if (filtered.length === 0) {
+        container.innerHTML = `<p>No images found for "${category}"</p>`;
+        console.log(`No images to display for category: ${category}`);
+        return;
+    }
+
+    // Add images to container
+    filtered.forEach(img => {
+        const imageElement = document.createElement('img');
+        imageElement.src = img.image_url;
+        imageElement.alt = category;
+        container.appendChild(imageElement);
+    });
+
+    console.log(`Displayed ${filtered.length} images for category: ${category}`);
+}
 
     // Lightbox setup
     function setupLightbox() {
