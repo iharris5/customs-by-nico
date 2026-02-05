@@ -38,11 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Nav click events
     const navHome = document.getElementById('nav-home');
-    if (navHome) {
-        navHome.addEventListener('click', () => {
-            showIntro();
-        });
-    }
+    if (navHome) navHome.addEventListener('click', () => showIntro());
 
     const mostPopularBtn = document.querySelector('[data-section="most-popular"]');
     if (mostPopularBtn) {
@@ -52,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Category buttons
     const categoryButtons = document.querySelectorAll('[data-category]');
     categoryButtons.forEach(cat => {
         cat.addEventListener('click', () => {
@@ -62,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // ----- All images -----
     const images = [
         { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular' },
         { image_url: 'assets/views/main/images/IMG_2355.jpeg', category: 'anime-cartoons', tags: ['jojo'] },
@@ -132,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (filtered.length === 0) {
             container.innerHTML = `<p>No images found for "${category}"</p>`;
             console.log(`No images to display for category: ${category} with tag: ${tag}`);
+            container.style.display = 'grid';
             return;
         }
 
@@ -148,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         setupLightbox();
+        container.style.display = 'grid';
         console.log(`Displayed ${filtered.length} images for category: ${category}`);
     }
 
