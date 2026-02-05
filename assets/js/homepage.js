@@ -178,5 +178,40 @@ document.addEventListener("DOMContentLoaded", function () {
     // ----- Initial state -----
     if (container) container.style.display = 'none'; // hide images initially
     if (introSection) introSection.style.display = 'block'; // show intro
+
+    // ----- Sidebar & Hamburger Menu -----
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('close-btn');
+
+    // Toggle sidebar open/close
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.add('open');
+        });
+    }
+
+    // Close sidebar with close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+        });
+    }
+
+    // Close sidebar when a category or section is clicked
+    document.querySelectorAll('.sidebar [data-category], .sidebar [data-section]').forEach(item => {
+        item.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+        });
+    });
+
+    // Toggle submenu inside sidebar (Hand Painted Customs)
+    const themesToggle = document.getElementById('themes-toggle');
+    if (themesToggle) {
+        themesToggle.addEventListener('click', () => {
+            themesToggle.classList.toggle('open');
+        });
+    }
+
 });
 
