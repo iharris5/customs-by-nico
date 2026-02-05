@@ -330,8 +330,8 @@ body {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-items: center;
-	gap: 10px;
-	padding: 10px;
+	gap: 20px;
+	padding: 20px;
 	background-color: #e1dfdb;
 	display: none;
 }
