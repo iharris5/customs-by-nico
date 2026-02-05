@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('shoe-container');
     const introSection = document.getElementById('intro-section');
 
+    // ----- Helper to show images and hide intro -----
+    function showImages(category, tag = null) {
+        introSection.style.display = 'none';   // hide intro
+        container.style.display = 'grid';      // show container
+        displayImages(category, tag);          // populate images
+    }
+
+    // ----- Show intro again (home button) -----
     function showIntro() {
         introSection.style.display = 'block';
         container.style.display = 'none';
@@ -25,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const clone = item.cloneNode(true);
         clone.addEventListener('click', () => {
             const section = clone.getAttribute('data-section');
-            displayImages(section);
-            container.style.display = 'grid';
+            showImages(section);
             closeSidebar();
         });
         moreMenuDropdown.appendChild(clone);
@@ -39,8 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mostPopularBtn = document.querySelector('[data-section="most-popular"]');
     if (mostPopularBtn) {
         mostPopularBtn.addEventListener('click', () => {
-            displayImages('most-popular');
-            container.style.display = 'grid';
+            showImages('most-popular');
         });
     }
 
@@ -49,8 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     categoryButtons.forEach(cat => {
         cat.addEventListener('click', () => {
             const selected = cat.getAttribute('data-category');
-            displayImages(selected);
-            container.style.display = 'grid';
+            showImages(selected);
             closeSidebar();
         });
     });
@@ -114,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' }
     ];
 
-    // ----- Display images -----
+    // ----- Display images into container -----
     function displayImages(category, tag = null) {
         container.innerHTML = '';
 
@@ -126,7 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (filtered.length === 0) {
             container.innerHTML = `<p>No images found for "${category}"</p>`;
-            container.style.display = 'grid';
             console.log(`No images to display for category: ${category} with tag: ${tag}`);
             return;
         }
@@ -144,11 +148,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         setupLightbox();
-        container.style.display = 'grid';
         console.log(`Displayed ${filtered.length} images for category: ${category}`);
     }
 
-    // ----- Lightbox setup -----
+    // ----- Lightbox functionality -----
     function setupLightbox() {
         document.querySelectorAll('.shoe-pic img').forEach(img => {
             img.addEventListener('click', () => {
@@ -212,8 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.anime-tag').forEach(button => {
         button.addEventListener('click', () => {
             const tag = button.getAttribute('data-tag');
-            displayImages('anime-cartoons', tag);
-            container.style.display = 'grid';
+            showImages('anime-cartoons', tag);
         });
     });
 });
