@@ -6,15 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
-        introSection.style.display = 'none';   // hide intro
-        container.style.display = 'grid';      // show container
-        displayImages(category, tag);          // populate images
+        if (!container) return;
+        if (introSection) introSection.style.display = 'none';   // hide intro
+        container.style.display = 'grid';                        // show container
+        displayImages(category, tag);                             // populate images
     }
 
     // ----- Show intro again (home button) -----
     function showIntro() {
-        introSection.style.display = 'block';
-        container.style.display = 'none';
+        if (introSection) introSection.style.display = 'block';
+        if (container) container.style.display = 'none';
     }
 
     // ----- Home button -----
@@ -25,40 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
             showIntro();
         });
     }
-
-    // ----- Sidebar More menu items -----
-    const moreMenuDropdown = document.querySelector('.more-menu .dropdown');
-    const movableItems = document.querySelectorAll('[data-section="about"], [data-section="create"], [data-section="most-popular"]');
-    movableItems.forEach(item => {
-        const clone = item.cloneNode(true);
-        clone.addEventListener('click', () => {
-            const section = clone.getAttribute('data-section');
-            showImages(section);
-            closeSidebar();
-        });
-        moreMenuDropdown.appendChild(clone);
-    });
-
-    // ----- Nav click events -----
-    const navHome = document.getElementById('nav-home');
-    if (navHome) navHome.addEventListener('click', () => showIntro());
-
-    const mostPopularBtn = document.querySelector('[data-section="most-popular"]');
-    if (mostPopularBtn) {
-        mostPopularBtn.addEventListener('click', () => {
-            showImages('most-popular');
-        });
-    }
-
-    // ----- Category buttons -----
-    const categoryButtons = document.querySelectorAll('[data-category]');
-    categoryButtons.forEach(cat => {
-        cat.addEventListener('click', () => {
-            const selected = cat.getAttribute('data-category');
-            showImages(selected);
-            closeSidebar();
-        });
-    });
 
     // ----- All images -----
     const images = [
@@ -119,19 +86,19 @@ document.addEventListener("DOMContentLoaded", function () {
         { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' }
     ];
 
-    // ----- Display images into container -----
+    // ----- Display images -----
     function displayImages(category, tag = null) {
+        if (!container) return;
         container.innerHTML = '';
 
+        // filter by category
         let filtered = images.filter(img => img.category === category);
 
-        if (tag) {
-            filtered = filtered.filter(img => img.tags && img.tags.includes(tag));
-        }
+        // filter by tag if present
+        if (tag) filtered = filtered.filter(img => img.tags && img.tags.includes(tag));
 
         if (filtered.length === 0) {
             container.innerHTML = `<p>No images found for "${category}"</p>`;
-            console.log(`No images to display for category: ${category} with tag: ${tag}`);
             return;
         }
 
@@ -148,75 +115,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         setupLightbox();
-        console.log(`Displayed ${filtered.length} images for category: ${category}`);
     }
 
-    // ----- Lightbox functionality -----
+    // ----- Lightbox -----
     function setupLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        if (!lightbox) return;
+
         document.querySelectorAll('.shoe-pic img').forEach(img => {
             img.addEventListener('click', () => {
-                const lightbox = document.getElementById('lightbox');
                 lightbox.querySelector('.lightbox-img').src = img.src;
                 lightbox.style.display = 'flex';
             });
         });
 
-        const closeBtn = document.querySelector('.lightbox .close');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                document.getElementById('lightbox').style.display = 'none';
-            });
-        }
+        const closeBtn = lightbox.querySelector('.close');
+        if (closeBtn) closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
 
-        const lightbox = document.getElementById('lightbox');
-        if (lightbox) {
-            lightbox.addEventListener('click', e => {
-                if (e.target === lightbox) lightbox.style.display = 'none';
-            });
-        }
-    }
-
-    // ----- Sidebar toggle -----
-    function setupSidebarToggle() {
-        const menuToggle = document.getElementById('menu-toggle');
-        const sidebar = document.getElementById('sidebar');
-        const closeBtn = document.getElementById('close-btn');
-
-        menuToggle.addEventListener('click', () => sidebar.classList.add('open'));
-        closeBtn.addEventListener('click', () => sidebar.classList.remove('open'));
-
-        document.addEventListener('click', (e) => {
-            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
-                sidebar.classList.remove('open');
-            }
-        });
-
-        const themesToggle = document.getElementById('themes-toggle');
-        themesToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            themesToggle.classList.toggle('open');
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) lightbox.style.display = 'none';
         });
     }
 
-    function closeSidebar() {
-        document.getElementById('sidebar').classList.remove('open');
-    }
-
-    setupSidebarToggle();
-
-    // ----- Anime tags toggle -----
-    const animeToggleBtn = document.getElementById('show-anime-tags');
-    if (animeToggleBtn) {
-        animeToggleBtn.addEventListener('click', () => {
-            document.getElementById('anime-tags').classList.toggle('show');
-        });
-    }
-
-    document.querySelectorAll('.anime-tag').forEach(button => {
-        button.addEventListener('click', () => {
-            const tag = button.getAttribute('data-tag');
-            showImages('anime-cartoons', tag);
-        });
-    });
+    // ----- Initial state -----
+    if (container) container.style.display = 'none'; // hide images initially
+    if (introSection) introSection.style.display = 'block'; // show intro
 });
 
