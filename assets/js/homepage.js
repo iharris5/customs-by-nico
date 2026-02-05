@@ -125,7 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
     	setupSidebarToggle();
 	
 	function displayImages(filter = 'all', tag = 'all') {
-        container.innerHTML = '';
+        console.log('displayImages called with:', filter);
+	container.innerHTML = '';
 
         const filterWrapper = document.getElementById('anime-filter-wrapper');
         const tagsContainer = document.getElementById('anime-tags');
@@ -168,14 +169,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         const closeBtn = document.querySelector('.lightbox .close');
-        closeBtn.addEventListener('click', () => {
-            document.getElementById('lightbox').style.display = 'none';
-        });
+	if (closeBtn) {
+        	closeBtn.addEventListener('click', () => {
+            		document.getElementById('lightbox').style.display = 'none';
+        	});
+	}
 
         const lightbox = document.getElementById('lightbox');
-        lightbox.addEventListener('click', e => {
-            if (e.target === lightbox) lightbox.style.display = 'none';
-        });
+	if (lightbox) {
+        	lightbox.addEventListener('click', e => {
+            		if (e.target === lightbox) lightbox.style.display = 'none';
+        	});
+	}
     }
 
     // Sidebar toggle
