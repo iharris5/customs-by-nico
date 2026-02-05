@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (introSection) introSection.style.display = 'none';   // hide intro
         container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
+        console.log(`Displaying images for category "${category}"${tag ? ' with tag "' + tag + '"' : ''}`);
     }
 
     // ----- Show intro again (home button) -----
     function showIntro() {
         if (introSection) introSection.style.display = 'block';
         if (container) container.style.display = 'none';
+        console.log('Showing intro section');
     }
 
     // ----- Home button -----
@@ -26,6 +28,23 @@ document.addEventListener("DOMContentLoaded", function () {
             showIntro();
         });
     }
+
+    // ----- Category buttons (sidebar or nav) -----
+    document.querySelectorAll('[data-category]').forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category');
+            showImages(category);
+        });
+    });
+
+    // ----- Anime filter buttons -----
+    const animeTags = document.querySelectorAll('.anime-tag');
+    animeTags.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tag = btn.getAttribute('data-tag');
+            showImages('anime-cartoons', tag);
+        });
+    });
 
     // ----- All images -----
     const images = [
