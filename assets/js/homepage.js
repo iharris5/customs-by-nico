@@ -2,18 +2,14 @@ console.log('calling homepage');
 
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('shoe-container');
-
-    function showShoes() {
-        document.getElementById('intro-section').style.display = 'none';
-        container.style.display = 'grid';
-    }
+    const introSection = document.getElementById('intro-section');
 
     function showIntro() {
-        document.getElementById('intro-section').style.display = 'block';
+        introSection.style.display = 'block';
         container.style.display = 'none';
     }
 
-    // Home button
+    // ----- Home button -----
     const homeBtn = document.getElementById('home-btn');
     if (homeBtn) {
         homeBtn.addEventListener('click', (e) => {
@@ -22,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Sidebar More menu items
+    // ----- Sidebar More menu items -----
     const moreMenuDropdown = document.querySelector('.more-menu .dropdown');
     const movableItems = document.querySelectorAll('[data-section="about"], [data-section="create"], [data-section="most-popular"]');
     movableItems.forEach(item => {
@@ -30,31 +26,31 @@ document.addEventListener("DOMContentLoaded", function () {
         clone.addEventListener('click', () => {
             const section = clone.getAttribute('data-section');
             displayImages(section);
-            showShoes();
+            container.style.display = 'grid';
             closeSidebar();
         });
         moreMenuDropdown.appendChild(clone);
     });
 
-    // Nav click events
+    // ----- Nav click events -----
     const navHome = document.getElementById('nav-home');
     if (navHome) navHome.addEventListener('click', () => showIntro());
 
     const mostPopularBtn = document.querySelector('[data-section="most-popular"]');
     if (mostPopularBtn) {
         mostPopularBtn.addEventListener('click', () => {
-            showShoes();
             displayImages('most-popular');
+            container.style.display = 'grid';
         });
     }
 
-    // Category buttons
+    // ----- Category buttons -----
     const categoryButtons = document.querySelectorAll('[data-category]');
     categoryButtons.forEach(cat => {
         cat.addEventListener('click', () => {
             const selected = cat.getAttribute('data-category');
-            showShoes();
             displayImages(selected);
+            container.style.display = 'grid';
             closeSidebar();
         });
     });
@@ -118,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' }
     ];
 
+    // ----- Display images -----
     function displayImages(category, tag = null) {
         container.innerHTML = '';
 
@@ -129,8 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (filtered.length === 0) {
             container.innerHTML = `<p>No images found for "${category}"</p>`;
-            console.log(`No images to display for category: ${category} with tag: ${tag}`);
             container.style.display = 'grid';
+            console.log(`No images to display for category: ${category} with tag: ${tag}`);
             return;
         }
 
@@ -151,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(`Displayed ${filtered.length} images for category: ${category}`);
     }
 
+    // ----- Lightbox setup -----
     function setupLightbox() {
         document.querySelectorAll('.shoe-pic img').forEach(img => {
             img.addEventListener('click', () => {
@@ -175,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Sidebar toggle
+    // ----- Sidebar toggle -----
     function setupSidebarToggle() {
         const menuToggle = document.getElementById('menu-toggle');
         const sidebar = document.getElementById('sidebar');
@@ -203,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setupSidebarToggle();
 
-    // Anime tags toggle
+    // ----- Anime tags toggle -----
     const animeToggleBtn = document.getElementById('show-anime-tags');
     if (animeToggleBtn) {
         animeToggleBtn.addEventListener('click', () => {
@@ -214,8 +212,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.anime-tag').forEach(button => {
         button.addEventListener('click', () => {
             const tag = button.getAttribute('data-tag');
-            showShoes();
             displayImages('anime-cartoons', tag);
+            container.style.display = 'grid';
         });
     });
 });
