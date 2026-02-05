@@ -2,12 +2,15 @@ console.log('calling homepage');
 
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('shoe-container');
+    const reviewsSection = document.getElementById('reviews-section');
     const introSection = document.getElementById('intro-section');
 
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
         if (!container) return;
         if (introSection) introSection.style.display = 'none';   // hide intro
+	if (reviewsSection) reviewsSection.style.display = 'none';
+
         container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
         console.log(`Displaying images for category "${category}"${tag ? ' with tag "' + tag + '"' : ''}`);
@@ -16,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ----- Show intro again (home button) -----
     function showIntro() {
         if (introSection) introSection.style.display = 'block';
+	if (reviewsSection) reviewsSection.style.display = 'block';
         if (container) container.style.display = 'none';
         console.log('Showing intro section');
     }
