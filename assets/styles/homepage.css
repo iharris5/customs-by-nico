@@ -80,6 +80,8 @@ p {
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
   margin-left: 6px;
+  position: relative;
+  top: -1px;
 }
 
 .has-dropdown .dropdown {
