@@ -81,7 +81,7 @@ p {
   transform: rotate(45deg);
   margin-left: 6px;
   position: relative;
-  top: -1px;
+  top: -5px;
 }
 
 .has-dropdown .dropdown {
