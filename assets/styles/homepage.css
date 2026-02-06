@@ -95,14 +95,14 @@ p {
 }
 
 .dropdown li {
-    color: white;
+    color: #FFFFFFDD;
     padding: 8px 15px;
     white-space: nowrap;
     list-style: none;
 }
 
 .dropdown li:hover {
-    background-color: #222;
+	color: white;
 }
 
 .more-menu {
