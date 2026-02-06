@@ -74,7 +74,7 @@ p {
 
 .nav-item .caret {
 	margin-left: 5px;
-	margin-bottom: 5px;
+	padding-bottom: 5px;
 	font-size: 12px;
 	display: inline-block;
 }
