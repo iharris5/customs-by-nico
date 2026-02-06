@@ -72,11 +72,13 @@ p {
 	border-bottom: 2px solid white;
 }
 
-.nav-item .caret {
-	margin-left: 5px;
-	font-size: 12px;
-	display: inline-block;
-	vertical-align: middle;
+.caret {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  margin-left: 6px;
 }
 
 .has-dropdown .dropdown {
