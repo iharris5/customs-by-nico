@@ -222,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.sidebar [data-category], .sidebar [data-section]').forEach(item => {
         item.addEventListener('click', () => {
             sidebar.classList.remove('open');
+	    menuToggle.classList.remove('open');
         });
     });
 
