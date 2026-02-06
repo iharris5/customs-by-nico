@@ -41,6 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    const navHome2 = document.getElementById('sidebar-home');
+    if (navHome2 && homeBtn) {
+        navHome2.addEventListener('click', () => {
+            homeBtn.click();
+        });
+    }
+
+
     document.querySelectorAll('[data-category="home"]').forEach(item => {
         item.addEventListener('click', () => {
             homeBtn.click();
