@@ -119,11 +119,36 @@ p {
 	color: white;
 }
 
-.hamburger, .menu-toggle {
+.hamburger {
 	display: none;
-	font-size: 30px;
+	width: 30px;
+	height: 22px;
+	flex-direction: column;
+	justify-content: space-between;
 	cursor: pointer;
-	color: white;
+	z-index: 1001;
+}
+
+/* Hamburger bars */
+.hamburger span {
+    display: block;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Transform to X when open */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 body.with-header {
@@ -148,7 +173,7 @@ body.with-header {
   }
 
   .hamburger {
-    display: block;
+    display: flex;
   }
 }
 

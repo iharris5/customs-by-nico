@@ -72,6 +72,19 @@ document.addEventListener("DOMContentLoaded", function () {
             showImages('anime-cartoons', tag);
         });
     });
+    
+    document.addEventListener('click', (e) => {
+        const sidebar = document.getElementById('sidebar');
+        const menuToggle = document.getElementById('menu-toggle');
+
+        // If sidebar is open AND click is outside sidebar and hamburger
+        if (sidebar.classList.contains('open') &&
+            !sidebar.contains(e.target) &&
+            !menuToggle.contains(e.target)) {
+            sidebar.classList.remove('open');
+            menuToggle.classList.remove('open'); // for X animation later
+        }
+    });
 
     // ----- All images -----
     const images = [
@@ -193,11 +206,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.getElementById('close-btn');
 
     // Toggle sidebar open/close
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.add('open');
-        });
-    }
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+	menuToggle.classList.toggle('open');
+    });
 
     // Close sidebar with close button
     if (closeBtn) {
