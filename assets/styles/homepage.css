@@ -137,7 +137,7 @@ body.with-header {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 805px) {
   .main-nav {
     display: none;
   }
