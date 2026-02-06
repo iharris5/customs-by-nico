@@ -502,6 +502,8 @@ body {
   margin-bottom: 4px;
   color: #BDBDBD;
   transition: color 0.2s;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
 }
 
 .category-list li:hover {
