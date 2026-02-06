@@ -79,10 +79,6 @@ p {
 	vertical-align: middle;
 }
 
-.arrow {
-	vertical-align: middle;
-}
-
 .has-dropdown .dropdown {
     display: none;
     position: absolute;
