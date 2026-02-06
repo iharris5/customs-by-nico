@@ -82,6 +82,11 @@ p {
   margin-left: 6px;
 }
 
+.nav-item.has-dropdown {
+	display: flex;
+	align-items: center;
+}
+
 .has-dropdown .dropdown {
     display: none;
     position: absolute;
