@@ -242,5 +242,14 @@ document.addEventListener("DOMContentLoaded", function () {
         af1Toggle.classList.toggle('open');
       });
     }
+
+    const af1Toggle2 = document.getElementById('af1-toggle2');
+
+    if (af1Toggle2) {
+      af1Toggle2.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent parent dropdown interference
+        af1Toggle2.classList.toggle('open');
+      });
+    }
 });
 
