@@ -146,6 +146,16 @@ p {
 	padding-left: 15px;
 }
 
+.dropdown-item .label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.caret.placeholder {
+	opacity: 0;
+}
+
 .hamburger {
 	display: none;
 	width: 30px;
