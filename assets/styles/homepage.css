@@ -133,6 +133,10 @@ p {
 	transform: rotate(225deg);
 }
 
+.caret {
+	transition: transform 0.2s ease;
+}
+
 .more-menu {
     display: none;
 }
