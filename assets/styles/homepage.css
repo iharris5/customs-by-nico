@@ -130,7 +130,7 @@ p {
 }
 
 .has-subdropdown.open > .caret {
-	transform: rotate(270deg);
+	transform: rotate(225deg);
 }
 
 .more-menu {
