@@ -114,6 +114,10 @@ p {
 	position: relative;
 }
 
+#sidebar-dropdown {
+	margin-left: -10px;
+}
+
 .has-subdropdown > .subdropdown {
 	display: none;
 	padding-left: 15px;
