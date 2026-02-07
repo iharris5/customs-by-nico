@@ -114,10 +114,13 @@ p {
 	position: relative;
 }
 
-.dropdown .has-dropdown > .dropdown {
-	top: 0;
-	left: 100%;
-	right: auto;
+.has-subdropdown > .subdropdown {
+	display: none;
+	padding-left: 15px;
+}
+
+.has-subdropdown:hover > .subdropdown {
+	display: block;
 }
 
 .more-menu {
