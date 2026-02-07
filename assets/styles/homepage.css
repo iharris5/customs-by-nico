@@ -129,7 +129,7 @@ p {
 	transition: transform 0.2s ease;
 }
 
-.has-subdropdown.open > .caret {
+.has-subdropdown.open .caret {
 	transform: rotate(225deg);
 }
 
