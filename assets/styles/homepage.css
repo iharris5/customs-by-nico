@@ -110,6 +110,16 @@ p {
 	color: white;
 }
 
+.dropdown .has-dropdown {
+	position: relative;
+}
+
+.dropdown .has-dropdown > .dropdown {
+	top: 0;
+	left: 100%;
+	right: auto;
+}
+
 .more-menu {
     display: none;
 }
