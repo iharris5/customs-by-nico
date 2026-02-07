@@ -117,10 +117,20 @@ p {
 .has-subdropdown > .subdropdown {
 	display: none;
 	padding-left: 15px;
+	margin-top: 6px;
 }
 
-.has-subdropdown:hover > .subdropdown {
+.has-subdropdown.open > .subdropdown {
 	display: block;
+}
+
+.has-subdropdown > .caret {
+	margin-left: 6px;
+	transition: transform 0.2s ease;
+}
+
+.has-subdropdown.open > .caret {
+	transform: rotate(180deg);
 }
 
 .more-menu {
