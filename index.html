@@ -130,12 +130,16 @@
         <span class="close-btn" id="close-btn">&times;</span>
         <ul class="category-list">
             <li id="sidebar-home">Home</li>
-            <li data-category="most-popular">Most Popular</li>
-            <li data-category="colorways">Colorways</li>
+	    <!--        <li data-category="colorways">Colorways</li>  -->
             <li data-category="cleats">Cleats</li>
             <li class="has-submenu" id="themes-toggle">Hand Painted Customs
                 <span class="caret"></span>
-                <ul class="submenu">
+		<ul class="dropdown">
+			<li class="dropdown-item has-subdropdown" data-section="air-force" id="af1-toggle2">
+			<span class="label">
+			<span class="caret"></span> Air Force 1s
+			</span>
+                <ul class="subdropdown">
                     <li data-category="anime">Anime</li>
 		    <li data-category="cartoons">Cartoons</li>
                     <li data-category="schools-sports">Schools & Sports</li>
@@ -143,8 +147,17 @@
                     <li data-category="custom-text">Custom Text</li>
                     <li data-category="baby-shoes">Baby Shoes</li>
                 </ul>
+			</li>
+		<li class="dropdown-item" data-category="cleats">
+			<span class="label">
+				<span class="caret placeholder"></span>
+				Cleats
+			</span>
+		</li>
+		</ul>
             </li>
-            <li data-section="create">Create Your Own</li>
+	    <li data-category="most-popular">Most Popular</li>
+	    <li data-section="create">Create Your Own</li>
             <li data-section="about">About Us</li>
         </ul>
     </div>
