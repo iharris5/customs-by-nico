@@ -115,7 +115,7 @@ p {
 }
 
 #sidebar-dropdown {
-	margin-left: -10px;
+	padding-left: 6px;
 }
 
 .has-subdropdown > .subdropdown {
