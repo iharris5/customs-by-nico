@@ -220,7 +220,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close sidebar when a category or section is clicked
     document.querySelectorAll('.sidebar [data-category], .sidebar [data-section]').forEach(item => {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (e) => {
+
+	    if (item.closest('.has-subdropdown')) {
+		    return;
+	    }
             sidebar.classList.remove('open');
 	    menuToggle.classList.remove('open');
         });

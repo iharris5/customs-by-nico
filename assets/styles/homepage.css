@@ -156,6 +156,17 @@ p {
 	transition: transform 0.2s ease;
 }
 
+/* Default caret direction (down) */
+.has-subdropdown .label .caret {
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+/* Rotate caret up when open */
+.has-subdropdown.open .label .caret {
+  transform: rotate(225deg);
+}
+
 .more-menu {
     display: none;
 }
