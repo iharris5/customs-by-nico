@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.sidebar [data-category], .sidebar [data-section]').forEach(item => {
         item.addEventListener('click', (e) => {
 
-	    if (item.closest('.has-subdropdown')) {
+	    if (e.target.closest('.js-toggle')) {
 		    return;
 	    }
             sidebar.classList.remove('open');

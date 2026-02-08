@@ -143,27 +143,14 @@ p {
     z-index: 2000;
 }
 
-.has-subdropdown > .caret {
-	margin-left: 6px;
-	transition: transform 0.2s ease;
-}
-
-.has-subdropdown.open .caret {
-	transform: rotate(225deg);
-}
-
-.caret {
-	transition: transform 0.2s ease;
-}
-
 /* Default caret direction (down) */
-.has-subdropdown .label .caret {
+.has-subdropdown .caret {
   transform: rotate(45deg);
   transition: transform 0.2s ease;
 }
 
 /* Rotate caret up when open */
-.has-subdropdown.open .label .caret {
+.has-subdropdown.open .caret {
   transform: rotate(225deg);
 }
 
