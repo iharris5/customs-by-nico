@@ -30,8 +30,8 @@
         <nav class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item" data-section="home" id="nav-home">Home</li>
-                <li class="nav-item has-dropdown" data-section="handpainted">
-                    Hand Painted Customs <span class="caret"></span>
+                <li class="nav-item has-subdropdown" data-section="handpainted">
+                    Hand Painted Customs <span class="caret js-toggle"></span>
                     <ul class="dropdown">
 			<li class="dropdown-item has-subdropdown" data-section="air-force" id="af1-toggle">
 			<span class="label">
@@ -131,9 +131,12 @@
         <ul class="category-list">
             <li id="sidebar-home">Home</li>
 	    <!--        <li data-category="colorways">Colorways</li>  -->
-            <li class="has-submenu" id="themes-toggle">Hand Painted Customs
+            <li class="has-subdropdown">
+		    <span class="label js-toggle">
+			    Hand Painted Customs
                 <span class="caret"></span>
-		<ul class="dropdown" id="sidebar-dropdown">
+		    </span>
+		<ul class="dropdown subdropdown">
 			<li class="dropdown-item has-subdropdown" data-section="air-force" id="af1-toggle2">
 			<span class="label">
 			<span class="caret"></span> Air Force 1s

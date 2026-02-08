@@ -227,29 +227,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Toggle submenu inside sidebar (Hand Painted Customs)
-    const themesToggle = document.getElementById('themes-toggle');
-    if (themesToggle) {
-        themesToggle.addEventListener('click', () => {
-            themesToggle.classList.toggle('open');
-        });
-    }
+    document.addEventListener('click', e => {
+      const toggle = e.target.closest('.js-toggle');
+      if (!toggle) return;
 
-    const af1Toggle = document.getElementById('af1-toggle');
+      e.stopPropagation();
 
-    if (af1Toggle) {
-      af1Toggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // prevent parent dropdown interference
-        af1Toggle.classList.toggle('open');
-      });
-    }
+      const parent = toggle.closest('.has-subdropdown');
+      if (!parent) return;
 
-    const af1Toggle2 = document.getElementById('af1-toggle2');
+      parent.classList.toggle('open');
+    });
 
-    if (af1Toggle2) {
-      af1Toggle2.addEventListener('click', (e) => {
-        e.stopPropagation(); // prevent parent dropdown interference
-        af1Toggle2.classList.toggle('open');
-      });
-    }
 });
 

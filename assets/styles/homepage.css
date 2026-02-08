@@ -118,13 +118,15 @@ p {
 	padding-left: 6px;
 }
 
-.has-subdropdown > .subdropdown {
+.has-subdropdown > .subdropdown,
+.has-subdropdown > .dropdown {
 	display: none;
 	padding-left: 15px;
 	margin-top: 6px;
 }
 
-.has-subdropdown.open > .subdropdown {
+.has-subdropdown.open > .subdropdown,
+.has-subdropdown.open > .dropdown {
 	display: block;
 }
 
