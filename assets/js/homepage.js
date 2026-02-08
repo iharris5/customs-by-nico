@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Adjust this to match when your hamburger disappears (Bootstrap md = 768px)
       if (window.innerWidth >= 811 && sidebar.classList.contains('open')) {
         sidebar.classList.remove('open');
-	menu-toggle.hamburger.classList.remove('open');
+	menuToggle.classList.remove('open');
       }
     }
 
