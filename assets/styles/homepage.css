@@ -95,10 +95,6 @@ p {
     z-index: 2000;
 }
 
-.has-dropdown:hover .dropdown {
-    display: block;
-}
-
 .dropdown li {
     color: #BDBDBD;
     padding: 8px 15px;
