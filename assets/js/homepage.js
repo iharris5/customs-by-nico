@@ -250,6 +250,21 @@ document.addEventListener("DOMContentLoaded", function () {
           .forEach(openMenu => openMenu.classList.remove('open'));
       });
     });
+    
+    // Close sidebar when window is resized above mobile breakpoint
+    function handleResize() {
+      const sidebar = document.getElementById('sidebar');
+      const menuToggle = document.getElementById('menu-toggle');
 
+      // Adjust this to match when your hamburger disappears (Bootstrap md = 768px)
+      if (window.innerWidth >= 811 && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+      }
+    }
+
+    // Run on resize
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
 });
 
