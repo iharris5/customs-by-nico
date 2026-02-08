@@ -126,6 +126,23 @@ p {
 	display: block;
 }
 
+/* Anchor header dropdowns */
+.site-header .has-subdropdown {
+    position: relative;
+}
+
+/* HEADER dropdowns float instead of pushing layout */
+.site-header .has-subdropdown > .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 6px;     /* keep your spacing */
+    padding-left: 0;     /* override sidebar indent */
+    background: black;
+    min-width: 220px;
+    z-index: 2000;
+}
+
 .has-subdropdown > .caret {
 	margin-left: 6px;
 	transition: transform 0.2s ease;
