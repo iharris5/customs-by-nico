@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Toggle submenu inside sidebar (Hand Painted Customs)
+    // Toggle submenu
     document.addEventListener('click', e => {
       const toggle = e.target.closest('.js-toggle');
       if (!toggle) return;
