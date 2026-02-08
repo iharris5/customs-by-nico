@@ -243,5 +243,13 @@ document.addEventListener("DOMContentLoaded", function () {
       parent.classList.toggle('open');
     });
 
+    // Close HEADER dropdowns when a category is clicked
+    document.querySelectorAll('.site-header [data-category]').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.site-header .has-subdropdown.open')
+          .forEach(openMenu => openMenu.classList.remove('open'));
+      });
+    });
+
 });
 
