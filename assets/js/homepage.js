@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (introSection) introSection.style.display = 'none';
         if (reviewsSection) reviewsSection.style.display = 'none';
         if (container) container.style.display = 'none';
-        if (createOwn) createOwn.style.display = 'block';
+        if (createOwn) createOwn.style.display = 'flex';
 
         console.log('Showing create your own section');
     }
