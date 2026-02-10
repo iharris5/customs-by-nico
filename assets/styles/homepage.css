@@ -170,9 +170,9 @@ p {
 	border: none;
 }
 
-.create-message p {
+.create-message {
 	text-align: center;
-	max-width: 600px;
+	background-color: #303033; 
 }
 
 .create-own a {
