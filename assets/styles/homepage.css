@@ -1,9 +1,12 @@
 p {
-    text-align: right;
     font-family: 'Merriweather', serif;
     font-weight: 700;
     font-style: normal;
     font-size: 16.5px;
+}
+
+.intro-text p {
+	text-align: right;
 }
 
 .site-header {
@@ -167,7 +170,7 @@ p {
 	border: none;
 }
 
-.create-message {
+.create-message p {
 	text-align: center;
 	max-width: 600px;
 }
