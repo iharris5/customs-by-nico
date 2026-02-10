@@ -172,7 +172,9 @@ p {
 
 .create-message {
 	text-align: center;
-	background-color: #303033; 
+	background-color: #303033;
+	color: white;
+	width: 100%
 }
 
 .create-own a {
