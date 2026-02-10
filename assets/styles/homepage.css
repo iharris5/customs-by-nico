@@ -171,11 +171,13 @@ p {
 }
 
 .create-message {
+	position: relative;
+	left: 50%;
+	margin-left: -50vw;
 	text-align: center;
 	background-color: #303033;
 	color: white;
-	width: 100%;
-   	margin-left: calc(-50vw + 50%);
+	width: 100vw;
 }
 
 .create-content {
