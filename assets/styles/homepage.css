@@ -156,8 +156,28 @@ p {
 
 .create-own {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
+	gap: 1rem;
+}
+
+.create-own iframe {
+	width: 100%;
+	max-width: 640px;
+	border: none;
+}
+
+.create-message {
+	text-align: center;
+	max-width: 600px;
+}
+
+.create-own a {
+	padding: 0.75rem 1.25rem;
+	background: #303033;
+	color: white;
+	text-decoration: none;
+	border-radius: 1px;
 }
 
 .more-menu {
