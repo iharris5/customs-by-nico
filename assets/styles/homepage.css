@@ -184,6 +184,15 @@ p {
 	flex-direction: column;
 	align-items: center;
 	gap: 1rem;
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+.create-content iframe {
+	width: 100%;
+	max-width: 640px;
+	border: none;
 }
 
 .create-own a {
@@ -192,6 +201,7 @@ p {
 	color: white;
 	text-decoration: none;
 	border-radius: 1px;
+	width: fit-content;
 }
 
 .more-menu {
