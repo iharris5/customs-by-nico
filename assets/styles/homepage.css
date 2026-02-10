@@ -179,6 +179,7 @@ p {
 	width: 100vw;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+	font-weight: 400;
 }
 
 .create-content {
@@ -204,7 +205,7 @@ p {
 	text-decoration: none;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	border-radius: 1px;
+	border-radius: 3px;
 	width: fit-content;
 }
 
