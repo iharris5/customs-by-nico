@@ -172,8 +172,7 @@ p {
 
 .create-message {
 	position: relative;
-	left: 50%;
-	margin-left: -50vw;
+	margin: 0;
 	text-align: center;
 	background-color: #303033;
 	color: white;
