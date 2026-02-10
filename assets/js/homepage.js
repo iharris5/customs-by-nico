@@ -221,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ----- Initial state -----
     if (container) container.style.display = 'none'; // hide images initially
     if (introSection) introSection.style.display = 'block'; // show intro
+    if (createOwn) createOwn.style.display = 'none';
 
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
