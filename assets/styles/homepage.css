@@ -177,9 +177,13 @@ p {
 	background-color: #303033;
 	color: white;
 	width: 100vw;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
-	font-weight: 0;
+}
+
+.create-message p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;       
+    font-size: 16px;
+    margin: 0;               
 }
 
 .create-content {
