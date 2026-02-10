@@ -4,14 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('shoe-container');
     const reviewsSection = document.getElementById('reviews-section');
     const introSection = document.getElementById('intro-section');
+    const createOwn = document.getElementById('create-own');
 
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
         if (!container) return;
         if (introSection) introSection.style.display = 'none';   // hide intro
 	if (reviewsSection) reviewsSection.style.display = 'none';
-
-        container.style.display = 'grid';                        // show container
+	if (createOwn) createOwn.style.display = 'none';
+        
+	container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
         console.log(`Displaying images for category "${category}"${tag ? ' with tag "' + tag + '"' : ''}`);
     }
@@ -21,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (introSection) introSection.style.display = 'block';
 	if (reviewsSection) reviewsSection.style.display = 'block';
         if (container) container.style.display = 'none';
+	if (createOwn) createOwn.style.display = 'none';
+
         console.log('Showing intro section');
     }
 
@@ -30,6 +34,24 @@ document.addEventListener("DOMContentLoaded", function () {
         homeBtn.addEventListener('click', (e) => {
             e.preventDefault();
             showIntro();
+        });
+    }
+
+    // ----- Create your own -----
+    function createYourOwn () {
+	if (introSection) introSection.style.display = 'none';
+        if (reviewsSection) reviewsSection.style.display = 'none';
+        if (container) container.style.display = 'none';
+        if (createOwn) createOwn.style.display = 'block';
+
+        console.log('Showing create your own section');
+    }
+
+    const createOwn = document.getElementById('createOwn-btn')
+	if (createOwn) {
+        createOwn.addEventListener('click', (e) => {
+            e.preventDefault();
+            createYourOwn();
         });
     }
 
