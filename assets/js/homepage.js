@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log('Showing create your own section');
     }
 
-    const createOwn = document.getElementById('createOwn-btn')
-	if (createOwn) {
-        createOwn.addEventListener('click', (e) => {
+    const createBtn = document.getElementById('createOwn-btn')
+	if (createBtn) {
+        createBtn.addEventListener('click', (e) => {
             e.preventDefault();
             createYourOwn();
         });
