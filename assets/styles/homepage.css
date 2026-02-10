@@ -177,6 +177,8 @@ p {
 	background-color: #303033;
 	color: white;
 	width: 100vw;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
 }
 
 .create-content {
@@ -196,10 +198,12 @@ p {
 }
 
 .create-own a {
-	padding: 0.75rem 1.25rem;
+	padding: 6px;
 	background: #303033;
 	color: white;
 	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
 	border-radius: 1px;
 	width: fit-content;
 }
