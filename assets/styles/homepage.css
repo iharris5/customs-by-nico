@@ -154,6 +154,12 @@ p {
   transform: rotate(225deg);
 }
 
+.create-own {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .more-menu {
     display: none;
 }
