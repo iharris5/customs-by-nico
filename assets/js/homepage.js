@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const reviewsSection = document.getElementById('reviews-section');
     const introSection = document.getElementById('intro-section');
     const createOwn = document.getElementById('create-own');
+    const aboutUs = document.getElementById('about-us');
 
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
@@ -12,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (introSection) introSection.style.display = 'none';   // hide intro
 	if (reviewsSection) reviewsSection.style.display = 'none';
 	if (createOwn) createOwn.style.display = 'none';
-        
+        if (aboutUs) aboutUs.style.display = 'none';
+
 	container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
         console.log(`Displaying images for category "${category}"${tag ? ' with tag "' + tag + '"' : ''}`);
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (reviewsSection) reviewsSection.style.display = 'block';
         if (container) container.style.display = 'none';
 	if (createOwn) createOwn.style.display = 'none';
+	if (aboutUs) aboutUs.style.display = 'none';
 
         console.log('Showing intro section');
     }
@@ -43,8 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (reviewsSection) reviewsSection.style.display = 'none';
         if (container) container.style.display = 'none';
         if (createOwn) createOwn.style.display = 'flex';
-
-        console.log('Showing create your own section');
+	if (aboutUs) aboutUs.style.display = 'none';
     }
 
     const createBtn = document.getElementById('createOwn-btn')
@@ -54,6 +56,22 @@ document.addEventListener("DOMContentLoaded", function () {
             createYourOwn();
         });
     }
+    
+    function showAbout () {
+	if (introSection) introSection.style.display = 'none';
+        if (reviewsSection) reviewsSection.style.display = 'none';
+        if (container) container.style.display = 'none';
+        if (createOwn) createOwn.style.display = 'none';
+        if (aboutUs) aboutUs.style.display = 'block';
+    }
+
+    const aboutBtn = document.getElementById('about-btn')
+	if (aboutBtn) {
+		aboutBtn.addEventListener('click', (e) => {
+			e.preventDefault();
+			showAbout();
+		});
+	}
 
     // Make all Home buttons behave like the logo
     const navHome = document.getElementById('nav-home');
