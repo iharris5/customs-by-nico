@@ -250,11 +250,13 @@ p {
         text-align: left;
         line-height: 1.6;
         margin-top: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 }
 
 .timeline-header {
         text-align: right;
-        font-family: 'Playfair Display', serif;
+        font-family: 'Open Sans', sans-serif;
         font-weight: 700;
         font-style: normal;
         font-size: 38px;
