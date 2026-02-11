@@ -236,12 +236,15 @@ p {
         flex: 1;
         display: flex;
         justify-content: center;
+	width: 220px;
+	flex-shrink: 0;
 }
 
 .timeline-box {
         display: flex;
         flex-direction: column;
         text-align: left;
+	flex: 1;
 }
 
 .timeline-box p {
