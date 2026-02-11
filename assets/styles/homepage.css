@@ -233,10 +233,9 @@ p {
 }
 
 .timeline-pic {
-        flex: 1;
+        flex: 0 0 250px;
         display: flex;
         justify-content: center;
-	width: 220px;
 	flex-shrink: 0;
 }
 
