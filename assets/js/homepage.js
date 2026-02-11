@@ -40,38 +40,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ----- Create your own -----
-    function createYourOwn () {
-	if (introSection) introSection.style.display = 'none';
-        if (reviewsSection) reviewsSection.style.display = 'none';
-        if (container) container.style.display = 'none';
-        if (createOwn) createOwn.style.display = 'flex';
-	if (aboutUs) aboutUs.style.display = 'none';
-    }
+    // Generic section toggle
+function showSection(section) {
+    if (introSection) introSection.style.display = 'none';
+    if (reviewsSection) reviewsSection.style.display = 'none';
+    if (container) container.style.display = 'none';
+    if (createOwn) createOwn.style.display = 'none';
+    if (aboutUs) aboutUs.style.display = 'none';
 
-    const createBtn = document.getElementById('createOwn-btn')
-	if (createBtn) {
-        createBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            createYourOwn();
-        });
+    if (section === 'create' && createOwn) {
+        createOwn.style.display = 'flex';
+    } else if (section === 'about' && aboutUs) {
+        aboutUs.style.display = 'block';
     }
-    
-    function showAbout () {
-	if (introSection) introSection.style.display = 'none';
-        if (reviewsSection) reviewsSection.style.display = 'none';
-        if (container) container.style.display = 'none';
-        if (createOwn) createOwn.style.display = 'none';
-        if (aboutUs) aboutUs.style.display = 'block';
-    }
+}
 
-    const aboutBtn = document.getElementById('about-btn')
-	if (aboutBtn) {
-		aboutBtn.addEventListener('click', (e) => {
-			e.preventDefault();
-			showAbout();
-		});
-	}
+// Attach click listeners to all section buttons
+document.querySelectorAll('.section-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = btn.dataset.section; // "create-own" or "about-us"
+        showSection(section);
+
+        // Close sidebar if open
+        if (sidebar.classList.contains('open')) {
+            sidebar.classList.remove('open');
+            menuToggle.classList.remove('open');
+        }
+    });
+});
 
     // Make all Home buttons behave like the logo
     const navHome = document.getElementById('nav-home');
