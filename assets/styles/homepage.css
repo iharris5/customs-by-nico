@@ -256,10 +256,9 @@ p {
 
 .timeline-header {
         text-align: right;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        font-size: 38px;
+	font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        font-size: 29px;
 }
 
 @media (max-width: 768px) {
