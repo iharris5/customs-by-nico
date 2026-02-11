@@ -218,6 +218,41 @@ p {
 	width: fit-content;
 }
 
+.about-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1050px;
+}
+
+.timeline-pic {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+}
+
+.timeline-box {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+}
+
+.timeline-box p {
+        text-align: left;
+        line-height: 1.6;
+        margin-top: 10px;
+}
+
+.timeline-header {
+        text-align: right;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 38px;
+}
+
 .more-menu {
     display: none;
 }
