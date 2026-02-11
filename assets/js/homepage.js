@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (reviewsSection) reviewsSection.style.display = 'none';
         if (container) container.style.display = 'none';
         if (createOwn) createOwn.style.display = 'none';
-        if (aboutUs) aboutUs.style.display = 'flex';
+        if (aboutUs) aboutUs.style.display = 'block';
     }
 
     const aboutBtn = document.getElementById('about-btn')
