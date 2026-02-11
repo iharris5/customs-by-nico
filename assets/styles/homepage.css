@@ -229,14 +229,19 @@ p {
 .timeline-item {
 	display: flex;
 	align-items: flex-start;
-	gap: 60px;
+	gap: 90px;
 }
 
 .timeline-pic {
-        flex: 0 0 250px;
+        flex: 0 0 320px;
         display: flex;
         justify-content: center;
 	flex-shrink: 0;
+}
+
+.timeline-pic img {
+    width: 100%;
+    height: auto;
 }
 
 .timeline-box {
@@ -257,7 +262,7 @@ p {
 .timeline-header {
 	font-family: 'Playfair Display', serif;
         font-weight: 400;
-        font-size: 29px;
+        font-size: 39px;
 }
 
 @media (max-width: 768px) {
