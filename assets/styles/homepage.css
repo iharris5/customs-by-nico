@@ -366,7 +366,7 @@ body.with-header {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
     .nav-list > .original.popular {
         display: none;
     }
@@ -375,7 +375,7 @@ body.with-header {
     }
 }
 
-@media (max-width: 810px) {
+@media (max-width: 800px) {
   .main-nav {
     display: none;
   }

@@ -296,7 +296,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
       const menuToggle = document.getElementById('menu-toggle');
 
       // Adjust this to match when your hamburger disappears (Bootstrap md = 768px)
-      if (window.innerWidth >= 811 && sidebar.classList.contains('open')) {
+      if (window.innerWidth >= 801 && sidebar.classList.contains('open')) {
         sidebar.classList.remove('open');
 	menuToggle.classList.remove('open');
       }
