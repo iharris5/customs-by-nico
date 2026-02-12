@@ -285,6 +285,11 @@ p {
     display: none;
 }
 
+.more-menu > .dropdown {
+	right: 0;
+	left: auto;
+}
+
 .more-menu .dropdown li {
 	display: block !important;
 	color: white;
