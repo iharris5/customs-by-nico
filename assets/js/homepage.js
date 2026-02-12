@@ -304,21 +304,22 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- Responsive "More" menu -----
 function handleHeaderOverflow() {
-	const navList = document.querySelector('.nav-list');
+    const nav = document.querySelector('.main-nav');
+    const navList = document.querySelector('.nav-list');
     const moreMenu = document.querySelector('.more-menu');
     const moreDropdown = moreMenu.querySelector('.dropdown');
 
-    if (!navList || !moreMenu) return;
+    if (!nav || !navList || !moreMenu) return;
 
-    // Always show More temporarily so width can be calculated
+    // Always show More so we can measure correctly
     moreMenu.style.display = 'inline-flex';
 
-    // Move items back from dropdown
-    Array.from(moreDropdown.children).forEach(item => {
-        navList.insertBefore(item, moreMenu);
-    });
+    // Move everything back from More
+    while (moreDropdown.firstChild) {
+        navList.insertBefore(moreDropdown.firstChild, moreMenu);
+    }
 
-    const navWidth = navList.getBoundingClientRect().width;
+    const availableWidth = nav.clientWidth;
     let usedWidth = moreMenu.offsetWidth;
 
     const items = Array.from(navList.children).filter(
@@ -328,7 +329,7 @@ function handleHeaderOverflow() {
     for (let item of items) {
         usedWidth += item.offsetWidth + 25; // match gap
 
-        if (usedWidth > navWidth) {
+        if (usedWidth > availableWidth) {
             moreDropdown.appendChild(item);
         }
     }
