@@ -349,6 +349,9 @@ body.with-header {
     .nav-list > .original.about {
         display: none; /* hide original */
     }
+    .nav-list .more-menu {
+	    display: block;
+    }
     .nav-list .in-more.about {
         display: block; /* show inside More dropdown */
     }
