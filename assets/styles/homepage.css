@@ -288,7 +288,7 @@ p {
 .more-menu > .dropdown {
 	right: 0;
 	left: auto;
-	transform: translateX(-45px);
+	transform: translateX(-55px);
 }
 
 .more-menu .dropdown li {
