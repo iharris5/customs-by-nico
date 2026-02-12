@@ -24,6 +24,7 @@ p {
     justify-content: space-between; /* logo left, nav right */
     max-width: 1600px;
     margin: 0 auto;
+    min-width: 0;
 }
 
 .header-left {
@@ -48,6 +49,7 @@ p {
     display: flex;
     margin-left: auto;
     align-items: center;
+    min-width: 0;
 }
 
 .nav-list {
