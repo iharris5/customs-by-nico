@@ -310,17 +310,15 @@ function handleHeaderOverflow() {
 
     if (!navList || !moreMenu) return;
 
-    // Always show More temporarily so we can measure correctly
+    // Always show More temporarily so width can be calculated
     moreMenu.style.display = 'inline-flex';
 
-    // Move everything back OUT of More first
-    const movedItems = moreDropdown.querySelectorAll('.nav-item.in-more');
-    movedItems.forEach(item => {
+    // Move items back from dropdown
+    Array.from(moreDropdown.children).forEach(item => {
         navList.insertBefore(item, moreMenu);
-        item.classList.remove('in-more');
     });
 
-    const availableWidth = navList.offsetWidth;
+    const navWidth = navList.clientWidth;
     let usedWidth = moreMenu.offsetWidth;
 
     const items = Array.from(navList.children).filter(
@@ -328,22 +326,21 @@ function handleHeaderOverflow() {
     );
 
     for (let item of items) {
-        usedWidth += item.offsetWidth + 25;
+        usedWidth += item.offsetWidth + 25; // match gap
 
-        if (usedWidth > availableWidth) {
+        if (usedWidth > navWidth) {
             moreDropdown.appendChild(item);
-            item.classList.add('in-more');
         }
     }
 
     // Hide More if empty
     moreMenu.style.display =
-        moreDropdown.children.length > 0 ? 'inline-flex' : 'none';
+        moreDropdown.children.length ? 'inline-flex' : 'none';
 }
 
 // Run on load and resize
 window.addEventListener('resize', handleHeaderOverflow);
-handleHeaderOverflow();
+window.addEventListener('load', handleHeaderOverflow);
 
     // Run on resize
     window.addEventListener('resize', handleResize);
