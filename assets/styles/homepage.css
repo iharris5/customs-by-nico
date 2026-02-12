@@ -336,16 +336,40 @@ body.with-header {
 	padding-top: 0;
 }
 
-@media (max-width: 1000px) {
-  .nav-list li[data-section="most-popular"],
-  .nav-list li[data-section="create"],
-  .nav-list li[data-section="about"] {
+/* Desktop: show original, hide in More */
+.nav-list > .original {
+    display: block;
+}
+.nav-list .in-more {
     display: none;
-  }
+}
 
-  .more-menu {
-	  display: block;
-  }
+/* Collapse into More menu at smaller widths */
+@media (max-width: 1000px) { /* pick the width when More should appear */
+    .nav-list > .original.about {
+        display: none; /* hide original */
+    }
+    .nav-list .in-more.about {
+        display: block; /* show inside More dropdown */
+    }
+}
+
+@media (max-width: 950px) {
+    .nav-list > .original.create {
+        display: none;
+    }
+    .nav-list .in-more.create {
+        display: block;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-list > .original.popular {
+        display: none;
+    }
+    .nav-list .in-more.popular {
+        display: block;
+    }
 }
 
 @media (max-width: 810px) {
