@@ -304,34 +304,41 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- Responsive "More" menu -----
 function handleHeaderOverflow() {
-    const header = document.querySelector('.site-header .nav'); // adjust if your header nav class is different
+	const navList = document.querySelector('.nav-list');
     const moreMenu = document.querySelector('.more-menu');
     const moreDropdown = moreMenu.querySelector('.dropdown');
-    const availableWidth = header.offsetWidth - moreMenu.offsetWidth;
 
-    let totalWidth = 0;
+    if (!navList || !moreMenu) return;
 
-    // Move items back from More first
-    const inMoreItems = moreDropdown.querySelectorAll('.nav-item.in-more');
-    inMoreItems.forEach(item => {
-        header.insertBefore(item, moreMenu); // move back before More
+    // Always show More temporarily so we can measure correctly
+    moreMenu.style.display = 'inline-flex';
+
+    // Move everything back OUT of More first
+    const movedItems = moreDropdown.querySelectorAll('.nav-item.in-more');
+    movedItems.forEach(item => {
+        navList.insertBefore(item, moreMenu);
         item.classList.remove('in-more');
     });
 
-    // Loop over header items (excluding More) and see which fit
-    const headerItems = Array.from(header.querySelectorAll('.nav-item:not(.more-menu)'));
-    for (let item of headerItems) {
-        totalWidth += item.offsetWidth;
-        if (totalWidth > availableWidth) {
-            // Move overflowing items into More
+    const availableWidth = navList.offsetWidth;
+    let usedWidth = moreMenu.offsetWidth;
+
+    const items = Array.from(navList.children).filter(
+        item => !item.classList.contains('more-menu')
+    );
+
+    for (let item of items) {
+        usedWidth += item.offsetWidth + 25;
+
+        if (usedWidth > availableWidth) {
             moreDropdown.appendChild(item);
             item.classList.add('in-more');
         }
     }
 
-    // Hide More menu if empty
-    const movedItems = moreDropdown.querySelectorAll('.nav-item.in-more');
-    moreMenu.style.display = movedItems.length ? 'inline-block' : 'none';
+    // Hide More if empty
+    moreMenu.style.display =
+        moreDropdown.children.length > 0 ? 'inline-flex' : 'none';
 }
 
 // Run on load and resize

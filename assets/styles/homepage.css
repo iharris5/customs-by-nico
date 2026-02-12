@@ -337,43 +337,6 @@ body.with-header {
 }
 
 /* Desktop: show original, hide in More */
-.nav-list > .original {
-    display: block;
-}
-.nav-list .in-more {
-    display: none;
-}
-
-/* Collapse into More menu at smaller widths */
-@media (max-width: 1000px) { /* pick the width when More should appear */
-    .nav-list > .original.about {
-        display: none; /* hide original */
-    }
-    .nav-list .more-menu {
-	    display: block;
-    }
-    .nav-list .in-more.about {
-        display: block; /* show inside More dropdown */
-    }
-}
-
-@media (max-width: 985px) {
-    .nav-list > .original.create {
-        display: none;
-    }
-    .nav-list .in-more.create {
-        display: block;
-    }
-}
-
-@media (max-width: 850px) {
-    .nav-list > .original.popular {
-        display: none;
-    }
-    .nav-list .in-more.popular {
-        display: block;
-    }
-}
 
 @media (max-width: 800px) {
   .main-nav {
