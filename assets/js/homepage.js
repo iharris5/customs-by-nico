@@ -318,7 +318,7 @@ function handleHeaderOverflow() {
         navList.insertBefore(item, moreMenu);
     });
 
-    const navWidth = navList.clientWidth;
+    const navWidth = navList.getBoundingClientRect().width;
     let usedWidth = moreMenu.offsetWidth;
 
     const items = Array.from(navList.children).filter(
