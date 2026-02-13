@@ -604,7 +604,7 @@ body {
 
 .shoe-grid .shoe-pic img {
 	width: 100%;
-	height: 330px;
+	aspect-ratio: 560 / 330;
 	object-fit: cover;
 	border-radius: 10px 10px 0 0;
 }
