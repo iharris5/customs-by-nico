@@ -581,6 +581,7 @@ body {
     font-size: 32px;                         /* Equivalent to Word 24pt */
     margin-bottom: 20px;
     padding-bottom: 5px;
+    text-align: center;
 }
 
 .shoe-grid {
