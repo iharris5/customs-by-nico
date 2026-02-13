@@ -601,6 +601,14 @@ body {
     cursor: pointer;
 }
 
+.shoe-name {
+	margin-top: 5px;
+	font-family: 'Playfair Display', serif;
+	font-size; 26px;
+	text-align: center;
+	word-wrap: break-word;
+}
+
 .lightbox {
     display: none;
     position: fixed;
