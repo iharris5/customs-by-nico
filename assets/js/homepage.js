@@ -179,7 +179,11 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         { image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats' },
         { image_url: 'assets/views/main/images/IMG_7598.jpg', category: 'anime', tags: ['hunter'], title: 'Hunter X Hunter', character: 'Hisoka' },
-        { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' }
+        { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' },
+	{ image_url: 'assets/views/main/images/IMG_8722.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Gold)' },
+	{ image_url: 'assets/views/main/images/IMG_8723.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Ryomen Sukuna' },
+	{ image_url: 'assets/views/main/images/IMG_8721.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Red)' },
+	{ image_url: 'assets/views/main/images/IMG_8720.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo & Suguru Geto Betta Fish' } 
     ];
 
     // ----- Display images -----
@@ -208,7 +212,8 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- Custom anime order -----
     const animeOrder = [
-        'One Piece',
+        'Jujutsu Kaisen',
+	'One Piece',
         'Hunter X Hunter',
         'Naruto',
         "JoJo's Bizarre Adventure",
