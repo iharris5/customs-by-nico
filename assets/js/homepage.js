@@ -199,9 +199,9 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         }
 	 // ----- Group images by first tag (or "Other") -----
         const groups = {};
-        filtered.forEach(img => {
-            const groupKey = img.tags ? img.tags[0] : 'Other';
-            if (!groups[groupKey]) groups[groupKey] = { title: img.title || groupKey, images: [] };
+	filtered.forEach(img => {
+            let groupKey = img.title || (img.tags && img.tags[0]) || 'Other';
+            if (!groups[groupKey]) groups[groupKey] = { title: groupKey, images: [] };
             groups[groupKey].images.push(img);
         });
 
