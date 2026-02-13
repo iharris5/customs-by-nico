@@ -150,6 +150,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         { image_url: 'assets/views/main/images/IMG_7310.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_4295.jpg', category: 'floral' },
         { image_url: 'assets/views/main/images/IMG_8100.jpg', category: 'anime', tags: ['naruto'], title: 'Naruto', character: 'Naruto & Sasuke' },
+	 { image_url: 'assets/views/main/images/IMG_3569.JPG', category: 'anime', tags: ['naruto'], title: 'Naruto', character: 'Akatsuki Clouds (White AF1)' },
         { image_url: 'assets/views/main/images/IMG_6770_Original.JPEG', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Leone Abbacchio' },
         { image_url: 'assets/views/main/images/IMG_1482.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_1626.jpg', category: 'colorways' },
@@ -219,8 +220,8 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         'Jujutsu Kaisen',
 	'One Piece',
         'Hunter X Hunter',
-        'Naruto',
         "JoJo's Bizarre Adventure",
+	'Naruto',
         'Other'
     ];
 
