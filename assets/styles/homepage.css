@@ -592,7 +592,8 @@ body {
 
 .shoe-grid .shoe-pic {
     width: 100%;
-    overflow: visible;
+    overflow: hidden;
+    aspect-ratio: 560 / 330;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -604,8 +605,7 @@ body {
 
 .shoe-grid .shoe-pic img {
 	width: 100%;
-	height: auto;
-	aspect-ratio: 560 / 330;
+	height: 100%;
 	object-fit: cover;
 	border-radius: 10px 10px 0 0;
 }
