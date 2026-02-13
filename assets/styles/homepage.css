@@ -609,6 +609,13 @@ body {
 	word-wrap: break-word;
 }
 
+.shoe-container-item {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
 .lightbox {
     display: none;
     position: fixed;
