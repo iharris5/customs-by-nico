@@ -586,7 +586,7 @@ body {
 
 .shoe-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); /* 2 images per row */
     gap: 20px; /* spacing between images */
 }
 
