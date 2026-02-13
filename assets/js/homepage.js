@@ -225,6 +225,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
                 const imageElement = document.createElement('img');
                 imageElement.src = img.image_url;
                 imageElement.alt = img.character || '';
+		imageElement.classList.add('shoe-pic');
 
                 // Character name below the image
                 const caption = document.createElement('div');
