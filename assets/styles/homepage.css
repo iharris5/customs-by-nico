@@ -572,6 +572,17 @@ body {
 	transform: scale(1.05);
 }
 
+.shoe-group {
+	margin-bottom: 40px;
+}
+
+.shoe-group h2 {
+    font-family: 'Playfair Display', serif; /* Playfair Display font */
+    font-size: 32px;                         /* Equivalent to Word 24pt */
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
 .lightbox {
     display: none;
     position: fixed;

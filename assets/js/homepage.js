@@ -126,59 +126,59 @@ document.querySelectorAll('.section-btn').forEach(btn => {
     // ----- All images -----
     const images = [
         { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular' },
-        { image_url: 'assets/views/main/images/IMG_2355.jpeg', category: 'anime', tags: ['jojo'] },
+        { image_url: 'assets/views/main/images/IMG_2355.jpeg', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Bruno Bucciarati' },
         { image_url: 'assets/views/main/images/IMG_3409.jpeg', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_3553.jpeg', category: 'floral' },
         { image_url: 'assets/views/main/images/IMG_3575.jpeg', category: 'custom-text' },
         { image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'baby-shoes' },
-        { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime', tags: ['one-piece'] },
+        { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime', tags: ['one-piece'], title: 'One Piece', character: 'Monkey D. Luffy & Roronoa Zoro (Full Color)' },
         { image_url: 'assets/views/main/images/IMG_6056.jpeg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_9383.jpeg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_8558.jpg', category: 'anime', tags: ['blue-exorcist'] },
+        { image_url: 'assets/views/main/images/IMG_8558.jpg', category: 'anime', tags: ['blue-exorcist'], title: 'Other', character: 'Blue Exorcist: Rin' },
         { image_url: 'assets/views/main/images/IMG_9082_Original.JPEG', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_6161.JPG', category: 'floral' },
         { image_url: 'assets/views/main/images/IMG_8968.jpg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_3082_Original.JPEG', category: 'anime', tags: ['jojo'] },
+        { image_url: 'assets/views/main/images/IMG_3082_Original.JPEG', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Joseph Joestar' },
         { image_url: 'assets/views/main/images/IMG_1490.jpg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_6077_Original.JPEG', category: 'anime', tags: ['jojo'] },
+        { image_url: 'assets/views/main/images/IMG_6077_Original.JPEG', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Noriaki Kakyoin' },
         { image_url: 'assets/views/main/images/IMG_2647.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_7846.jpg', category: 'cleats' },
         { image_url: 'assets/views/main/images/IMG_2698.jpg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_5932_Original.JPEG', category: 'anime', tags: ['demon-slayer'] },
+        { image_url: 'assets/views/main/images/IMG_5932_Original.JPEG', category: 'anime', tags: ['demon-slayer'], title: 'Other', character: 'Demon Slayer: Nezuko' },
         { image_url: 'assets/views/main/images/IMG_8451.jpg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_8059.jpg', category: 'anime', tags: ['one-piece'] },
+        { image_url: 'assets/views/main/images/IMG_8059.jpg', category: 'anime', tags: ['one-piece'], title: 'One Piece', character: 'Donquixote Rosinante (Corazon)' },
         { image_url: 'assets/views/main/images/IMG_7310.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_4295.jpg', category: 'floral' },
-        { image_url: 'assets/views/main/images/IMG_8100.jpg', category: 'anime', tags: ['naruto'] },
-        { image_url: 'assets/views/main/images/IMG_6770_Original.JPEG', category: 'anime', tags: ['jojo'] },
+        { image_url: 'assets/views/main/images/IMG_8100.jpg', category: 'anime', tags: ['naruto'], title: 'Naruto', character: 'Naruto & Sasuke' },
+        { image_url: 'assets/views/main/images/IMG_6770_Original.JPEG', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Leone Abbacchio' },
         { image_url: 'assets/views/main/images/IMG_1482.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_1626.jpg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_7920.jpg', category: 'anime', tags: ['jojo'] },
+        { image_url: 'assets/views/main/images/IMG_7920.jpg', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Joseph Joestar & Caesar Zeppeli' },
         { image_url: 'assets/views/main/images/IMG_1566.jpeg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_7970.jpg', category: 'anime', tags: ['hunter'] },
+        { image_url: 'assets/views/main/images/IMG_7970.jpg', category: 'anime', tags: ['hunter'], title: 'Hunter X Hunter', character: 'Meruem' },
         { image_url: 'assets/views/main/images/IMG_2364.jpg', category: 'floral' },
         { image_url: 'assets/views/main/images/IMG_1567.jpeg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_5384.jpg', category: 'anime', tags: ['one-piece'] },
+        { image_url: 'assets/views/main/images/IMG_5384.jpg', category: 'anime', tags: ['one-piece'], title: 'One Piece', character: 'Monkey D. Luffy & Roronoa Zoro' },
         { image_url: 'assets/views/main/images/IMG_8454.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_9430.jpg', category: 'anime', tags: ['jojo'] },
+        { image_url: 'assets/views/main/images/IMG_9430.jpg', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Jotaro Kujo & Star Platinum' },
         { image_url: 'assets/views/main/images/IMG_7641.jpg', category: 'schools-sports' },
-        { image_url: 'assets/views/main/images/IMG_9446.jpg', category: 'anime', tags: ['jojo'] },
+        { image_url: 'assets/views/main/images/IMG_9446.jpg', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Dio Brando & The World' },
         { image_url: 'assets/views/main/images/IMG_8101.jpg', category: 'schools-sports' },
         { image_url: 'assets/views/main/images/IMG_0534.jpg', category: 'floral' },
-        { image_url: 'assets/views/main/images/IMG_6477.jpg', category: 'anime', tags: ['hunter'] },
+        { image_url: 'assets/views/main/images/IMG_6477.jpg', category: 'anime', tags: ['hunter'], title: 'Hunter X Hunter', character: 'Illumi Zoldyck' },
         { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text' },
         { image_url: 'assets/views/main/images/IMG_1985.jpg', category: 'schools-sports' },
         { image_url: 'assets/views/main/images/IMG_7648.jpg', category: 'cleats' },
         { image_url: 'assets/views/main/images/IMG_9464.jpg', category: 'schools-sports' },
-        { image_url: 'assets/views/main/images/IMG_7955.jpg', category: 'anime', tags: ['vinland'] },
+        { image_url: 'assets/views/main/images/IMG_7955.jpg', category: 'anime', tags: ['vinland'], title: 'Other', character: 'Vinland Saga: Thorfinn' },
         { image_url: 'assets/views/main/images/IMG_8114.jpg', category: 'schools-sports' },
-        { image_url: 'assets/views/main/images/IMG_1008.jpg', category: 'anime', tags: ['fullmetal'] },
+        { image_url: 'assets/views/main/images/IMG_1008.jpg', category: 'anime', tags: ['fullmetal'], title: 'Other', character: 'Fullmetal Alchemist: Brotherhood' },
         { image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports' },
         { image_url: 'assets/views/main/images/IMG_3288.jpg', category: 'cartoons', tags: ['lilo-stitch'] },
         { image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats' },
-        { image_url: 'assets/views/main/images/IMG_7598.jpg', category: 'anime', tags: ['hunter'] },
+        { image_url: 'assets/views/main/images/IMG_7598.jpg', category: 'anime', tags: ['hunter'], title: 'Hunter X Hunter', character: 'Hisoka' },
         { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' }
     ];
 
@@ -197,20 +197,50 @@ document.querySelectorAll('.section-btn').forEach(btn => {
             container.innerHTML = `<p>No images found for "${category}"</p>`;
             return;
         }
-
+	 // ----- Group images by first tag (or "Other") -----
+        const groups = {};
         filtered.forEach(img => {
-            const div = document.createElement('div');
-            div.classList.add('shoe-pic');
-
-            const imageElement = document.createElement('img');
-            imageElement.src = img.image_url;
-            imageElement.alt = category;
-
-            div.appendChild(imageElement);
-            container.appendChild(div);
+            const groupKey = img.tags ? img.tags[0] : 'Other';
+            if (!groups[groupKey]) groups[groupKey] = { title: img.title || groupKey, images: [] };
+            groups[groupKey].images.push(img);
         });
 
-        setupLightbox();
+        // ----- Render each group -----
+        for (let group in groups) {
+            const section = document.createElement('div');
+            section.classList.add('shoe-group');
+
+            // Section header using human-readable title
+            const heading = document.createElement('h2');
+            heading.textContent = groups[group].title;
+            section.appendChild(heading);
+
+            const grid = document.createElement('div');
+            grid.classList.add('shoe-grid');
+
+            groups[group].images.forEach(img => {
+                const div = document.createElement('div');
+                div.classList.add('shoe-pic');
+
+                const imageElement = document.createElement('img');
+                imageElement.src = img.image_url;
+                imageElement.alt = img.character || '';
+
+                // Character name below the image
+                const caption = document.createElement('div');
+                caption.classList.add('shoe-name');
+                caption.textContent = img.character || '';
+
+                div.appendChild(imageElement);
+                div.appendChild(caption);
+                grid.appendChild(div);
+            });
+
+            section.appendChild(grid);
+            container.appendChild(section);
+        }
+
+        setupLightbox(); // keep your lightbox working
     }
 
     // ----- Lightbox -----
