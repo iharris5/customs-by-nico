@@ -184,65 +184,81 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- Display images -----
     function displayImages(category, tag = null) {
-        if (!container) return;
-        container.innerHTML = '';
+    if (!container) return;
+    container.innerHTML = '';
 
-        // filter by category
-        let filtered = images.filter(img => img.category === category);
+    // ----- Filter images by category -----
+    let filtered = images.filter(img => img.category === category);
 
-        // filter by tag if present
-        if (tag) filtered = filtered.filter(img => img.tags && img.tags.includes(tag));
+    // ----- Filter by tag if present -----
+    if (tag) filtered = filtered.filter(img => img.tags && img.tags.includes(tag));
 
-        if (filtered.length === 0) {
-            container.innerHTML = `<p>No images found for "${category}"</p>`;
-            return;
-        }
-	 // ----- Group images by first tag (or "Other") -----
-        const groups = {};
-	filtered.forEach(img => {
-            let groupKey = img.title || (img.tags && img.tags[0]) || 'Other';
-            if (!groups[groupKey]) groups[groupKey] = { title: groupKey, images: [] };
-            groups[groupKey].images.push(img);
+    if (filtered.length === 0) {
+        container.innerHTML = `<p>No images found for "${category}"</p>`;
+        return;
+    }
+
+    // ----- Group images by title (or first tag or "Other") -----
+    const groups = {};
+    filtered.forEach(img => {
+        let groupKey = img.title || (img.tags && img.tags[0]) || 'Other';
+        if (!groups[groupKey]) groups[groupKey] = { title: groupKey, images: [] };
+        groups[groupKey].images.push(img);
+    });
+
+    // ----- Custom anime order -----
+    const animeOrder = [
+        'One Piece',
+        'Hunter X Hunter',
+        'Naruto',
+        "JoJo's Bizarre Adventure",
+        'Other'
+    ];
+
+    // ----- Sort groups according to custom order -----
+    const sortedGroups = Object.values(groups).sort((a, b) => {
+        const indexA = animeOrder.indexOf(a.title) !== -1 ? animeOrder.indexOf(a.title) : animeOrder.length;
+        const indexB = animeOrder.indexOf(b.title) !== -1 ? animeOrder.indexOf(b.title) : animeOrder.length;
+        return indexA - indexB;
+    });
+
+    // ----- Render each sorted group -----
+    sortedGroups.forEach(group => {
+        const section = document.createElement('div');
+        section.classList.add('shoe-group');
+
+        // Section header
+        const heading = document.createElement('h2');
+        heading.textContent = group.title;
+        section.appendChild(heading);
+
+        const grid = document.createElement('div');
+        grid.classList.add('shoe-grid');
+
+        group.images.forEach(img => {
+            const div = document.createElement('div');
+            div.classList.add('shoe-pic');
+
+            const imageElement = document.createElement('img');
+            imageElement.src = img.image_url;
+            imageElement.alt = img.character || '';
+            imageElement.classList.add('shoe-pic');
+
+            const caption = document.createElement('div');
+            caption.classList.add('shoe-name');
+            caption.textContent = img.character || '';
+
+            div.appendChild(imageElement);
+            div.appendChild(caption);
+            grid.appendChild(div);
         });
 
-        // ----- Render each group -----
-        for (let group in groups) {
-            const section = document.createElement('div');
-            section.classList.add('shoe-group');
+        section.appendChild(grid);
+        container.appendChild(section);
+    });
 
-            // Section header using human-readable title
-            const heading = document.createElement('h2');
-            heading.textContent = groups[group].title;
-            section.appendChild(heading);
-
-            const grid = document.createElement('div');
-            grid.classList.add('shoe-grid');
-
-            groups[group].images.forEach(img => {
-                const div = document.createElement('div');
-                div.classList.add('shoe-pic');
-
-                const imageElement = document.createElement('img');
-                imageElement.src = img.image_url;
-                imageElement.alt = img.character || '';
-		imageElement.classList.add('shoe-pic');
-
-                // Character name below the image
-                const caption = document.createElement('div');
-                caption.classList.add('shoe-name');
-                caption.textContent = img.character || '';
-
-                div.appendChild(imageElement);
-                div.appendChild(caption);
-                grid.appendChild(div);
-            });
-
-            section.appendChild(grid);
-            container.appendChild(section);
-        }
-
-        setupLightbox(); // keep your lightbox working
-    }
+    setupLightbox(); // keep your lightbox working
+}
 
     // ----- Lightbox -----
     function setupLightbox() {
