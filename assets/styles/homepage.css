@@ -589,7 +589,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* 2 images per row */
     column-gap: 30px; /* spacing between images */
-    row-gap: 40px;
+    row-gap: 80px;
 }
 
 .shoe-grid .shoe-pic {
