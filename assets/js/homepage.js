@@ -136,7 +136,6 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_8731.JPG', category: 'floral', title: 'Floral', character: 'Blue 3M Reflective Butterflies' },
 	{ image_url: 'assets/views/main/images/IMG_8730.JPG', category: 'floral', title: 'Floral', character: 'Lilac 3M Reflective Butterflies' },
 	{ image_url: 'assets/views/main/images/IMG_8733.JPG', category: 'floral', title: 'Floral', character: '3M Reflective Butterflies' },
-        { image_url: 'assets/views/main/images/IMG_3575.jpeg', category: 'custom-text' },
         { image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime', tags: ['one-piece'], title: 'One Piece', character: 'Monkey D. Luffy & Roronoa Zoro (Full Color)' },
         { image_url: 'assets/views/main/images/IMG_6056.jpeg', category: 'colorways' },
@@ -184,7 +183,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         { image_url: 'assets/views/main/images/IMG_8454.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_6477.jpg', category: 'anime', tags: ['hunter'], title: 'Hunter X Hunter', character: 'Illumi Zoldyck' },
-        { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text' },
+//        { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text' },
         { image_url: 'assets/views/main/images/IMG_7648.jpg', category: 'cleats' },
         { image_url: 'assets/views/main/images/IMG_9464.jpg', category: 'schools-sports', title: 'Schools', character: 'Texas State' },
 	{ image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports', title: 'Schools', character: 'North Carolina A&T' },
@@ -211,7 +210,11 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_8722.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Gold)' },
 	{ image_url: 'assets/views/main/images/IMG_8723.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Ryomen Sukuna' },
 	{ image_url: 'assets/views/main/images/IMG_8721.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Red)' },
-	{ image_url: 'assets/views/main/images/IMG_8720.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo & Suguru Geto Betta Fish' } 
+	{ image_url: 'assets/views/main/images/IMG_8720.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo & Suguru Geto Betta Fish' },
+	{ image_url: 'assets/views/main/images/IMG_8741.jpeg', category: 'custom-text', title: 'Events', character: 'Wedding: Emerald Mr.' },
+	{ image_url: 'assets/views/main/images/IMG_8740.jpeg', category: 'custom-text', title: 'Events', character: 'Wedding: Pearl Mrs.' },
+	{ image_url: 'assets/views/main/images/IMG_8739.jpg', category: 'custom-text', title: 'Events', character: 'Custom Message\n"4lifers"' }
+	//        { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text' },
     ];
 
     // ----- Display images -----
