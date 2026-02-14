@@ -601,6 +601,7 @@ body {
     border-radius: 10px;
     transition: transform 0.3s;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .shoe-grid .shoe-pic img {
