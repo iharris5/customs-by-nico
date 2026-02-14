@@ -195,6 +195,8 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_8728.jpg', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'Dancing Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_3288.jpg', category: 'cartoons', tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch' },
 	{ image_url: 'assets/views/main/images/IMG_3312.JPG', category: 'cartoons', tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch: Gule Leaves' },
+	{ image_url: 'assets/views/main/images/IMG_9571.JPG', category: 'cartoons', tags: ['dc'], title: 'DC', character: 'Batman: The Animated Series: Harley Quinn & The Joker' },
+	{ image_url: 'assets/views/main/images/IMG_3192_Original.JPG', category: 'cartoons', tags: ['sanrio'], title: 'Sanrio', character: 'My Melody & Kuromi' },
         { image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats' },
         { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' },
