@@ -190,7 +190,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         { image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports' },
         { image_url: 'assets/views/main/images/IMG_8725.JPG', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'Snoopy, Joe Cool, & Woodstock' },
 	{ image_url: 'assets/views/main/images/IMG_8724.JPG', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'DJ Snoopy' },
-	{ image_url: 'assets/views/main/images/IMG_8727.jpg', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'Ninja 400 & Gromm Snoopy' },
+	{ image_url: 'assets/views/main/images/IMG_8729.jpg', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'Ninja 400 & Gromm Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8726.JPG', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8728.jpg', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'Dancing Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_3288.jpg', category: 'cartoons', tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch' },
