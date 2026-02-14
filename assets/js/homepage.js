@@ -125,7 +125,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- All images -----
     const images = [
-        { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular' },
+        { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular', tags: ['popular'], title: 'Most Popular' },
         { image_url: 'assets/views/main/images/IMG_3409.jpeg', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_3553.jpeg', category: 'floral' },
         { image_url: 'assets/views/main/images/IMG_3575.jpeg', category: 'custom-text' },
@@ -188,7 +188,13 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         { image_url: 'assets/views/main/images/IMG_9464.jpg', category: 'schools-sports' },
         { image_url: 'assets/views/main/images/IMG_8114.jpg', category: 'schools-sports' },
         { image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports' },
-        { image_url: 'assets/views/main/images/IMG_3288.jpg', category: 'cartoons', tags: ['lilo-stitch'] },
+        { image_url: 'assets/views/main/images/IMG_8725.JPG', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'Snoopy, Joe Cool, & Woodstock' },
+	{ image_url: 'assets/views/main/images/IMG_8724.JPG', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'DJ Snoopy' },
+	{ image_url: 'assets/views/main/images/IMG_8727.jpg', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'Ninja 400 & Gromm Snoopy' },
+	{ image_url: 'assets/views/main/images/IMG_8726.JPG', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy' },
+	{ image_url: 'assets/views/main/images/IMG_8728.jpg', category: 'cartoons', tags: ['snoopy'], title: 'Snoopy', character: 'Dancing Snoopy' },
+	{ image_url: 'assets/views/main/images/IMG_3288.jpg', category: 'cartoons', tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch' },
+	{ image_url: 'assets/views/main/images/IMG_3312.JPG', category: 'cartoons', tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch: Gule Leaves' },
         { image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats' },
         { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' },
