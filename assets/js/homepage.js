@@ -125,7 +125,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- All images -----
     const images = [
-        { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular', tags: ['popular'], title: 'Most Popular' },
+        { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular', tags: ['popular'], title: '' },
         { image_url: 'assets/views/main/images/IMG_3409.jpeg', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_3553.jpeg', category: 'floral' },
         { image_url: 'assets/views/main/images/IMG_3575.jpeg', category: 'custom-text' },
