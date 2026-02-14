@@ -158,7 +158,6 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_6538_Original.JPG', category: 'anime', tags: ['jojo'], title: "JoJo's Bizarre Adventure", character: 'Jotaro Kujo' },
         { image_url: 'assets/views/main/images/IMG_1490.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_2647.jpg', category: 'colorways' },
-        { image_url: 'assets/views/main/images/IMG_7846.jpg', category: 'cleats' },
         { image_url: 'assets/views/main/images/IMG_2698.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_8451.jpg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_8059.jpg', category: 'anime', tags: ['one-piece'], title: 'One Piece', character: 'Donquixote Rosinante (Corazon)' },
@@ -182,7 +181,6 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         { image_url: 'assets/views/main/images/GreyAndWhite.jpeg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_6477.jpg', category: 'anime', tags: ['hunter'], title: 'Hunter X Hunter', character: 'Illumi Zoldyck' },
 //        { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text' },
-        { image_url: 'assets/views/main/images/IMG_7648.jpg', category: 'cleats' },
         { image_url: 'assets/views/main/images/IMG_9464.jpg', category: 'schools-sports', title: 'Schools', character: 'Texas State' },
 	{ image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', category: 'schools-sports', title: 'Schools', character: 'North Carolina A&T' },
 	{ image_url: 'assets/views/main/images/IMG_7641.jpg', category: 'schools-sports', title: 'Football', character: 'Bengals Stripes' },
@@ -202,7 +200,6 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_3312.JPG', category: 'cartoons', tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch: Gule Leaves' },
 	{ image_url: 'assets/views/main/images/IMG_9571.JPG', category: 'cartoons', tags: ['dc'], title: 'DC', character: 'Batman: The Animated Series: Harley Quinn & The Joker' },
 	{ image_url: 'assets/views/main/images/IMG_3192_Original.JPG', category: 'cartoons', tags: ['sanrio'], title: 'Sanrio', character: 'My Melody & Kuromi' },
-        { image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats' },
 	{ image_url: 'assets/views/main/images/IMG_8722.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Gold)' },
 	{ image_url: 'assets/views/main/images/IMG_8723.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Ryomen Sukuna' },
 	{ image_url: 'assets/views/main/images/IMG_8721.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Red)' },
@@ -216,7 +213,10 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'baby-shoes', title: 'Baby Customs', character: 'Canticos: 1st Birthday' },
 	{ image_url: 'assets/views/main/images/IMG_8745.JPG', category: 'baby-shoes', title: 'Baby Customs', character: 'Pink Split Swoosh' },
 	{ image_url: 'assets/views/main/images/IMG_8744.jpg', category: 'baby-shoes', title: 'Baby Customs', character: 'Red Split Swoosh' },
-	{ image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'baby-shoes', title: 'Baby Customs', character: 'Sesame Street:\nElmo & Cookie Monster' }
+	{ image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'baby-shoes', title: 'Baby Customs', character: 'Sesame Street:\nElmo & Cookie Monster' },
+	{ image_url: 'assets/views/main/images/IMG_7846.jpg', category: 'cleats', title: 'Cleats' },
+	{ image_url: 'assets/views/main/images/IMG_7648.jpg', category: 'cleats', title: 'Cleats' },
+	{ image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats', title: 'Cleats' }
     ];
 
     // ----- Display images -----
