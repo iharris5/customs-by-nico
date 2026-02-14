@@ -617,6 +617,7 @@ body {
 	font-size: 26px;
 	text-align: center;
 	word-wrap: break-word;
+	white-space: pre-line;
 }
 
 .shoe-container-item {
