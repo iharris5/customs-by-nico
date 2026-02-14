@@ -136,7 +136,6 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_8731.JPG', category: 'floral', title: 'Floral', character: 'Blue 3M Reflective Butterflies' },
 	{ image_url: 'assets/views/main/images/IMG_8730.JPG', category: 'floral', title: 'Floral', character: 'Lilac 3M Reflective Butterflies' },
 	{ image_url: 'assets/views/main/images/IMG_8733.JPG', category: 'floral', title: 'Floral', character: '3M Reflective Butterflies' },
-        { image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_5545.jpeg', category: 'anime', tags: ['one-piece'], title: 'One Piece', character: 'Monkey D. Luffy & Roronoa Zoro (Full Color)' },
         { image_url: 'assets/views/main/images/IMG_6056.jpeg', category: 'colorways' },
         { image_url: 'assets/views/main/images/IMG_9383.jpeg', category: 'colorways' },
@@ -204,9 +203,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_3312.JPG', category: 'cartoons', tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch: Gule Leaves' },
 	{ image_url: 'assets/views/main/images/IMG_9571.JPG', category: 'cartoons', tags: ['dc'], title: 'DC', character: 'Batman: The Animated Series: Harley Quinn & The Joker' },
 	{ image_url: 'assets/views/main/images/IMG_3192_Original.JPG', category: 'cartoons', tags: ['sanrio'], title: 'Sanrio', character: 'My Melody & Kuromi' },
-        { image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'baby-shoes' },
         { image_url: 'assets/views/main/images/IMG_0447.jpg', category: 'cleats' },
-        { image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes' },
 	{ image_url: 'assets/views/main/images/IMG_8722.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Gold)' },
 	{ image_url: 'assets/views/main/images/IMG_8723.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Ryomen Sukuna' },
 	{ image_url: 'assets/views/main/images/IMG_8721.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Red)' },
@@ -215,6 +212,12 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_8740.jpeg', category: 'custom-text', title: 'Events', character: 'Wedding: Pearl Mrs.' },
 	{ image_url: 'assets/views/main/images/IMG_8739.jpg', category: 'custom-text', title: 'Events', character: 'Custom Message\n"4lifers"' }
 	//        { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text' },
+	{ image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes', title: 'Baby Customs', character: '"Luna"' },
+	{ image_url: 'assets/views/main/images/IMG_3409.jpeg', category: 'baby-shoes', title: 'Baby Customs', character: 'Honey Bear' },
+	{ image_url: 'assets/views/main/images/IMG_5953_Original.JPEG', category: 'baby-shoes', title: 'Baby Customs', character: 'Canticos: 1st Birthday' },
+	{ image_url: 'assets/views/main/images/IMG_8745.JPG', category: 'baby-shoes', title: 'Baby Customs', character: 'Pink Split Swoosh' },
+	{ image_url: 'assets/views/main/images/IMG_8744.jpg', category: 'baby-shoes', title: 'Baby Customs', character: 'Red Split Swoosh' },
+	{ image_url: 'assets/views/main/images/IMG_3951.jpeg', category: 'baby-shoes', title: 'Baby Customs', character: 'Sesame Street:\nElmo & Cookie Monster' }
     ];
 
     // ----- Display images -----
