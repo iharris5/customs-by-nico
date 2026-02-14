@@ -209,7 +209,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 	{ image_url: 'assets/views/main/images/IMG_8720.jpeg', category: 'anime', tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo & Suguru Geto Betta Fish' },
 	{ image_url: 'assets/views/main/images/IMG_8741.jpeg', category: 'custom-text', title: 'Events', character: 'Wedding: Emerald Mr.' },
 	{ image_url: 'assets/views/main/images/IMG_8740.jpeg', category: 'custom-text', title: 'Events', character: 'Wedding: Pearl Mrs.' },
-	{ image_url: 'assets/views/main/images/IMG_8739.jpg', category: 'custom-text', title: 'Events', character: 'Custom Message\n"4lifers"' }
+	{ image_url: 'assets/views/main/images/IMG_8739.jpg', category: 'custom-text', title: 'Events', character: 'Custom Message\n"4lifers"' },
 	//        { image_url: 'assets/views/main/images/IMG_6203.JPG', category: 'custom-text' },
 	{ image_url: 'assets/views/main/images/IMG_0249.jpg', category: 'baby-shoes', title: 'Baby Customs', character: '"Luna"' },
 	{ image_url: 'assets/views/main/images/IMG_3409.jpeg', category: 'baby-shoes', title: 'Baby Customs', character: 'Honey Bear' },
