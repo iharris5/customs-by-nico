@@ -390,6 +390,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
     if (globeSection) globeSection.style.display = 'block';
     if (createOwn) createOwn.style.display = 'none';
     if (aboutUs) aboutUs.style.display = 'none';
+    updateBannerTitle('');
 
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
