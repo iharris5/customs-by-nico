@@ -29,8 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	    if (text.trim() === '') {
         	overlay.style.opacity = '0';
+		title.classList.add('empty');
     	    } else {
         	overlay.style.opacity = '1';
+		title.classList.remove('empty');
     	    }
     }
 
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (category === 'custom-text') {
 	    updateBannerTitle('Events'); 
         } else if (category === 'baby-shoes') {
-	    updateBannerTitle('Baby Shoes');
+	    updateBannerTitle('Baby Customs');
         } else if (category === 'cleats') {
 	    updateBannerTitle('Cleats');
 	}

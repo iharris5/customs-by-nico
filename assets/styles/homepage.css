@@ -543,6 +543,11 @@ body {
     pointer-events: none;
 }
 
+.banner-title.empty {
+	border: none;
+	padding: 0;
+}
+
 .banner-spacer {
 	height: 400px;
 }
