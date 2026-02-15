@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
-	const banner = document.querySelector('banner');
+	const banner = document.getElementById('banner-switch');
 	if (banner) {
 		if (category === 'anime') {
 			banner.src = 'assets/views/main/images/IMG_2888_Original.JPG';
