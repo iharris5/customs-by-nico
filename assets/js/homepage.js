@@ -191,7 +191,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- All images -----
     const images = [
-        { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular', tags: ['popular'] },
+        { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular' },
 	{ image_url: 'assets/views/main/images/IMG_2364.jpg', category: 'floral', character: 'Blue Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_4295.jpg', category: 'floral', character: 'Lilac Blossoms' },
         { image_url: 'assets/views/main/images/IMG_3553.jpeg', category: 'floral', character: 'Pink Blossoms' },
