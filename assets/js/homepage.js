@@ -439,6 +439,7 @@ const globeContainer = document.getElementById('globeViz');
 if (globeContainer) {
     const globe = Globe()(globeContainer)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+	.backgroundColor('rgba(0,0,0,0)')
         .pointsData([
             { lat: 40.9200, lng: -73.7863, label: "New Rochelle, NY" },
             { lat: 40.8448, lng: -73.8648, label: "Bronx, NY" },

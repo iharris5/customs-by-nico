@@ -844,5 +844,7 @@ body {
 
 #globeViz canvas {
     display: block;
+    pointer-events: auto;
+    background: transparent;
 }
 
