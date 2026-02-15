@@ -837,5 +837,6 @@ body {
     height: 500px;
     max-width: 1100px;
     margin: 0 auto;
+    display: block;
 }
 
