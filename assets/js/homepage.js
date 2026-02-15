@@ -19,9 +19,44 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     
+    function updateBannerTitle(text = '') {
+	    const title = document.getElementById('banner-title');
+	    const overlay = document.querySelector('.banner-overlay');
+
+	    if (!title || overlay) return;
+
+	    title.textContent = text;
+
+	    if (text.trim() === '') {
+        	overlay.style.opacity = '0';
+    	    } else {
+        	overlay.style.opacity = '1';
+    	    }
+    }
+
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
         updateBanner(category);
+
+	if (category === 'anime') {
+    	    updateBannerTitle('Anime');
+	} else if (category === 'cartoons') {
+            updateBannerTitle('Cartoons');
+	} else if (category === 'floral') {
+  	    updateBannerTitle('Floral');
+	} else if (category === 'most-popular') {
+            updateBannerTitle('Most Popular');
+    	} else if (category === 'colorways') {
+    	    updateBannerTitle('Colorways');
+    	} else if (category === 'schools-sports') {
+	    updateBannerTitle('Schools, Sports, & Teams');
+        } else if (category === 'custom-text') {
+	    updateBannerTitle('Events'); 
+        } else if (category === 'baby-shoes') {
+	    updateBannerTitle('Baby Shoes');
+        } else if (category === 'cleats') {
+	    updateBannerTitle('Cleats');
+	}
 
 	if (!container) return;
         if (introSection) introSection.style.display = 'none';   // hide intro
@@ -38,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ----- Show intro again (home button) -----
     function showIntro() {
 	updateBanner();
+	updateBannerTitle('');
 
         if (introSection) introSection.style.display = 'block';
 	if (reviewsSection) reviewsSection.style.display = 'block';
@@ -61,6 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Generic section toggle
 function showSection(section) {
     updateBanner();
+    if (section === 'create') {
+	    updateBannerTitle('Create Your Own');
+    } else if (section === 'about') {
+	    updateBannerTitle('About Us');
+    }
 
     if (introSection) introSection.style.display = 'none';
     if (reviewsSection) reviewsSection.style.display = 'none';

@@ -516,6 +516,31 @@ body {
         object-fit: cover;
 }
 
+/* Dark overlay */
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35); /* adjust darkness here */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Title text */
+.banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    pointer-events: none;
+}
+
 .banner-spacer {
 	height: 400px;
 }
