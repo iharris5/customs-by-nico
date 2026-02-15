@@ -840,3 +840,8 @@ body {
     display: block;
 }
 
+#globeViz canvas {
+    display: block;
+    margin: 0 auto;  /* horizontally centers the canvas */
+}
+
