@@ -439,7 +439,6 @@ const globeContainer = document.getElementById('globeViz');
 if (globeContainer) {
     const globe = Globe()(globeContainer)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
-        .backgroundColor('#111')
         .pointsData([
             { lat: 40.9200, lng: -73.7863, label: "New Rochelle, NY" },
             { lat: 40.8448, lng: -73.8648, label: "Bronx, NY" },
