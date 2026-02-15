@@ -481,7 +481,29 @@ if (globeContainer) {
         ])
         .pointLabel('label')
         .pointColor(() => '#87CEEB')
-        .pointAltitude(0.02);
+        .pointAltitude(0.05);
+
+	const origin = { lat: 40.9115, lng: -73.7824 }; // New Rochelle, NY
+
+	const destinations = globe.pointsData(); // get all points you just set
+    globe.arcsData(
+        destinations
+            .filter(d => !(d.lat === origin.lat && d.lng === origin.lng)) // skip origin itself
+            .map(d => ({
+                startLat: origin.lat,
+                startLng: origin.lng,
+                endLat: d.lat,
+                endLng: d.lng,
+                color: '#ff6666',
+                dashLength: 0.4,
+                stroke: 0.5,
+                animationDuration: 2000
+            }))
+    )
+    .arcColor('color')
+    .arcDashLength('dashLength')
+    .arcDashGap(0.5)
+    .arcDashAnimateTime('animationDuration');
 
     // Slow auto-rotate
     globe.controls().autoRotate = true;
