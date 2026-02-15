@@ -837,11 +837,12 @@ body {
     height: 500px;
     max-width: 1100px;
     margin: 0 auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #globeViz canvas {
     display: block;
-    margin: 0 auto;  /* horizontally centers the canvas */
 }
 
