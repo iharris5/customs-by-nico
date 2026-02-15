@@ -826,6 +826,8 @@ body {
     align-items: center;
     gap: 20px;
     padding: 0;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .globe-title {
@@ -833,15 +835,21 @@ body {
     font-size: 32px;
     font-weight: 700;
     margin-top: 80px;
+    text-align: center;
 }
 
 #globeViz {
     display: inline-block; /* shrink to the size of the canvas */
+    width: auto;
+    height: auto;
+    max-width: 100vw;
 }
 
 #globeViz canvas {
-    display: inline-block;
+    display: block;
     pointer-events: auto;
     background: transparent;
+    width: 100%;
+    height: auto;
 }
 

@@ -437,6 +437,12 @@ window.addEventListener('load', handleHeaderOverflow);
 const globeContainer = document.getElementById('globeViz');
 
 if (globeContainer) {
+    function getGlobeSize() {
+        const maxSize = 500; // max desktop size
+        const padding = 40; // optional margin around globe
+        return Math.min(maxSize, window.innerWidth - padding * 2);
+    }
+
     const globe = Globe()(globeContainer)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
 	.backgroundColor('rgba(0,0,0,0)')
@@ -482,6 +488,18 @@ if (globeContainer) {
         .pointLabel('label')
         .pointColor(() => '#87CEEB')
         .pointAltitude(0.05);
+
+	// Responsive sizing
+        function resizeGlobe() {
+            const size = getGlobeSize();
+            globe.width(size).height(size);
+        }
+
+        // Initial size
+        resizeGlobe();
+
+        // Update size on window resize
+        window.addEventListener('resize', resizeGlobe);
 
 	const origin = { lat: 40.9115, lng: -73.7824 }; // New Rochelle, NY
 
