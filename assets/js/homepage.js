@@ -242,7 +242,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
     // ----- Group images by title (or first tag or "Other") -----
     const groups = {};
     filtered.forEach(img => {
-        let groupKey = img.title || (img.tags && img.tags[0]) || 'Other';
+        let groupKey = img.title || (img.tags && img.tags[0]) || '';
         if (!groups[groupKey]) groups[groupKey] = { title: groupKey, images: [] };
         groups[groupKey].images.push(img);
     });
@@ -270,9 +270,11 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         section.classList.add('shoe-group');
 
         // Section header
-        const heading = document.createElement('h2');
-        heading.textContent = group.title;
-        section.appendChild(heading);
+        if (group.title) {
+	    const heading = document.createElement('h2');
+            heading.textContent = group.title;
+            section.appendChild(heading);
+	}
 
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
