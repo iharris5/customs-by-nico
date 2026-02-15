@@ -8,9 +8,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutUs = document.getElementById('about-us');
     const globeSection = document.querySelector('.globe-section');
 
+    function updateBanner(category = null) {
+        const banner = document.getElementById('banner-switch');
+        if (!banner) return;
+
+        if (category === 'anime') {
+            banner.src = 'assets/views/main/images/IMG_2888_Original.JPG';
+        } else {
+            banner.src = 'assets/views/main/images/CustomsByNico.png';
+        }
+    }
+    
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
-        if (!container) return;
+        updateBanner(category);
+
+	if (!container) return;
         if (introSection) introSection.style.display = 'none';   // hide intro
 	if (reviewsSection) reviewsSection.style.display = 'none';
 	if (createOwn) createOwn.style.display = 'none';
@@ -19,31 +32,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
-	const banner = document.getElementById('banner-switch');
-	if (banner) {
-		if (category === 'anime') {
-			banner.src = 'assets/views/main/images/IMG_2888_Original.JPG';
-		} else {
-			banner.src = 'assets/views/main/images/CustomsByNico.png';
-		}
-	}
-
         console.log(`Displaying images for category "${category}"${tag ? ' with tag "' + tag + '"' : ''}`);
     }
 
     // ----- Show intro again (home button) -----
     function showIntro() {
+	updateBanner();
+
         if (introSection) introSection.style.display = 'block';
 	if (reviewsSection) reviewsSection.style.display = 'block';
 	if (globeSection) globeSection.style.display = 'block';
         if (container) container.style.display = 'none';
 	if (createOwn) createOwn.style.display = 'none';
 	if (aboutUs) aboutUs.style.display = 'none';
-
-	const banner = document.getElementById('banner-switch');
-	if (banner) {
-		banner.src = 'assets/views/main/images/CustomsByNico.png';
-	}
 
         console.log('Showing intro section');
     }
@@ -59,6 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Generic section toggle
 function showSection(section) {
+    updateBanner();
+
     if (introSection) introSection.style.display = 'none';
     if (reviewsSection) reviewsSection.style.display = 'none';
     if (globeSection) globeSection.style.display = 'none';
