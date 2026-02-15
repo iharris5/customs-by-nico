@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const introSection = document.getElementById('intro-section');
     const createOwn = document.getElementById('create-own');
     const aboutUs = document.getElementById('about-us');
-    const globeSection = document.getElementById('globe-section');
+    const globeSection = document.querySelector('.globe-section');
 
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
