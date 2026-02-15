@@ -528,6 +528,7 @@ body {
 
 /* Title text */
 .banner-title {
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -541,6 +542,10 @@ body {
     padding: 44px 56px;
     border: 5px solid white;
     pointer-events: none;
+}
+
+.banner-title.show {
+	display: block;
 }
 
 .banner-title.empty {

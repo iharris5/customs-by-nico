@@ -30,9 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	    if (text.trim() === '') {
         	overlay.style.opacity = '0';
 		title.classList.add('empty');
+		title.classList.remove('show');
     	    } else {
         	overlay.style.opacity = '1';
 		title.classList.remove('empty');
+		title.classList.add('show');
     	    }
     }
 
