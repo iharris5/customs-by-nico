@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    const title = document.getElementById('banner-title');
 	    const overlay = document.querySelector('.banner-overlay');
 
-	    if (!title || !overlay) return;
+	    if (!title) return;
 
 	    title.textContent = text;
 
