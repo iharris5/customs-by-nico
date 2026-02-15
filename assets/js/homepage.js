@@ -432,5 +432,61 @@ window.addEventListener('load', handleHeaderOverflow);
     window.addEventListener('resize', handleResize);
 
     handleResize();
+
+    // ----- 3D Globe -----
+const globeContainer = document.getElementById('globeViz');
+
+if (globeContainer) {
+    const globe = Globe()(globeContainer)
+        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+        .backgroundColor('#111')
+        .pointsData([
+            { lat: 40.9200, lng: -73.7863, label: "New Rochelle, NY" },
+            { lat: 40.8448, lng: -73.8648, label: "Bronx, NY" },
+            { lat: 40.9126, lng: -73.8371, label: "Mount Vernon, NY" },
+            { lat: 13.5344, lng: 144.8856, label: "Yigo, Guam" },
+	    { lat: 39.1845, lng: -77.3125, label: "Boyds, MD" },
+	    { lat: 40.9319, lng: -73.8990, label: "Yonkers, NY" },
+	    { lat: -37.6372, lng: 145.0935, label: "South Morang, Melbourne, Victoria, Australia" },
+	    { lat: 40.6782, lng: -73.9442, label: "Brooklyn, NY" },
+	    { lat: 52.5144, lng: 4.9641, label: "Purmerend, Noord-Holland, Netherlands" },
+	    { lat: 41.8273, lng: -86.3611, label: "Buchanan, MI" },
+	    { lat: 32.7357, lng: -97.1081, label: "Arlington, TX" },
+	    { lat: 55.9533, lng: -3.1883, label: "Edinburgh, United Kingdom" },
+	    { lat: 32.6401, lng: -117.0842, label: "Chula Vista, CA" },
+	    { lat: 34.1685, lng: -118.6058, label: "Woodland Hills, CA" },
+	    { lat: 28.1614, lng: -81.6017, label: "Davenport, FL" },
+	    { lat: 47.2088, lng: 7.5323, label: "Solothurn, Switzerland" },
+	    { lat: 38.6582, lng: -77.2497, label: "Woodbridge, VA" },
+	    { lat: 43.0268, lng: -76.1784, label: "Onondaga County, NY" },
+	    { lat: 40.9700, lng: -73.7176, label: "Harrison, NY" },
+	    { lat: 37.3387, lng: -121.8853, label: "San Jose, CA" },
+	    { lat: 42.3212, lng: -85.1797, label: "Battle Creek, MI" },
+	    { lat: 42.3555, lng: -71.0565, label: "Boston, MA" },
+	    { lat: 40.9170, lng: -72.6620, label: "Riverhead, NY" },
+	    { lat: 39.7680, lng: -74.2136, label: "Barnegat, NJ" },
+	    { lat: 41.5048, lng: -73.9696, label: "Beacon, NY" },
+	    { lat: 33.5387, lng: -112.1860, label: "Glendale, AZ" },
+	    { lat: 38.8121, lng: -77.6364, label: "Haymarket, VA" },
+	    { lat: 42.9704, lng: -85.6722, label: "Grand Rapids, MI" },
+	    { lat: 27.3365, lng: -82.5310, label: "Sarasota, FL" },
+	    { lat: 40.0362, lng: -75.5138, label: "Malvern, PA" },
+	    { lat: 38.0389, lng: -84.5153, label: "Lexington, KY" },
+	    { lat: 42.1525, lng: -83.2663, label: "Brownstown, MI" },
+	    { lat: 40.4896, lng: -81.4455, label: "New Philadelphia, OH" },
+	    { lat: 40.9382, lng: -73.8321, label: "Bronxville, NY" },
+	    { lat: 39.3701, lng: -76.4545, label: "Nottingham, MD" },
+	    { lat: 41.5840, lng: -73.8087, label: "Hopewell Junction, NY" },
+	    { lat: 34.0549, lng: -118.2426, label: "Los Angeles, California" }
+        ])
+        .pointLabel('label')
+        .pointColor(() => '#87CEEB')
+        .pointAltitude(0.02);
+
+    // Slow auto-rotate
+    globe.controls().autoRotate = true;
+    globe.controls().autoRotateSpeed = 0.5;
+}
+
 });
 
