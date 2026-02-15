@@ -840,7 +840,7 @@ body {
 }
 
 #globeViz canvas {
-    display: block;
+    display: inline-block;
     pointer-events: auto;
     background: transparent;
 }
