@@ -821,9 +821,8 @@ body {
 }
 
 .globe-section {
-    padding: 80px;
+    padding: 80px 40px;
     text-align: center;
-    color: white;
 }
 
 .globe-title {
@@ -831,7 +830,6 @@ body {
     font-size: 32px;
     margin-bottom: 40px;
     font-weight: 700;
-    color: black;
 }
 
 #globeViz {
