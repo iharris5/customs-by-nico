@@ -631,6 +631,10 @@ body {
     .shoe-grid {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     }
+
+    .shoe-grid .shoe-pic {
+	    aspect-ratio: auto;
+    }
 }
 
 .lightbox {
