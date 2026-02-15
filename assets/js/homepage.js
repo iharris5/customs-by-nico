@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const introSection = document.getElementById('intro-section');
     const createOwn = document.getElementById('create-own');
     const aboutUs = document.getElementById('about-us');
+    const globeSection = document.getElementById('globe-section');
 
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (reviewsSection) reviewsSection.style.display = 'none';
 	if (createOwn) createOwn.style.display = 'none';
         if (aboutUs) aboutUs.style.display = 'none';
+	if (globeSection) globeSection.style.display = 'none';
 
 	container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showIntro() {
         if (introSection) introSection.style.display = 'block';
 	if (reviewsSection) reviewsSection.style.display = 'block';
+	if (globeSection) globeSection.style.display = 'block';
         if (container) container.style.display = 'none';
 	if (createOwn) createOwn.style.display = 'none';
 	if (aboutUs) aboutUs.style.display = 'none';
@@ -44,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function showSection(section) {
     if (introSection) introSection.style.display = 'none';
     if (reviewsSection) reviewsSection.style.display = 'none';
+    if (globeSection) globeSection.style.display = 'none';
     if (container) container.style.display = 'none';
     if (createOwn) createOwn.style.display = 'none';
     if (aboutUs) aboutUs.style.display = 'none';
@@ -321,6 +325,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
     // ----- Initial state -----
     if (container) container.style.display = 'none'; // hide images initially
     if (introSection) introSection.style.display = 'block'; // show intro
+    if (globeSection) globeSection.style.display = 'block';
     if (createOwn) createOwn.style.display = 'none';
     if (aboutUs) aboutUs.style.display = 'none';
 
