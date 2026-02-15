@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
+	const banner = document.querySelector('banner');
+	if (banner) {
+		if (category === 'anime') {
+			banner.src = 'assets/views/main/images/IMG_2888_Original.JPG';
+		} else {
+			banner.src = 'assets/views/main/images/CustomsByNico.png';
+		}
+	}
+
         console.log(`Displaying images for category "${category}"${tag ? ' with tag "' + tag + '"' : ''}`);
     }
 
@@ -129,7 +138,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- All images -----
     const images = [
-        { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular', tags: ['popular'], title: 'Most Popular' },
+        { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular', tags: ['popular'] },
 	{ image_url: 'assets/views/main/images/IMG_2364.jpg', category: 'floral', character: 'Blue Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_4295.jpg', category: 'floral', character: 'Lilac Blossoms' },
         { image_url: 'assets/views/main/images/IMG_3553.jpeg', category: 'floral', character: 'Pink Blossoms' },
