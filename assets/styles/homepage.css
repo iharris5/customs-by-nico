@@ -534,10 +534,12 @@ body {
     transform: translate(-50%, -50%);
     color: white;
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
+    font-size: 72px;
     font-weight: 700;
     text-align: center;
     margin: 0;
+    padding: 44px 56px;
+    border: 5px solid white;
     pointer-events: none;
 }
 

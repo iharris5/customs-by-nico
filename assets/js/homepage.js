@@ -100,7 +100,7 @@ function showSection(section) {
     if (section === 'create') {
 	    updateBannerTitle('Create Your Own');
     } else if (section === 'about') {
-	    updateBannerTitle('About Us');
+	    updateBannerTitle('About');
     }
 
     if (introSection) introSection.style.display = 'none';
