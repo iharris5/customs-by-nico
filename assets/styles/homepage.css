@@ -821,25 +821,27 @@ body {
 }
 
 .globe-section {
-    padding: 80px 40px;
-    text-align: center;
+    display: flex;              /* allow tight wrapping */
+    flex-direction: column;     /* title on top, globe below */
+    justify-content: center;    /* center vertically (if needed) */
+    align-items: center;        /* center horizontally */
+    gap: 20px;                  /* space between title and globe */
+    padding: 0;                 /* remove extra padding */
+    width: fit-content;         /* shrink-wrap to content */
+    margin: 0 auto;             /* center section on page */
 }
 
 .globe-title {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
-    margin-bottom: 40px;
     font-weight: 700;
+    margin: 0;                  /* remove extra margin */
 }
 
 #globeViz {
-    width: 100%;
+    width: 500px;               /* fixed globe size, adjust as needed */
     height: 500px;
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
 }
 
 #globeViz canvas {
