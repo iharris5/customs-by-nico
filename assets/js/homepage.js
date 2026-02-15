@@ -40,6 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (createOwn) createOwn.style.display = 'none';
 	if (aboutUs) aboutUs.style.display = 'none';
 
+	const banner = document.getElementById('banner-switch');
+	if (banner) {
+		banner.src = 'assets/views/main/images/CustomsByNico.png';
+	}
+
         console.log('Showing intro section');
     }
 
