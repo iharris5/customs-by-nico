@@ -27,7 +27,6 @@ function setActive(element) {
             parentDropdown.classList.add('active-parent');
             parentDropdown = parentDropdown.parentElement.closest('.has-subdropdown');
         }
-    }
 }
 
     function updateBanner(category = null) {
