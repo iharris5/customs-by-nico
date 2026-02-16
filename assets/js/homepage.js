@@ -600,6 +600,8 @@ if (globeContainer) {
         return Math.max(minSize, Math.min(maxSize, window.innerWidth - padding * 2));
     }
 
+    const homePoint = { lat: 40.9115, lng: -73.7824 };
+
     const globe = Globe()(globeContainer)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
         .backgroundColor('rgba(0,0,0,0)')
@@ -610,9 +612,7 @@ if (globeContainer) {
             const material = new THREE.MeshStandardMaterial({ color: '#FF0000' });
 	    let height = 0.5;
 
-	    if (point.lat === 40.9115 && point.lng === -73.7824) {
-                height = 1.0; // Making New Ro taller
-            }
+	    const height = (point.lat === homePoint.lat && point.lng === homePoint.lng) ? 1.2 : 0.5;
 
             const cone = new THREE.Mesh(
                 new THREE.ConeGeometry(0.2, height, 6),
@@ -621,6 +621,12 @@ if (globeContainer) {
             cone.rotation.x = Math.PI;
             cone.userData = point;
             return cone;
+        })
+        .customThreeObjectUpdate((obj, point) => {
+            // Optional: make home taller dynamically if needed
+            if (point.lat === homePoint.lat && point.lng === homePoint.lng) {
+                obj.scale.set(1.2, 1.2, 1.2);
+            }
         });
 
     // ----- Tooltip -----
