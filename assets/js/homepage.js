@@ -422,7 +422,15 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     window.addEventListener('load', () => {
         const homeButtons = document.querySelectorAll('#nav-home, #sidebar-home');
-        homeButtons.forEach(btn => setActive(btn));
+        homeButtons.forEach(btn => btn.classList.add('active'));
+
+	homeButtons.forEach(btn => {
+	    let parentDropdown = btn.closest('.has-subdropdown');
+            while (parentDropdown) {
+                parentDropdown.classList.add('active-parent');
+                parentDropdown = parentDropdown.parentElement.closest('.has-subdropdown');
+            }
+        });
     });
 
     // ----- Sidebar & Hamburger Menu -----
