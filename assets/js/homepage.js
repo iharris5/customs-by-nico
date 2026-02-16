@@ -661,8 +661,9 @@ if (globeContainer) {
 
     globe.onPointClick(mesh => {
         if (!mesh) return;
+	const pointData = mesh.userData;
 	globe.controls().autoRotate = false;
-        globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
+        globe.pointOfView({ lat: pointData.lat, lng: pointData.lng, altitude: 1.5 }, 1000);
 	highlightPoint(mesh);
 	tooltip.textContent = pointData.label;
 	tooltip.style.display = 'block';
@@ -686,11 +687,10 @@ if (globeContainer) {
         if (point && point !== selectedPoint && point.mesh) {
             point.mesh.scale.set(1.2,1.2,1.2);
         }
-        globe.pointsData(globe.pointsData());
     });
 
     // Update tooltip on each animation frame
-    (function animateTooltip() {
+    function animateTooltip() {
          if (selectedPoint) {
         const screenCoords = globe.getScreenCoords(
             selectedPoint.userData.lat,
