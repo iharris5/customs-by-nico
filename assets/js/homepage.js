@@ -605,7 +605,6 @@ if (globeContainer) {
     const globe = Globe()(globeContainer)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
         .backgroundColor('rgba(0,0,0,0)')
-        .pointColor(() => 'transparent')
         .pointsData(points) // now points exists!
         .customThreeObject(point => {
             const material = new THREE.MeshStandardMaterial({ color: '#FF0000' });
