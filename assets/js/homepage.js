@@ -600,7 +600,7 @@ if (globeContainer) {
         return Math.max(minSize, Math.min(maxSize, window.innerWidth - padding * 2));
     }
 
-    const homePoint = { lat: 40.9115, lng: -73.7824 };
+    const homePoint = { lat: 40.9200, lng: -73.7863 };
 
     const globe = Globe()(globeContainer)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
