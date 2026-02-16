@@ -541,13 +541,18 @@ if (nextBtn) {
     });
 
     // Close HEADER dropdowns when a category is clicked
-    document.querySelectorAll('.site-header [data-category], .site-header [data-section]').forEach(item => {
-      item.addEventListener('click', () => {
-        document.querySelectorAll('.site-header .has-subdropdown.open')
-          .forEach(openMenu => openMenu.classList.remove('open'));
-      });
+    document.querySelector('.site-header').addEventListener('click', (e) => {
+       const clickedNavItem = e.target.closest('[data-category], [data-section]');
+       if (!clickedNavItem) return;
+
+       // If the click was on a dropdown toggle (like Hand Painted or Air Force 1)
+       if (e.target.closest('.js-toggle')) return;
+
+       // Otherwise close all open dropdowns
+       document.querySelectorAll('.site-header .has-subdropdown.open')
+         .forEach(openMenu => openMenu.classList.remove('open'));
     });
-    
+ 
     // Close sidebar when window is resized above mobile breakpoint
     function handleResize() {
       const sidebar = document.getElementById('sidebar');
