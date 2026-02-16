@@ -228,8 +228,9 @@ let currentIndex = 0;
 
 function updateCarousel() {
     slides.forEach((slide, index) => {
-        slide.classList.remove('active');
-        if(index === currentIndex) slide.classList.add('active');
+	const offset = index - currentIndex;
+	slide.style.transform = `translateX(${offset * 220}px) scale(${index === currentIndex ? 1 : 0.8})`;
+        slide.style.zIndex = index === currentIndex ? 5 : 1;
     });
 }
 
@@ -240,7 +241,7 @@ updateCarousel();
 setInterval(() => {
     currentIndex = (currentIndex + 1) % slides.length;
     updateCarousel();
-}, 3000);
+}, 5000);
 
 // Click to select
 slides.forEach((slide, index) => {

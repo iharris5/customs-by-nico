@@ -475,7 +475,7 @@ body.with-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: -20px;
     overflow-x: hidden;           /* allows horizontal scroll */
     padding-bottom: 20px;
     position: relative;
@@ -483,17 +483,15 @@ body.with-header {
 
 .review-slide {
     flex: 0 0 250px;             /* prevent shrinking */
-    transition: all 0.5s ease;
+    transition: all 0.5s ease, z-index 0.5s ease;
     transform: scale(0.8);
-    opacity: 0.5;
+    z-index: 1;
     cursor: pointer;
 }
 
 .review-slide.active {
-	flex: 0 0 350px;
 	transform: scale(1);
-	opacity: 1;
-	z-index: 2;
+	z-index: 5;
 }
 
 .review-slide img {
