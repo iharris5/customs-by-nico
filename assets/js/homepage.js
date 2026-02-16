@@ -629,14 +629,14 @@ if (globeContainer) {
 
     // ----- Tooltip -----
     const tooltip = document.createElement('div');
-    tooltip.style.position = 'absolute';
+    tooltip.style.position = 'fixed';
     tooltip.style.padding = '5px 10px';
     tooltip.style.background = 'rgba(0,0,0,0.7)';
     tooltip.style.color = 'white';
     tooltip.style.borderRadius = '4px';
     tooltip.style.pointerEvents = 'none';
-    tooltip.style.display = 'none';
-    tooltip.style.zIndex = '1000';
+    tooltip.style.opacity = '0';
+    tooltip.style.zIndex = '9999';
     document.body.appendChild(tooltip);
 
     let selectedPoint = null;
@@ -665,12 +665,12 @@ if (globeContainer) {
         globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
 	highlightPoint(point);
 	tooltip.textContent = point.label;
-	tooltip.style.display = 'block';
+	tooltip.style.opacity = '1';
 	selectedPoint = point;
     });
 
     globe.onGlobeClick(() => {
-        tooltip.style.display = 'none';
+        tooltip.style.display = '0';
         if (selectedPoint && selectedPoint.mesh) {
             selectedPoint.mesh.scale.set(1, 1, 1);
             selectedPoint = null;
@@ -696,8 +696,10 @@ if (globeContainer) {
         );
 
         if (screenCoords) {
-            tooltip.style.left = screenCoords.x + 'px';
-            tooltip.style.top = (screenCoords.y - 20) + 'px';
+            tooltip.style.left =
+			(screenCoords.x - tooltip.offsetWidth / 2) +  'px';
+            tooltip.style.top = 
+			(screenCoords.y - tooltip.offsetHeight - 10) + 'px';
         }
     }
 
