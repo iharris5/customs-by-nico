@@ -604,6 +604,76 @@ if (globeContainer) {
         .pointLabel('label')
         .pointColor(() => '#87CEEB')
         .pointAltitude(0.05);
+        
+	// ----- Tooltip setup -----
+const tooltip = document.createElement('div');
+tooltip.style.position = 'absolute';
+tooltip.style.padding = '5px 10px';
+tooltip.style.background = 'rgba(0,0,0,0.7)';
+tooltip.style.color = 'white';
+tooltip.style.borderRadius = '4px';
+tooltip.style.pointerEvents = 'none';
+tooltip.style.display = 'none';
+tooltip.style.zIndex = '1000';
+document.body.appendChild(tooltip);
+
+let selectedPoint = null;
+
+// ----- Highlight function -----
+function highlightPoint(point) {
+    // Reset previous point
+    if (selectedPoint) {
+        selectedPoint.radius = 0.01;  // normal size
+        selectedPoint.color = '#87CEEB';
+    }
+
+    // Highlight current point
+    point.radius = 0.03;  // bigger pin
+    point.color = '#FF0000'; // red
+    selectedPoint = point;
+
+    globe.pointsData(globe.pointsData()); // trigger re-render
+}
+
+// ----- Use custom Three.js object for points (cone as marker) -----
+globe.pointsThreeObject(point => {
+    const color = point === selectedPoint ? 0xff0000 : 0x87ceeb;
+    const radius = point === selectedPoint ? 0.03 : 0.01;
+
+    const geometry = new THREE.ConeGeometry(radius, 0.06, 6);
+    const material = new THREE.MeshStandardMaterial({ color });
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.lookAt(new THREE.Vector3(0, 0, 0));
+    return mesh;
+});
+
+// ----- Click to fly and highlight -----
+globe.onPointClick(point => {
+    if (!point) return;
+
+    // Smoothly fly to the point
+    globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
+
+    // Highlight only the clicked point
+    highlightPoint(point);
+
+    // Show tooltip
+    tooltip.style.display = 'block';
+    tooltip.textContent = point.label;
+});
+
+// ----- Hide tooltip when clicking elsewhere -----
+globeContainer.addEventListener('click', e => {
+    if (!e.target.closest('.globe-point')) {
+        tooltip.style.display = 'none';
+    }
+});
+
+// ----- Tooltip follows mouse -----
+window.addEventListener('mousemove', e => {
+    tooltip.style.left = e.clientX + 10 + 'px';
+    tooltip.style.top = e.clientY + 10 + 'px';
+});
 
 	// Responsive sizing
         function resizeGlobe() {
