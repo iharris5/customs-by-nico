@@ -75,8 +75,18 @@ p {
     color: white; /* highlight */
 }
 
-.nav-item.active {
-	border-bottom: 2px solid white;
+.nav-item.active,
+.dropdown li.active,
+.subdropdown li.active,
+.category-list li.active {
+    color: white !important;
+    font-weight: bold;
+}
+
+.dropdown li.active,
+.subdropdown li.active, 
+.category-list li.active {
+	background-color: #3a3938;
 }
 
 .caret {

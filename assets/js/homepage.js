@@ -8,6 +8,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutUs = document.getElementById('about-us');
     const globeSection = document.querySelector('.globe-section');
 
+    // ----- Active State Handling -----
+function setActive(element) {
+    // Remove active from EVERYTHING in nav + sidebar + dropdowns
+    document.querySelectorAll(
+        '.nav-item, .dropdown li, .subdropdown li, .category-list li'
+    ).forEach(el => el.classList.remove('active'));
+
+    if (element) {
+        element.classList.add('active');
+
+        // Also highlight parent dropdown headers if inside one
+        let parentDropdown = element.closest('.has-subdropdown');
+        while (parentDropdown) {
+            parentDropdown.classList.add('active');
+            parentDropdown = parentDropdown.parentElement.closest('.has-subdropdown');
+        }
+    }
+}
+
     function updateBanner(category = null) {
         const banner = document.getElementById('banner-switch');
         if (!banner) return;
@@ -95,6 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
         homeBtn.addEventListener('click', (e) => {
             e.preventDefault();
             showIntro();
+
+	    const navHome = document.getElementById('nav-home');
+	    if (navHome) setActive(navHome);
         });
     }
 
@@ -123,10 +145,11 @@ function showSection(section) {
 
 // Attach click listeners to all section buttons
 document.querySelectorAll('.section-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', function (e) {
         e.preventDefault();
-        const section = btn.dataset.section; // "create-own" or "about-us"
+        const section = this.dataset.section; // "create-own" or "about-us"
         showSection(section);
+	setActive(this);
 
         // Close sidebar if open
         if (sidebar.classList.contains('open')) {
@@ -161,9 +184,10 @@ document.querySelectorAll('.section-btn').forEach(btn => {
 
     // ----- Category buttons (sidebar or nav) -----
     document.querySelectorAll('[data-category]').forEach(button => {
-        button.addEventListener('click', () => {
-            const category = button.getAttribute('data-category');
+        button.addEventListener('click', function () {
+            const category = this.getAttribute('data-category');
             showImages(category);
+	    setActive(this);
         });
     });
 
