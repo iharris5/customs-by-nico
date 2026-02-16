@@ -228,9 +228,10 @@ let currentIndex = 0;
 
 function updateCarousel() {
     slides.forEach((slide, index) => {
-	const offset = index - currentIndex;
-	slide.style.transform = `translateX(${offset * 220}px) scale(${index === currentIndex ? 1 : 0.8})`;
-        slide.style.zIndex = index === currentIndex ? 5 : 1;
+        slide.classList.remove('active', 'prev', 'next');
+        if (index === currentIndex) slide.classList.add('active');
+        if (index === (currentIndex - 1 + slides.length) % slides.length) slide.classList.add('prev');
+        if (index === (currentIndex + 1) % slides.length) slide.classList.add('next');
     });
 }
 
