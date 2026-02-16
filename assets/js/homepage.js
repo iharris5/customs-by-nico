@@ -35,6 +35,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 }
+    function setActiveHome() {
+    const homeButtons = document.querySelectorAll('#nav-home, #sidebar-home');
+
+    // Remove active from ALL buttons
+    document.querySelectorAll('.nav-item, .dropdown li, .subdropdown li, .category-list li, .section-btn, #sidebar-home, #nav-home')
+        .forEach(el => el.classList.remove('active'));
+
+    // Remove active-parent from all parent dropdowns
+    document.querySelectorAll('.has-subdropdown').forEach(parent => parent.classList.remove('active-parent'));
+
+    // Add active to all home buttons
+    homeButtons.forEach(btn => btn.classList.add('active'));
+
+    // Highlight parent dropdowns
+    homeButtons.forEach(btn => {
+        let parentDropdown = btn.closest('.has-subdropdown');
+        while (parentDropdown) {
+            parentDropdown.classList.add('active-parent');
+            parentDropdown = parentDropdown.parentElement.closest('.has-subdropdown');
+        }
+    });
+}
 
     function updateBanner(category = null) {
         const banner = document.getElementById('banner-switch');
@@ -123,13 +145,16 @@ document.addEventListener("DOMContentLoaded", function () {
         homeBtn.addEventListener('click', (e) => {
             e.preventDefault();
             showIntro();
-
-	    const navHome = document.getElementById('nav-home');
-	    const sidebarHome = document.getElementById('sidebar-home');
-	    if (navHome) setActive(navHome);
-	    if (sidebarHome) setActive(sidebarHome);
-        });
+	    setActiveHome();
+	});
     }
+    ['#nav-home', '#sidebar-home'].forEach(selector => {
+        const btn = document.querySelector(selector);
+        if (btn) btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            homeBtn.click();
+	});
+    });
 
     // Generic section toggle
 function showSection(section) {
@@ -486,18 +511,7 @@ if (nextBtn) {
     if (aboutUs) aboutUs.style.display = 'none';
     updateBannerTitle('');
 
-    window.addEventListener('load', () => {
-        const homeButtons = document.querySelectorAll('#nav-home, #sidebar-home');
-        homeButtons.forEach(btn => btn.classList.add('active'));
-
-	homeButtons.forEach(btn => {
-	    let parentDropdown = btn.closest('.has-subdropdown');
-            while (parentDropdown) {
-                parentDropdown.classList.add('active-parent');
-                parentDropdown = parentDropdown.parentElement.closest('.has-subdropdown');
-            }
-        });
-    });
+    window.addEventListener('load', setActiveHome);
 
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
