@@ -689,18 +689,20 @@ if (globeContainer) {
 
     // Update tooltip on each animation frame
     function animateTooltip() {
-         if (selectedPoint) {
-        const screenCoords = globe.getScreenCoords(
-            selectedPoint.lat,
-            selectedPoint.lng,
-            0
-        );
+        if (selectedPoint) {
+            const screenCoords = globe.getScreenCoords(
+                selectedPoint.lat,
+                selectedPoint.lng,
+                0
+            );
 
         if (screenCoords) {
+	    const rect = globeContainer.getBoundingClientRect();
+
             tooltip.style.left =
-			(screenCoords.x - tooltip.offsetWidth / 2) +  'px';
+			(rect.left + screenCoords.x - tooltip.offsetWidth / 2) +  'px';
             tooltip.style.top = 
-			(screenCoords.y - tooltip.offsetHeight - 12) + 'px';
+			(rect.top + screenCoords.y - tooltip.offsetHeight - 12) + 'px';
 	    tooltip.style.display = 'block';
         }
     }
