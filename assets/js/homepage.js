@@ -15,13 +15,16 @@ function setActive(element) {
         '.nav-item, .dropdown li, .subdropdown li, .category-list li'
     ).forEach(el => el.classList.remove('active'));
 
-    if (element) {
-        element.classList.add('active');
+    document.querySelectorAll('.has-subdropdown')
+        .forEach(el => el.classList.remove('active-parent'));
+
+    if (!element) return;
+    element.classList.add('active');
 
         // Also highlight parent dropdown headers if inside one
         let parentDropdown = element.closest('.has-subdropdown');
         while (parentDropdown) {
-            parentDropdown.classList.add('active');
+            parentDropdown.classList.add('active-parent');
             parentDropdown = parentDropdown.parentElement.closest('.has-subdropdown');
         }
     }
@@ -417,6 +420,9 @@ document.querySelectorAll('.section-btn').forEach(btn => {
     if (createOwn) createOwn.style.display = 'none';
     if (aboutUs) aboutUs.style.display = 'none';
     updateBannerTitle('');
+
+    const initialHome = document.querySelectorAll('#nav-home, #sidebar-home');
+    initialHome.forEach(el => setActive(el));
 
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');

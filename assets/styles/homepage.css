@@ -89,6 +89,11 @@ p {
 	background-color: #3a3938;
 }
 
+.has-subdropdown.active-parent > .label {
+    color: white !important;
+    font-weight: bold;
+}
+
 .caret {
   display: inline-block;
   width: 7px;
