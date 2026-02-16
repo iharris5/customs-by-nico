@@ -90,7 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ----- Helper to show images and hide intro -----
     function showImages(category, tag = null) {
-        updateBanner(category);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+	updateBanner(category);
 
 	if (category === 'anime') {
     	    updateBannerTitle('Anime');
@@ -126,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ----- Show intro again (home button) -----
     function showIntro() {
+	window.scrollTo({ top: 0, behavior: 'smooth' });
 	updateBanner();
 	updateBannerTitle('');
 
@@ -158,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Generic section toggle
 function showSection(section) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     updateBanner();
     if (section === 'create') {
 	    updateBannerTitle('Create Your Own');
