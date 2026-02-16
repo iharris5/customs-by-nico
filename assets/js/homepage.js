@@ -692,14 +692,14 @@ if (globeContainer) {
     function animateTooltip() {
          if (selectedPoint) {
         const screenCoords = globe.getScreenCoords(
-            selectedPoint.userData.lat,
-            selectedPoint.userData.lng,
+            selectedPoint.lat,
+            selectedPoint.lng,
             0
         );
 
         if (screenCoords) {
-            tooltip.style.left = `${screenCoords.x}px`;
-            tooltip.style.top = `${screenCoords.y - 20}px`;
+            tooltip.style.left = screenCoords.x + 'px';
+            tooltip.style.top = (screenCoords.y - 20) + 'px';
         }
     }
 
