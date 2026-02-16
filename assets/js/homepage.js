@@ -671,11 +671,9 @@ if (globeContainer) {
 
     globe.onGlobeClick(() => {
         tooltip.style.display = 'none';
-        if (selectedPoint) {
-            selectedPoint.radius = 0.08;
-            selectedPoint.color = '#87CEEB';
+        if (selectedPoint && selectedPoint.mesh) {
+            selectedPoint.mesh.scale.set(1, 1, 1);
             selectedPoint = null;
-            globe.pointsData(globe.pointsData());
         }
 
 	globe.controls().autoRotate = true;
