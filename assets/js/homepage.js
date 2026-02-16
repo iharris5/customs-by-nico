@@ -726,16 +726,22 @@ if (globeContainer) {
 	selectedPoint = point;
     });
 
-    globe.onGlobeClick(() => {
-        tooltip.style.display = 'none';
-	tooltip.style.opacity = '0';
-        if (selectedPoint && selectedPoint.mesh) {
-            selectedPoint.mesh.scale.set(1, 1, 1);
-            selectedPoint = null;
-        }
+    // Hide tooltip and reset selected point on any click
+document.addEventListener('click', (e) => {
+    if (!selectedPoint) return;
 
-	globe.controls().autoRotate = true;
-    });
+    tooltip.style.display = 'none';
+    tooltip.style.opacity = '0';
+
+    if (selectedPoint.mesh) {
+        selectedPoint.mesh.scale.set(1, 1, 1); // reset size
+    }
+
+    selectedPoint = null;
+
+    // Re-enable globe auto-rotate
+    if (globe) globe.controls().autoRotate = true;
+});
 
     // Optional: hover effect
     globe.onPointHover(point => {
