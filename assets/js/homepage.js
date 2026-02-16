@@ -12,22 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function setActive(element) {
     if (!element) return;
 
-    // Determine the category/section this button represents
-    const category = element.dataset.category || element.dataset.section || 'home';
-
-    // Remove active from ALL buttons with the same category
-    document.querySelectorAll(`[data-category="${category}"], [data-section="${category}"]`).forEach(el => {
+    // Remove active from ALL buttons
+    document.querySelectorAll('.nav-item, .dropdown li, .subdropdown li, .category-list li, .section-btn').forEach(el => {
         el.classList.remove('active');
     });
 
-    // Remove active from all other buttons
-    document.querySelectorAll(
-        '.nav-item, .dropdown li, .subdropdown li, .category-list li'
-    ).forEach(el => {
-        if (!el.dataset.category && !el.dataset.section) el.classList.remove('active');
-    });
+    // Remove active-parent from all parent dropdowns
+    document.querySelectorAll('.has-subdropdown').forEach(parent => parent.classList.remove('active-parent'));
 
-    // Add active to ALL buttons with this category
+    // Determine the category/section
+    const category = element.dataset.category || element.dataset.section || 'home';
+
+    // Add active to clicked element and all buttons with same category
     document.querySelectorAll(`[data-category="${category}"], [data-section="${category}"]`).forEach(el => {
         el.classList.add('active');
 
