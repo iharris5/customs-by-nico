@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!element) return;
 
     // Remove active from ALL buttons
-    document.querySelectorAll('.nav-item, .dropdown li, .subdropdown li, .category-list li, .section-btn').forEach(el => {
+    document.querySelectorAll('.nav-item, .dropdown li, .subdropdown li, .category-list li, .section-btn, #sidebar-home').forEach(el => {
         el.classList.remove('active');
     });
 
@@ -125,7 +125,9 @@ document.addEventListener("DOMContentLoaded", function () {
             showIntro();
 
 	    const navHome = document.getElementById('nav-home');
+	    const sidebarHome = document.getElementById('sidebar-home');
 	    if (navHome) setActive(navHome);
+	    if (sidebarHome) setActive(sidebarHome);
         });
     }
 
