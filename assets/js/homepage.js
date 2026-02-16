@@ -670,7 +670,8 @@ if (globeContainer) {
     });
 
     globe.onGlobeClick(() => {
-        tooltip.style.display = '0';
+        tooltip.style.display = 'none';
+	tooltip.style.opacity = '0';
         if (selectedPoint && selectedPoint.mesh) {
             selectedPoint.mesh.scale.set(1, 1, 1);
             selectedPoint = null;
@@ -699,7 +700,8 @@ if (globeContainer) {
             tooltip.style.left =
 			(screenCoords.x - tooltip.offsetWidth / 2) +  'px';
             tooltip.style.top = 
-			(screenCoords.y - tooltip.offsetHeight - 10) + 'px';
+			(screenCoords.y - tooltip.offsetHeight - 12) + 'px';
+	    tooltip.style.display = 'block';
         }
     }
 
