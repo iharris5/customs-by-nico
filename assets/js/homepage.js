@@ -235,20 +235,28 @@ function updateCarousel() {
     });
 }
 
-// Initial active
-updateCarousel();
-
 // Auto-slide every 3 seconds
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateCarousel();
-}, 5000);
+function startAutoSlide() {
+	autoSlideTimer = setInterval(() => {
+    	    currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        }, 5000);
+}
+
+function resetAutoSlide() {
+        clearInterval(autoSlideTimer);
+        startAutoSlide();
+}
+
+updateCarousel();
+startAutoSlide();
 
 // Click to select
 slides.forEach((slide, index) => {
     slide.addEventListener('click', () => {
         currentIndex = index;
         updateCarousel();
+	resetAutoSlide();
     });
 });
 
