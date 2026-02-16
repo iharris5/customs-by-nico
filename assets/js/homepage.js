@@ -563,9 +563,20 @@ if (globeContainer) {
     const globe = Globe()(globeContainer)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
 	.backgroundColor('rgba(0,0,0,0)')
-	.pointAltitude(0.05)
-	.pointRadius(0.08)
-	.pointColor(() => '#87CEEB');
+	.pointAltitude(0)
+	.pointLabel('label')
+	.pointsData(points)
+	.customThreeObject(point => {
+            // Red map-pin marker
+            const material = new THREE.MeshStandardMaterial({ color: '#FF0000' });
+            const cone = new THREE.Mesh(
+                new THREE.ConeGeometry(0.2, 0.5, 6), // radius, height, segments
+                material
+            );
+            cone.rotation.x = Math.PI; // point downwards
+            cone.userData = point; // attach data for click/hover
+            return cone;
+        });
 
         const points = [
             { lat: 40.9200, lng: -73.7863, label: "New Rochelle, NY" },
@@ -624,14 +635,14 @@ if (globeContainer) {
     let selectedPoint = null;
 
     function highlightPoint(point) {
-        if (selectedPoint) {
-            selectedPoint.radius = 0.08;
-            selectedPoint.color = '#87CEEB';
+        if (selectedPoint && selectedPoint.mesh) {
+            selectedPoint.mesh.scale.set(1,1,1);
         }
-        point.radius = 0.15;
-        point.color = '#FF0000';
+
+    	if (!point) return;
+        // Enlarge selected pin
+        point.mesh.scale.set(1.5, 1.5, 1.5);
         selectedPoint = point;
-        globe.pointsData(globe.pointsData());
     }
 
     function updateTooltipPosition() {
@@ -665,8 +676,8 @@ if (globeContainer) {
 
     // Optional: hover effect
     globe.onPointHover(point => {
-        if (point && point !== selectedPoint) {
-            point.radius = 0.12;
+        if (point && point !== selectedPoint && point.mesh) {
+            point.mesh.scale.set(1.2,1.2,1.2);
         }
         globe.pointsData(globe.pointsData());
     });
