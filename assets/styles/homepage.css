@@ -474,7 +474,7 @@ body.with-header {
 .review-carousel {
     overflow: hidden;           
     width: 100%;
-    height: clamp(350px, 50vw, 700px);
+    height: clamp(350px, 40vw, 700px);
     padding-bottom: 20px;
     position: relative;
 }
