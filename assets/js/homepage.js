@@ -260,6 +260,19 @@ slides.forEach((slide, index) => {
     });
 });
 
+// Arrow click handlers
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+        resetAutoSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+        resetAutoSlide();
+    });
+
     // ----- All images -----
     const images = [
         { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular' },

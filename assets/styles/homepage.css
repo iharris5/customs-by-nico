@@ -518,6 +518,36 @@ body.with-header {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+.carousel-arrow {
+    display: none; /* only show on mobile */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-arrow.prev {
+    left: 10px;
+}
+
+.carousel-arrow.next {
+    right: 10px;
+}
+
+/* Show arrows only on smaller screens */
+@media (max-width: 768px) {
+    .carousel-arrow {
+        display: block;
+    }
+}
+
 body {
 	background-color: #e1dfdb;
 }
