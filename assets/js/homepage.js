@@ -646,7 +646,7 @@ if (globeContainer) {
             selectedPoint.mesh.scale.set(1,1,1);
         }
 
-    	if (!point) return;
+    	if (!point || !point.mesh) return;
         // Enlarge selected pin
         point.mesh.scale.set(1.5, 1.5, 1.5);
         selectedPoint = point;
@@ -659,15 +659,14 @@ if (globeContainer) {
         tooltip.style.top = (coords[1] - 20) + 'px'; // above point
     }
 
-    globe.onPointClick(mesh => {
-        if (!mesh) return;
-	const pointData = mesh.userData;
+    globe.onPointClick(point => {
+        if (!point) return;
 	globe.controls().autoRotate = false;
-        globe.pointOfView({ lat: pointData.lat, lng: pointData.lng, altitude: 1.5 }, 1000);
-	highlightPoint(mesh);
-	tooltip.textContent = pointData.label;
+        globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
+	highlightPoint(point);
+	tooltip.textContent = point.label;
 	tooltip.style.display = 'block';
-	selectedPoint = mesh;
+	selectedPoint = point;
     });
 
     globe.onGlobeClick(() => {
