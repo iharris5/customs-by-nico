@@ -473,16 +473,27 @@ body.with-header {
 
 .review-carousel {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
-    overflow-x: auto;           /* allows horizontal scroll */
+    overflow-x: hidden;           /* allows horizontal scroll */
     padding-bottom: 20px;
-    scroll-snap-type: x mandatory;
+    position: relative;
 }
 
 .review-slide {
-    flex: 0 0 auto;             /* prevent shrinking */
-    width: clamp(250px, 35%, 565px); /* min 250px, max 565px */
-    scroll-snap-align: start;
+    flex: 0 0 250px;             /* prevent shrinking */
+    transition: all 0.5s ease;
+    transform: scale(0.8);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.review-slide.active {
+	flex: 0 0 350px;
+	transform: scale(1);
+	opacity: 1;
+	z-index: 2;
 }
 
 .review-slide img {
@@ -490,6 +501,7 @@ body.with-header {
     height: auto;
     border-radius: 10px;
     object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 body {

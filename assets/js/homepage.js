@@ -222,6 +222,34 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         }
     });
 
+    // ----- Review carousel -----
+const slides = document.querySelectorAll('.review-slide');
+let currentIndex = 0;
+
+function updateCarousel() {
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if(index === currentIndex) slide.classList.add('active');
+    });
+}
+
+// Initial active
+updateCarousel();
+
+// Auto-slide every 3 seconds
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+}, 3000);
+
+// Click to select
+slides.forEach((slide, index) => {
+    slide.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+    });
+});
+
     // ----- All images -----
     const images = [
         { image_url: 'assets/views/main/images/IMG_1421.jpeg', category: 'most-popular' },
