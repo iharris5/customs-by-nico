@@ -563,7 +563,11 @@ if (globeContainer) {
     const globe = Globe()(globeContainer)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
 	.backgroundColor('rgba(0,0,0,0)')
-        .pointsData([
+	.pointAltitude(0.05)
+	.pointRadius(0.08)
+	.pointColor(() => '#87CEEB');
+
+        const points = [
             { lat: 40.9200, lng: -73.7863, label: "New Rochelle, NY" },
             { lat: 40.8448, lng: -73.8648, label: "Bronx, NY" },
             { lat: 40.9126, lng: -73.8371, label: "Mount Vernon, NY" },
@@ -601,87 +605,83 @@ if (globeContainer) {
 	    { lat: 39.3701, lng: -76.4545, label: "Nottingham, MD" },
 	    { lat: 41.5840, lng: -73.8087, label: "Hopewell Junction, NY" },
 	    { lat: 34.0549, lng: -118.2426, label: "Los Angeles, California" }
-        ])
-        .pointLabel('label')
-        .pointColor(() => '#87CEEB')
-        .pointAltitude(0.05);
-        
-	// ----- Tooltip setup -----
-const tooltip = document.createElement('div');
-tooltip.style.position = 'absolute';
-tooltip.style.padding = '5px 10px';
-tooltip.style.background = 'rgba(0,0,0,0.7)';
-tooltip.style.color = 'white';
-tooltip.style.borderRadius = '4px';
-tooltip.style.pointerEvents = 'none';
-tooltip.style.display = 'none';
-tooltip.style.zIndex = '1000';
-document.body.appendChild(tooltip);
+        ];
+	 globe.pointsData(points)
+         .pointLabel('label');
 
-let selectedPoint = null;
+    // ----- Tooltip -----
+    const tooltip = document.createElement('div');
+    tooltip.style.position = 'absolute';
+    tooltip.style.padding = '5px 10px';
+    tooltip.style.background = 'rgba(0,0,0,0.7)';
+    tooltip.style.color = 'white';
+    tooltip.style.borderRadius = '4px';
+    tooltip.style.pointerEvents = 'none';
+    tooltip.style.display = 'none';
+    tooltip.style.zIndex = '1000';
+    document.body.appendChild(tooltip);
 
-// ----- Highlight function -----
-function highlightPoint(point) {
-    // Reset previous point
-    if (selectedPoint) {
-        selectedPoint.altitude = 0.05;  
-        selectedPoint.color = '#87CEEB';
+    let selectedPoint = null;
+
+    function highlightPoint(point) {
+        if (selectedPoint) {
+            selectedPoint.radius = 0.08;
+            selectedPoint.color = '#87CEEB';
+        }
+        point.radius = 0.15;
+        point.color = '#FF0000';
+        selectedPoint = point;
+        globe.pointsData(globe.pointsData());
     }
 
-    // Highlight current point
-    point.radius = 0.15; 
-    point.color = '#FF0000'; // red
-    selectedPoint = point;
+    function updateTooltip(point) {
+        if (!point) return;
+        const coords = globe.getCoords(point); // screen coordinates [x, y]
+        tooltip.style.left = coords[0] + 'px';
+        tooltip.style.top = (coords[1] - 20) + 'px'; // above point
+        tooltip.textContent = point.label;
+        tooltip.style.display = 'block';
+    }
 
-    globe.pointsData(globe.pointsData()); // trigger re-render
-}
+    globe.onPointClick(point => {
+        if (!point) return;
+        globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
+        highlightPoint(point);
+        updateTooltip(point);
+    });
 
-globe.onPointClick(point => {
-    globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
-    highlightPoint(point);
-    tooltip.style.display = 'block';
-    tooltip.textContent = point.label;
-});
-
-// ----- Click to fly and highlight -----
-globe.onPointClick(point => {
-    if (!point) return;
-
-    // Smoothly fly to the point
-    globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
-
-    // Highlight only the clicked point
-    highlightPoint(point);
-
-    // Show tooltip
-    tooltip.style.display = 'block';
-    tooltip.textContent = point.label;
-});
-
-// ----- Tooltip follows mouse -----
-window.addEventListener('mousemove', e => {
-    tooltip.style.left = e.clientX + 10 + 'px';
-    tooltip.style.top = e.clientY + 10 + 'px';
-});
-
-	// Responsive sizing
-        function resizeGlobe() {
-            const size = getGlobeSize();
-            globe.width(size).height(size);
+    globe.onGlobeClick(() => {
+        tooltip.style.display = 'none';
+        if (selectedPoint) {
+            selectedPoint.radius = 0.08;
+            selectedPoint.color = '#87CEEB';
+            selectedPoint = null;
+            globe.pointsData(globe.pointsData());
         }
+    });
 
-        // Initial size
-        resizeGlobe();
+    // Optional: hover effect
+    globe.onPointHover(point => {
+        if (point && point !== selectedPoint) {
+            point.radius = 0.12;
+        }
+        globe.pointsData(globe.pointsData());
+    });
 
-        // Update size on window resize
-        window.addEventListener('resize', resizeGlobe);
+    // ----- Responsive size -----
+    function resizeGlobe() {
+        const size = getGlobeSize();
+        globe.width(size).height(size);
+    }
 
-	const origin = { lat: 40.9115, lng: -73.7824 }; // New Rochelle, NY
+    resizeGlobe();
+    window.addEventListener('resize', resizeGlobe);
 
-	const destinations = globe.pointsData(); // get all points you just set
+    // ----- Arcs from origin -----
+    const origin = { lat: 40.9115, lng: -73.7824 }; // New Rochelle, NY
     globe.arcsData(
-        destinations
-            .filter(d => !(d.lat === origin.lat && d.lng === origin.lng)) // skip origin itself
+        points
+            .filter(d => !(d.lat === origin.lat && d.lng === origin.lng))
             .map(d => ({
                 startLat: origin.lat,
                 startLng: origin.lng,
