@@ -9,24 +9,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const globeSection = document.querySelector('.globe-section');
 
     // ----- Active State Handling -----
-function setActive(element) {
-    // Remove active from EVERYTHING in nav + sidebar + dropdowns
+    function setActive(element) {
+    if (!element) return;
+
+    // Determine the category/section this button represents
+    const category = element.dataset.category || element.dataset.section || 'home';
+
+    // Remove active from ALL buttons with the same category
+    document.querySelectorAll(`[data-category="${category}"], [data-section="${category}"]`).forEach(el => {
+        el.classList.remove('active');
+    });
+
+    // Remove active from all other buttons
     document.querySelectorAll(
         '.nav-item, .dropdown li, .subdropdown li, .category-list li'
-    ).forEach(el => el.classList.remove('active'));
+    ).forEach(el => {
+        if (!el.dataset.category && !el.dataset.section) el.classList.remove('active');
+    });
 
-    document.querySelectorAll('.has-subdropdown')
-        .forEach(el => el.classList.remove('active-parent'));
+    // Add active to ALL buttons with this category
+    document.querySelectorAll(`[data-category="${category}"], [data-section="${category}"]`).forEach(el => {
+        el.classList.add('active');
 
-    if (!element) return;
-    element.classList.add('active');
-
-        // Also highlight parent dropdown headers if inside one
-        let parentDropdown = element.closest('.has-subdropdown');
+        // highlight parent dropdowns if any
+        let parentDropdown = el.closest('.has-subdropdown');
         while (parentDropdown) {
             parentDropdown.classList.add('active-parent');
             parentDropdown = parentDropdown.parentElement.closest('.has-subdropdown');
         }
+    });
 }
 
     function updateBanner(category = null) {
