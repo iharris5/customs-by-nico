@@ -600,6 +600,14 @@ function handleHeaderOverflow() {
     // Hide More if empty
     moreMenu.style.display =
         moreDropdown.children.length ? 'inline-flex' : 'none';
+    
+    const activeItem = navList.querySelector('.active'); // currently active item
+    const activeInsideMore = moreDropdown.contains(activeItem);
+
+    if (!activeInsideMore) {
+        moreMenu.classList.remove('active');
+        moreMenu.classList.remove('active-parent');
+    }
 }
 
 // Run on load and resize
