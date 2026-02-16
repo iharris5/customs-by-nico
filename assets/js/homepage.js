@@ -610,7 +610,6 @@ if (globeContainer) {
         .pointsData(points) // now points exists!
         .customThreeObject(point => {
             const material = new THREE.MeshStandardMaterial({ color: '#FF0000' });
-	    let height = 0.5;
 
 	    const height = (point.lat === homePoint.lat && point.lng === homePoint.lng) ? 1.2 : 0.5;
 
