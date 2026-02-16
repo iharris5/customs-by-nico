@@ -261,17 +261,23 @@ slides.forEach((slide, index) => {
 });
 
 // Arrow click handlers
+const prevBtn = document.getElementById('review-prev');
+const nextBtn = document.getElementById('review-next');
+
+if (prevBtn) {
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateCarousel();
         resetAutoSlide();
     });
-
+}
+if (nextBtn) {
     nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % slides.length;
         updateCarousel();
         resetAutoSlide();
     });
+}
 
     // ----- All images -----
     const images = [
