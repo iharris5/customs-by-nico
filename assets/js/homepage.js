@@ -514,7 +514,10 @@ if (nextBtn) {
     if (aboutUs) aboutUs.style.display = 'none';
     updateBannerTitle('');
 
-    window.addEventListener('load', setActiveHome);
+    window.addEventListener('load', () => {
+	    window.scrollTo(0, 0);
+	    setActiveHome();
+    });
 
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
