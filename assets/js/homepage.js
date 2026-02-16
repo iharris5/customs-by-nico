@@ -634,20 +634,21 @@ if (globeContainer) {
         globe.pointsData(globe.pointsData());
     }
 
-    function updateTooltip(point) {
-        if (!point) return;
-        const coords = globe.getCoords(point); // screen coordinates [x, y]
+    function updateTooltipPosition() {
+        if (!selectedPoint) return;
+        const coords = globe.getCoords(selectedPoint); // screen coordinates [x, y]
         tooltip.style.left = coords[0] + 'px';
         tooltip.style.top = (coords[1] - 20) + 'px'; // above point
-        tooltip.textContent = point.label;
-        tooltip.style.display = 'block';
     }
 
     globe.onPointClick(point => {
         if (!point) return;
+	globe.controls().autoRotate = false;
         globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
-        highlightPoint(point);
-        updateTooltip(point);
+	highlightPoint(point);
+	tooltip.textContent = point.label;
+	tooltip.style.display = 'block';
+        updateTooltipPosition();
     });
 
     globe.onGlobeClick(() => {
@@ -658,6 +659,8 @@ if (globeContainer) {
             selectedPoint = null;
             globe.pointsData(globe.pointsData());
         }
+
+	globe.controls().autoRotate = true;
     });
 
     // Optional: hover effect
@@ -667,6 +670,12 @@ if (globeContainer) {
         }
         globe.pointsData(globe.pointsData());
     });
+
+    // Update tooltip on each animation frame
+    (function animateTooltip() {
+        requestAnimationFrame(animateTooltip);
+        updateTooltipPosition();
+    })();
 
     // ----- Responsive size -----
     function resizeGlobe() {
