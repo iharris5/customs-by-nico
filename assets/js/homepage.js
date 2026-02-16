@@ -617,6 +617,7 @@ if (globeContainer) {
                 material
             );
             cone.rotation.x = Math.PI;
+	    point.mesh = cone;
             cone.userData = point;
             return cone;
         })
