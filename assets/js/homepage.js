@@ -608,8 +608,14 @@ if (globeContainer) {
         .pointsData(points) // now points exists!
         .customThreeObject(point => {
             const material = new THREE.MeshStandardMaterial({ color: '#FF0000' });
+	    let height = 0.5;
+
+	    if (point.lat === 40.9115 && point.lng === -73.7824) {
+                height = 1.0; // Making New Ro taller
+            }
+
             const cone = new THREE.Mesh(
-                new THREE.ConeGeometry(0.2, 0.5, 6),
+                new THREE.ConeGeometry(0.2, height, 6),
                 material
             );
             cone.rotation.x = Math.PI;
