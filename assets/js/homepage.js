@@ -420,8 +420,10 @@ document.querySelectorAll('.section-btn').forEach(btn => {
     if (aboutUs) aboutUs.style.display = 'none';
     updateBannerTitle('');
 
-    const initialHome = document.querySelectorAll('#nav-home, #sidebar-home');
-    initialHome.forEach(el => setActive(el));
+    window.addEventListener('load', () => {
+        const homeButtons = document.querySelectorAll('#nav-home, #sidebar-home');
+        homeButtons.forEach(btn => setActive(btn));
+    });
 
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
