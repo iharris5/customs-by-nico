@@ -541,7 +541,7 @@ if (nextBtn) {
     });
 
     // Close HEADER dropdowns when a category is clicked
-    document.querySelectorAll('.site-header [data-category]').forEach(item => {
+    document.querySelectorAll('.site-header [data-category], .site-header [data-section]').forEach(item => {
       item.addEventListener('click', () => {
         document.querySelectorAll('.site-header .has-subdropdown.open')
           .forEach(openMenu => openMenu.classList.remove('open'));
