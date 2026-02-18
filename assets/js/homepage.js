@@ -525,33 +525,38 @@ const introVideo = document.getElementById('intro-video');
 
 if (!introAnimation || !introVideo) return;
 
-    // Required for iOS autoplay
-    introVideo.muted = true;
-    introVideo.playsInline = true;
+// iOS/Android autoplay fixes
+introVideo.muted = true;
+introVideo.playsInline = true;
+introVideo.setAttribute('muted', '');
+introVideo.setAttribute('playsinline', '');
+introVideo.setAttribute('webkit-playsinline', '');
 
-    // Try to autoplay
-    const playPromise = introVideo.play();
+// Try to autoplay
+const playPromise = introVideo.play();
 
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            // If autoplay fails, show controls
-            introVideo.controls = true;
-        });
-    }
+if (playPromise !== undefined) {
+    playPromise.catch(() => {
+        // If autoplay fails, show controls
+        introVideo.controls = true;
+    });
+}
 
-    // Fade ONLY when video actually ends
-    introVideo.addEventListener("ended", function () {
-    introAnimation.style.opacity = "0";
+// Fade out when video naturally ends
+introVideo.addEventListener('ended', () => {
+    introAnimation.style.opacity = '0';
     setTimeout(() => introAnimation.remove(), 1000);
 });
 
-// Fallback in case video never plays/ends
+// Fallback: max wait in case autoplay fails or video never ends
+const fallbackTime = introVideo.duration ? (introVideo.duration + 1) * 1000 : 6000;
+
 setTimeout(() => {
     if (introAnimation.parentNode) {
-        introAnimation.style.opacity = "0";
+        introAnimation.style.opacity = '0';
         setTimeout(() => introAnimation.remove(), 1000);
     }
-}, 6000); // adjust time to video length + buffer
+}, fallbackTime);
 
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
