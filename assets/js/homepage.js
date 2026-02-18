@@ -519,6 +519,25 @@ if (nextBtn) {
 	    setActiveHome();
     });
 
+    // ----- Intro animation fadeout -----
+const introAnimation = document.getElementById('intro-animation');
+const introVideo = document.getElementById('intro-video');
+
+if (introAnimation && introVideo) {
+    // Optional: wait for video to be ready
+    introVideo.addEventListener('canplaythrough', () => {
+        setTimeout(() => {
+            // Fade out
+            introAnimation.style.opacity = '0';
+            
+            // Remove from DOM after fade duration (matches your CSS transition: 1s)
+            setTimeout(() => {
+                introAnimation.remove();
+            }, 1000);
+        }, 3000); // <-- 3 seconds delay before fade
+    });
+}
+
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
