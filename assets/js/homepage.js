@@ -523,20 +523,35 @@ if (nextBtn) {
 const introAnimation = document.getElementById('intro-animation');
 const introVideo = document.getElementById('intro-video');
 
-if (introAnimation && introVideo) {
-    // Optional: wait for video to be ready
-    introVideo.addEventListener('canplaythrough', () => {
-        setTimeout(() => {
-            // Fade out
-            introAnimation.style.opacity = '0';
-            
-            // Remove from DOM after fade duration (matches your CSS transition: 1s)
-            setTimeout(() => {
-                introAnimation.remove();
-            }, 1000);
-        }, 3000); // <-- 3 seconds delay before fade
-    });
-}
+if (!introAnimation || !introVideo) return;
+
+    // Required for iOS autoplay
+    introVideo.muted = true;
+    introVideo.playsInline = true;
+
+    // Try to autoplay
+    const playPromise = introVideo.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            // If autoplay fails, show controls
+            introVideo.controls = true;
+        });
+    }
+
+    // Fade ONLY when video actually ends
+    introVideo.addEventListener("ended", function () {
+    introAnimation.style.opacity = "0";
+    setTimeout(() => introAnimation.remove(), 1000);
+});
+
+// Fallback in case video never plays/ends
+setTimeout(() => {
+    if (introAnimation.parentNode) {
+        introAnimation.style.opacity = "0";
+        setTimeout(() => introAnimation.remove(), 1000);
+    }
+}, 6000); // adjust time to video length + buffer
 
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
