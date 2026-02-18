@@ -989,5 +989,5 @@ body {
 #intro-animation video {
     width: 100%;
     height: 100%;
-    object-fit: fill; /* fill the screen while keeping aspect ratio */
+    object-fit: contain;
 }
