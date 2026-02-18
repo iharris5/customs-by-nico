@@ -525,13 +525,6 @@ const introVideo = document.getElementById('intro-video');
 
 if (!introAnimation || !introVideo) return;
 
-// iOS/Android autoplay fixes
-introVideo.muted = true;
-introVideo.playsInline = true;
-introVideo.setAttribute('muted', '');
-introVideo.setAttribute('playsinline', '');
-introVideo.setAttribute('webkit-playsinline', '');
-
 // Try to autoplay
 const playPromise = introVideo.play();
 
@@ -549,7 +542,7 @@ introVideo.addEventListener('ended', () => {
 });
 
 // Fallback: max wait in case autoplay fails or video never ends
-const fallbackTime = introVideo.duration ? (introVideo.duration + 1) * 1000 : 6000;
+const fallbackTime = introVideo.duration ? (introVideo.duration + 3) * 1000 : 10000;
 
 setTimeout(() => {
     if (introAnimation.parentNode) {
