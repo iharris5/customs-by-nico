@@ -595,6 +595,9 @@ body {
 	.banner-container {
 		height: auto;
 	}
+	.banner-spacer {
+		height: 60vw;
+	}
 }
 
 /* Dark overlay */
@@ -635,7 +638,7 @@ body {
 }
 
 .banner-spacer {
-	height: clamp(250px, 45vw, 400px);
+	height: 400px;
 }
 
 .content {
