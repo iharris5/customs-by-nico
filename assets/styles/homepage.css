@@ -585,18 +585,18 @@ body {
         height: auto;
 	max-height: 400px;
         object-fit: contain;
+	aspect-ratio: 16 / 9;
 }
 
 @media (max-width: 768px) {
 	.banner {
-		object-fit: contain;
 		max-height: 60vw;
 	}
 	.banner-container {
 		height: auto;
 	}
 	.banner-spacer {
-		height: 60vw;
+		max-height: 60vw;
 	}
 }
 
@@ -638,7 +638,9 @@ body {
 }
 
 .banner-spacer {
-	height: 400px;
+	max-height: 400px;
+	aspect-ratio: 16 / 9;
+	width: 100%;
 }
 
 .content {
