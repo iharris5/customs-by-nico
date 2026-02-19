@@ -541,7 +541,7 @@ introVideo.play().catch(() => {
 introVideo.addEventListener('ended', removeIntro);
 
 // Fallback: max wait in case video hangs or autoplay never starts
-const fallbackTime = introVideo.duration ? (introVideo.duration + 3) * 1000 : 10000;
+const fallbackTime = introVideo.duration ? (introVideo.duration + 3) * 1000 : 4000;
 setTimeout(() => {
     if (introAnimation.parentNode) {
         removeIntro();
