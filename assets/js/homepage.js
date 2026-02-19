@@ -523,34 +523,31 @@ if (nextBtn) {
 const introAnimation = document.getElementById('intro-animation');
 const introVideo = document.getElementById('intro-video');
 
-if (!introAnimation || !introVideo) return;
+if (introAnimation && introVideo) {
 
-// Try to autoplay
-const playPromise = introVideo.play();
-
-if (playPromise !== undefined) {
-    playPromise.catch(() => {
-        // If autoplay fails, show controls
-        introVideo.controls = true;
-    });
-}
-
-// Fade out when video naturally ends
-introVideo.addEventListener('ended', () => {
+// Function to remove overlay with fade
+const removeIntro = () => {
     introAnimation.style.opacity = '0';
     setTimeout(() => introAnimation.remove(), 1000);
+    }
+
+// Try to autoplay
+introVideo.play().catch(() => {
+    // Autoplay failed → skip intro
+    removeIntro();
 });
 
-// Fallback: max wait in case autoplay fails or video never ends
-const fallbackTime = introVideo.duration ? (introVideo.duration + 3) * 1000 : 10000;
+// Fade out naturally when video ends
+introVideo.addEventListener('ended', removeIntro);
 
+// Fallback: max wait in case video hangs or autoplay never starts
+const fallbackTime = introVideo.duration ? (introVideo.duration + 3) * 1000 : 10000;
 setTimeout(() => {
     if (introAnimation.parentNode) {
-        introAnimation.style.opacity = '0';
-        setTimeout(() => introAnimation.remove(), 1000);
+        removeIntro();
     }
 }, fallbackTime);
-
+}
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
