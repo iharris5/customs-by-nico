@@ -575,7 +575,7 @@ body {
 	top: 0;
 	width: 100%;
 	position: fixed;
-	height: clamp(250px, 45vw, 400px);
+	height: auto;
 	z-index: -10;
 	overflow: hidden;
 }
@@ -590,7 +590,10 @@ body {
 @media (max-width: 768px) {
 	.banner {
 		object-fit: contain;
-		background-color: black;
+		max-height: 60vw;
+	}
+	.banner-container {
+		height: auto;
 	}
 }
 
