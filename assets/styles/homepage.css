@@ -986,8 +986,14 @@ body {
     transition: opacity 1s ease;
 }
 
-#intro-animation video {
+#intro-animation video, 
+#intro-animation img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+#intro-fallback {
+    display: none;
 }

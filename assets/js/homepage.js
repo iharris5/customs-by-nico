@@ -522,32 +522,40 @@ if (nextBtn) {
     // ----- Intro animation fadeout -----
 const introAnimation = document.getElementById('intro-animation');
 const introVideo = document.getElementById('intro-video');
+const introFallback = document.getElementById('intro-fallback');
 
 if (introAnimation && introVideo) {
 
 // Function to remove overlay with fade
-const removeIntro = () => {
-    introAnimation.style.opacity = '0';
-    setTimeout(() => introAnimation.remove(), 1000);
-    }
+const removeIntro = (delay = 0) => {
+    setTimeout(() => {
+	introAnimation.style.opacity = '0';
+    	setTimeout(() => introAnimation.remove(), 1000);
+    }, delay);
+};
 
 // Try to autoplay
-introVideo.play().catch(() => {
+introVideo.play().then(() => {
     // Autoplay failed → skip intro
-    removeIntro();
-});
+    introVideo.addEventListener('ended', () => removeIntro());
+    setTimeout(() => {
+            if (introAnimation.parentNode) {
+                removeIntro();
+            }
+    }, 6000);
 
-// Fade out naturally when video ends
-introVideo.addEventListener('ended', removeIntro);
+     }).catch(() => {
+        // Autoplay failed → show fallback image
+        introVideo.style.display = 'none';
+        if (introFallback) {
+            introFallback.style.display = 'block';
+        }
 
-// Fallback: max wait in case video hangs or autoplay never starts
-const fallbackTime = introVideo.duration ? (introVideo.duration + 3) * 1000 : 4000;
-setTimeout(() => {
-    if (introAnimation.parentNode) {
-        removeIntro();
-    }
-}, fallbackTime);
+        // Show image briefly then fade
+        removeIntro(2000); // show image for 2 seconds
+    });
 }
+
     // ----- Sidebar & Hamburger Menu -----
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
