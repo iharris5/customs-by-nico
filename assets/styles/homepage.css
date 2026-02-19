@@ -582,8 +582,9 @@ body {
 
 .banner {
         width: 100%;
-        height: clamp(250px, 45vw, 400px);
-        object-fit: cover;
+        height: auto;
+	max-height: 400px;
+        object-fit: contain;
 }
 
 @media (max-width: 768px) {
