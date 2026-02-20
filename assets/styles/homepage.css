@@ -610,8 +610,8 @@ body {
     font-weight: 700;
     text-align: center;
     margin: 0;
-    padding: 20px 56px;
-    border: 5px solid white;
+    padding: clamp(8px, 2vw, 20px) clamp(12px, 5vw, 56px);
+    border: clamp(2px, 0.5vw, 5px) solid white;
     pointer-events: none;
 }
 
