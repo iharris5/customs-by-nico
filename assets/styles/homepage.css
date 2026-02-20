@@ -625,7 +625,6 @@ body {
 }
 
 .banner-spacer {
-	max-height: 400px;
 	height: auto;
 	aspect-ratio: 16 / 9;
 	width: 100%;
