@@ -424,12 +424,16 @@ if (nextBtn) {
     }
 
     // ----- Group images by title (or first tag or "Other") -----
-    const groups = {};
-    filtered.forEach(img => {
-        let groupKey = img.title || (img.tags && img.tags[0]) || '';
-        if (!groups[groupKey]) groups[groupKey] = { title: groupKey, images: [] };
-        groups[groupKey].images.push(img);
-    });
+    let groups = {};
+    if (category === 'most-popular') {
+	    groups['all'] = { title: '', images: filtered };
+    } else {
+    	filtered.forEach(img => {
+        	let groupKey = img.title || (img.tags && img.tags[0]) || '';
+        	if (!groups[groupKey]) groups[groupKey] = { title: groupKey, images: [] };
+        	groups[groupKey].images.push(img);
+        });
+    }
 
     // ----- Custom anime order -----
     const animeOrder = [
