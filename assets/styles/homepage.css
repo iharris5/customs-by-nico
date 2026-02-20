@@ -588,18 +588,6 @@ body {
 	aspect-ratio: 16 / 9;
 }
 
-@media (max-width: 768px) {
-	.banner {
-		max-height: 60vw;
-	}
-	.banner-container {
-		height: auto;
-	}
-	.banner-spacer {
-		max-height: 60vw;
-	}
-}
-
 /* Dark overlay */
 .banner-overlay {
     position: absolute;
@@ -637,12 +625,14 @@ body {
 	padding: 0;
 }
 
+/*
 .banner-spacer {
 	max-height: 400px;
 	height: auto;
 	aspect-ratio: 16 / 9;
 	width: 100%;
 }
+*/
 
 .content {
         position: relative;
