@@ -163,7 +163,7 @@ function showSection(section) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     updateBanner();
     if (section === 'create') {
-	    updateBannerTitle('Create Your Own');
+	    updateBannerTitle('Order Form');
     } else if (section === 'about') {
 	    updateBannerTitle('About');
     }
