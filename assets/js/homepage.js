@@ -311,7 +311,7 @@ if (nextBtn) {
 
     // ----- All images -----
     const images = [
-        { image_url: 'assets/views/main/images/IMG_1421.jpeg', categories: ['most-popular'] },
+        { image_url: 'assets/views/main/images/IMG_8725.JPG', categories: ['cartoons', 'most-popular'], tags: ['snoopy'], title: 'Snoopy', character: 'Snoopy, Joe Cool, & Woodstock' },
 	{ image_url: 'assets/views/main/images/IMG_2364.jpg', categories: ['floral'], character: 'Blue Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_4295.jpg', categories: ['floral'], character: 'Lilac Blossoms' },
         { image_url: 'assets/views/main/images/IMG_3553.jpeg', categories: ['floral', 'most-popular'], character: 'Pink Blossoms' },
@@ -377,7 +377,6 @@ if (nextBtn) {
         { image_url: 'assets/views/main/images/IMG_8114.jpg', categories: ['schools-sports'], title: 'Baseball', character: 'Crushers' },
 	{ image_url: 'assets/views/main/images/IMG_8738.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Chivas Locas' },
 	{ image_url: 'assets/views/main/images/IMG_8734.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Club de Guadalajara' },
-        { image_url: 'assets/views/main/images/IMG_8725.JPG', categories: ['cartoons', 'most-popular'], tags: ['snoopy'], title: 'Snoopy', character: 'Snoopy, Joe Cool, & Woodstock' },
 	{ image_url: 'assets/views/main/images/IMG_8724.JPG', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'DJ Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8729.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Ninja 400 & Gromm Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8726.JPG', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy' },
@@ -402,7 +401,8 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_3951.jpeg', categories: ['baby-shoes'], character: 'Sesame Street:\nElmo & Cookie Monster' },
 	{ image_url: 'assets/views/main/images/IMG_7846.jpg', categories: ['cleats'], title: 'Cleats' },
 	{ image_url: 'assets/views/main/images/IMG_7648.jpg', categories: ['cleats'], title: 'Cleats' },
-	{ image_url: 'assets/views/main/images/IMG_0447.jpg', categories: ['cleats'], title: 'Cleats' }
+	{ image_url: 'assets/views/main/images/IMG_0447.jpg', categories: ['cleats'], title: 'Cleats' },
+	{ image_url: 'assets/views/main/images/IMG_1421.jpeg', categories: ['most-popular'] }
     ];
 
     // ----- Display images -----
