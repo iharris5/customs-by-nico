@@ -624,6 +624,10 @@ body {
 	padding: 0;
 }
 
+.anime-banner .banner-title {
+	top: 45%;
+}
+
 .banner-spacer {
 	height: clamp(200px, 30vw, 400px);
 	width: 100%;
