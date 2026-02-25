@@ -575,14 +575,14 @@ body {
 	top: 70px;
 	width: 100%;
 	position: fixed;
-	height: auto;
+	height: 25vw;
 	z-index: -10;
 	overflow: hidden;
 }
 
 .banner {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
 	display: block;
 }
@@ -622,10 +622,6 @@ body {
 .banner-title.empty {
 	border: none;
 	padding: 0;
-}
-
-.anime-banner .banner-title {
-	top: 15%;
 }
 
 .banner-spacer {

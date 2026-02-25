@@ -60,15 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateBanner(category = null) {
         const banner = document.getElementById('banner-switch');
-	const container = document.querySelector('.banner-container');
-        if (!banner || !container) return;
+        if (!banner) return;
 
         if (category === 'anime') {
             banner.src = 'assets/views/main/images/IMG_2888_Original.JPG';
- 	    container.classList.add('anime-banner');
         } else {
             banner.src = 'assets/views/main/images/CustomsByNico.png';
-	    container.classList.remove('anime-banner');
         }
     }
     
