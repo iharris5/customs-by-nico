@@ -404,9 +404,12 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8745.JPG', categories: ['baby-shoes'], character: 'Pink Split Swoosh' },
 	{ image_url: 'assets/views/main/images/IMG_8744.jpg', categories: ['baby-shoes'], character: 'Red Split Swoosh' },
 	{ image_url: 'assets/views/main/images/IMG_3951.jpeg', categories: ['baby-shoes'], character: 'Sesame Street:\nElmo & Cookie Monster' },
-	{ image_url: 'assets/views/main/images/IMG_7846.jpg', categories: ['cleats'], title: 'Cleats' },
+	{ image_url: 'assets/views/main/images/IMG_8798.jpg', categories: ['cleats'], title: 'Cleats' },
 	{ image_url: 'assets/views/main/images/IMG_7648.jpg', categories: ['cleats'], title: 'Cleats' },
+	{ image_url: 'assets/views/main/images/IMG_7846.jpg', categories: ['cleats'], title: 'Cleats' },
+	{ image_url: 'assets/views/main/images/IMG_8799.jpg', categories: ['cleats'], title: 'Cleats' },
 	{ image_url: 'assets/views/main/images/IMG_0447.jpg', categories: ['cleats'], title: 'Cleats' },
+	{ image_url: 'assets/views/main/images/IMG_8797.jpg', categories: ['cleats'], title: 'Cleats' },
 	{ image_url: 'assets/views/main/images/IMG_1421.jpeg', categories: ['most-popular'] }
     ];
 
