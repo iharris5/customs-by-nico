@@ -409,6 +409,24 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8797.jpg', categories: ['cleats'], title: 'Cleats' },
 	{ image_url: 'assets/views/main/images/IMG_1421.jpeg', categories: ['most-popular'] }
     ];
+    
+    const container = document.querySelector('.shoe-container');
+
+images.forEach(file => {
+  const img = document.createElement('img');
+
+  // replace extension with .webp
+  const webpFile = file.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+
+  img.src = `assets/views/main/webp/${webpFile}`;
+  img.loading = "lazy";
+
+  img.onerror = function() {
+	  img.src = `assets/views/main/images/${file}`;
+  };
+
+  container.appendChild(img);
+});
 
     // ----- Display images -----
     function displayImages(category, tag = null) {
@@ -513,7 +531,10 @@ if (nextBtn) {
         if (closeBtn) closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
 
         lightbox.addEventListener('click', e => {
-            if (e.target === lightbox) lightbox.style.display = 'none';
+            const image = lightbox.querySelector('.lightbox-img');
+	    if (!image.contains(e.target)) {
+		    lightbox.style.display = 'none';
+	    }
         });
     }
 
