@@ -410,24 +410,6 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_1421.jpeg', categories: ['most-popular'] }
     ];
     
-    const container = document.querySelector('.shoe-container');
-
-images.forEach(file => {
-  const img = document.createElement('img');
-
-  // replace extension with .webp
-  const webpFile = file.replace(/\.(jpg|jpeg|png)$/i, ".webp");
-
-  img.src = `assets/views/main/webp/${webpFile}`;
-  img.loading = "lazy";
-
-  img.onerror = function() {
-	  img.src = `assets/views/main/images/${file}`;
-  };
-
-  container.appendChild(img);
-});
-
     // ----- Display images -----
     function displayImages(category, tag = null) {
     if (!container) return;
@@ -495,8 +477,18 @@ images.forEach(file => {
             div.classList.add('shoe-pic');
 
             const imageElement = document.createElement('img');
-            imageElement.src = img.image_url;
-            imageElement.alt = img.character || '';
+            const originalPath = img.image_url;
+            const filename = originalPath.split('/').pop();
+	    const webpFile = filename.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+
+	    imageElement.src = `assets/views/main/webp/${webpFile}`;
+	    imageElement.loading = "lazy";
+
+	    imageElement.onerror = function() {
+    	    imageElement.src = originalPath;
+	    };
+
+	    imageElement.alt = img.character || '';
             imageElement.classList.add('shoe-pic');
 
             const caption = document.createElement('div');
