@@ -240,7 +240,7 @@ p {
 .about-container {
         display: flex;
         flex-direction: column;
-        gap: 80px;
+        gap: 50px;
         margin: 0 auto;
         max-width: 1050px;
 }
