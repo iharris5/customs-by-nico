@@ -252,10 +252,10 @@ p {
 }
 
 .timeline-pic {
-        flex: 0 0 320px;
         display: flex;
         justify-content: center;
-	flex-shrink: 0;
+	width: clamp(260px, 5vw, 460px);
+	height: auto;
 }
 
 .timeline-pic img {
