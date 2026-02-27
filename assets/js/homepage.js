@@ -522,11 +522,10 @@ if (nextBtn) {
         const closeBtn = lightbox.querySelector('.close');
         if (closeBtn) closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
 
-        lightbox.addEventListener('click', e => {
-            const image = lightbox.querySelector('.lightbox-img');
-	    if (!image.contains(e.target)) {
-		    lightbox.style.display = 'none';
-	    }
+        document.addEventListener('click', (e) => {
+            const lightbox = document.getElementById('lightbox');
+	    if (!lightbox || lightbox.style.display !== 'flex') return;
+	    lightbox.style.display = 'none';
         });
     }
 
