@@ -516,7 +516,7 @@ if (nextBtn) {
         const closeBtn = lightbox.querySelector('.close');
 
         document.querySelectorAll('.shoe-pic img').forEach(img => {
-            img.addEventListener('click', () => {
+            img.addEventListener('click', e => {
 		e.stopPropagation();
                 lightboxImage.src = img.src;
                 lightbox.style.display = 'flex';
@@ -526,7 +526,7 @@ if (nextBtn) {
         if (closeBtn) {
 		closeBtn.addEventListener('click', e => {
 			e.stopPropagation();
-			lightbox.style.display = 'none');
+			lightbox.style.display = 'none';
 		});
 	}
  
