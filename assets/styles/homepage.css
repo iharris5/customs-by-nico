@@ -254,7 +254,7 @@ p {
 .timeline-pic {
         display: flex;
         justify-content: center;
-	width: clamp(260px, 5vw, 460px);
+	width: clamp(260px, 45vw, 460px);
 	height: auto;
 }
 
