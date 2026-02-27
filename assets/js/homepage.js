@@ -511,21 +511,31 @@ if (nextBtn) {
     function setupLightbox() {
         const lightbox = document.getElementById('lightbox');
         if (!lightbox) return;
+	
+	const lightboxImage = lightbox.querySelector('.lightbox-img');
+        const closeBtn = lightbox.querySelector('.close');
 
         document.querySelectorAll('.shoe-pic img').forEach(img => {
             img.addEventListener('click', () => {
-                lightbox.querySelector('.lightbox-img').src = img.src;
+		e.stopPropagation();
+                lightboxImage.src = img.src;
                 lightbox.style.display = 'flex';
             });
         });
 
-        const closeBtn = lightbox.querySelector('.close');
-        if (closeBtn) closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+        if (closeBtn) {
+		closeBtn.addEventListener('click', e => {
+			e.stopPropagation();
+			lightbox.style.display = 'none');
+		});
+	}
+ 
+	lightboxImage.addEventListener('click', e => e.stopPropagation());
 
-        document.addEventListener('click', (e) => {
-            const lightbox = document.getElementById('lightbox');
-	    if (!lightbox || lightbox.style.display !== 'flex') return;
-	    lightbox.style.display = 'none';
+        document.addEventListener('click', () => {
+	    if (lightbox.style.display === 'flex') {
+	    	lightbox.style.display = 'none';
+	    }
         });
     }
 
