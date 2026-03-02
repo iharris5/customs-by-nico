@@ -950,11 +950,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     padding: 0;
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
+    text-align: center;
 }
 
 .globe-title {
@@ -967,6 +969,7 @@ body {
 
 #globeViz {
     display: inline-block; /* shrink to the size of the canvas */
+    vertical-align: middle;
     width: auto;
     height: auto;
     max-width: 100vw;
