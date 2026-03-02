@@ -976,8 +976,6 @@ body {
     display: block;
     pointer-events: auto;
     background: transparent;
-    width: 100%;
-    height: auto;
 }
 
 #intro-animation {
