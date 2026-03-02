@@ -761,7 +761,7 @@ if (globeContainer) {
         const padding = 40;
 	const containerWidth = globeContainer.offsetWidth;
 
-        return Math.max(minSize, Math.min(maxSize, containerWidth - padding);
+        return Math.max(minSize, Math.min(maxSize, containerWidth - padding));
     }
 
     const homePoint = { lat: 40.9200, lng: -73.7863 };
