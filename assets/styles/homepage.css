@@ -290,7 +290,7 @@ p {
 
 @media (max-width: 768px) {
     .timeline-item {
-        flex-direction: column;
+        flex-direction: column !important;
         align-items: center;
         text-align: center;
     }
