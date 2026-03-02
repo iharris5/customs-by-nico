@@ -64,7 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (category === 'anime') {
             banner.src = 'assets/views/main/images/IMG_2888_Original.JPG';
-        } else {
+        } else if (category === 'about') {
+	    banner.src = 'assets/views/main/images/About-Us-Banner.JPG';
+	} else {
             banner.src = 'assets/views/main/images/CustomsByNico.png';
         }
     }
@@ -311,7 +313,10 @@ if (nextBtn) {
 
     // ----- All images -----
     const images = [
-        { image_url: 'assets/views/main/images/IMG_8725.JPG', categories: ['cartoons', 'most-popular'], tags: ['snoopy'], title: 'Snoopy', character: 'Snoopy, Joe Cool, & Woodstock' },
+	{ image_url: 'assets/views/main/images/IMG_8830.jpg', categories: ['most-popular'], character: 'Bad Bunny' },
+	{ image_url: 'assets/views/main/images/IMG_5527.jpeg', categories: ['most-popular'] },
+	{ image_url: 'assets/views/main/images/IMG_8725.JPG', categories: ['cartoons', 'most-popular'], tags: ['snoopy'], title: 'Snoopy', character: 'Snoopy, Joe Cool, & Woodstock' },
+	{ image_url: 'assets/views/main/images/IMG_0006.jpg', categories: ['most-popular'], character: 'Pink Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_2364.jpg', categories: ['floral'], character: 'Blue Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_4295.jpg', categories: ['floral'], character: 'Lilac Blossoms' },
         { image_url: 'assets/views/main/images/IMG_3553.jpeg', categories: ['floral', 'most-popular'], character: 'Pink Blossoms' },
@@ -377,8 +382,8 @@ if (nextBtn) {
         { image_url: 'assets/views/main/images/IMG_8114.jpg', categories: ['schools-sports'], title: 'Baseball', character: 'Crushers' },
 	{ image_url: 'assets/views/main/images/IMG_8738.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Chivas Locas' },
 	{ image_url: 'assets/views/main/images/IMG_8734.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Club de Guadalajara' },
-	{ image_url: 'assets/views/main/images/IMG_1957.jpeg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid' },
-	{ image_url: 'assets/views/main/images/IMG_1954.jpeg', categories: ['schools-sports'], title: 'Soccer' },
+	{ image_url: 'assets/views/main/images/IMG_1954.jpeg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid' },
+	{ image_url: 'assets/views/main/images/IMG_2282.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid CF' },
 	{ image_url: 'assets/views/main/images/IMG_8724.JPG', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'DJ Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8729.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Ninja 400 & Gromm Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8726.JPG', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy' },
