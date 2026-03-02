@@ -696,9 +696,16 @@ body {
 
 .shoe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* 2 images per row */
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
     column-gap: 30px; /* spacing between images */
     row-gap: 80px;
+}
+
+.shoe-grid > :last-child:nth-child(odd) {
+	grid-column: 1 / -1;
+	justify-self: center;
+	max-width: 500px;
+	width: 100%;
 }
 
 .shoe-grid .shoe-pic {
