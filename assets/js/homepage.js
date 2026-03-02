@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Generic section toggle
 function showSection(section) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    updateBanner();
+    updateBanner(section);
     if (section === 'create') {
 	    updateBannerTitle('Order Form');
     } else if (section === 'about') {
