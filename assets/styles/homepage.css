@@ -694,9 +694,12 @@ body {
     font-family: 'Playfair Display', serif; /* Playfair Display font */
     font-size: 32px;                         /* Equivalent to Word 24pt */
     margin-bottom: 50px;
-    padding-bottom: 5px;
+    padding: 1.5rem 0;
     text-align: center;
     font-weight: bold;
+    background-color: #303033;
+    box-shadow: 0 0 0 100vmax #303033;
+    clip-path: inset(0 -100vmax);
 }
 
 .shoe-grid {
