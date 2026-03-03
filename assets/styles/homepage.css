@@ -252,13 +252,17 @@ p {
         font-size: 38px;
 }
 
+.meet-text {
+	text-align: left;
+}
+
 .timeline-item {
 	display: flex;
 	align-items: flex-start;
 	gap: 45px;
 }
 
-.timeline-item:nth-child(even) {
+.timeline-item:nth-child(odd) {
 	flex-direction: row-reverse;
 }
 
@@ -305,11 +309,6 @@ p {
 
     .timeline-box {
         text-align: center;
-    }
-
-    .about-intro {
-	    flex-direction: column;
-	    text-align: center;
     }
 }
 
