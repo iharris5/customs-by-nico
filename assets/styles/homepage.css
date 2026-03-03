@@ -262,11 +262,11 @@ p {
 	gap: 45px;
 }
 
-.timeline-item:nth-of-type(odd) .timeline-box{
+.timeline-item:nth-of-type(odd) {
 	flex-direction: row-reverse;
 }
 
-.timeline-item:nth-of-type(even) .timeline-box{
+.timeline-item:nth-of-type(even) {
         flex-direction: row;
 }
 
