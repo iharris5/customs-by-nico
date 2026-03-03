@@ -319,7 +319,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8454.jpg', categories: ['colorways'], character: 'Raspberry Two-Tone' },	
         { image_url: 'assets/views/main/images/IMG_1566.jpeg', categories: ['colorways'], character: 'Brown Two-Tone' },
 	{ image_url: 'assets/views/main/images/IMG_6056.jpeg', categories: ['colorways'], character: 'Mocha Tri-Color' },
-        { image_url: 'assets/views/main/images/IMG_9383.jpeg', categories: ['colorways'], 'Black & White Split' },	
+        { image_url: 'assets/views/main/images/IMG_9383.jpeg', categories: ['colorways'], character: 'Black & White Split' },	
 	{ image_url: 'assets/views/main/images/IMG_1421.jpeg', categories: ['colorways'], character: 'Donut Drip Mids' },
 	{ image_url: 'assets/views/main/images/ice-cream.jpg', categories: ['colorways'], character: 'Ice Cream Drip' },
 	{ image_url: 'assets/views/main/images/IMG_8840.jpg', categories: ['colorways'], character: 'Black & Gray Cartoon' },
