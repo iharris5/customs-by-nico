@@ -194,38 +194,29 @@ p {
 	border: none;
 }
 
-.create-message {
-	position: relative;
-	margin: 0;
-	text-align: center;
-	background-color: #303033;
-	color: white;
-	width: 100vw;
-	padding: 32px 0;
-}
-
 .create-message p {
     font-family: 'Playfair Display', serif;
-    font-weight: 700;       
     font-size: 16px;
-    margin: 0;               
+    font-weight: 700;
+    color: #e1dfdb;
+    text-align: center;
+    margin: 0;
+    padding: 2rem 0;
+    background-color: #303033;
+    box-shadow: 0 0 0 100vmax #303033; /* extends background full width */
+    clip-path: inset(0 -100vmax);      /* prevents horizontal cutoff */
 }
-
-.create-own-header {
-	position: relative;
-        margin: 0;
-        text-align: center;
-        background-color: #303033;
-        color: white;
-        width: 100vw;
-        padding: 32px 0;
-}
-
 .create-own-header p {
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
     font-size: 32px;
     margin: 0;
+    padding: 2rem 0;
+    text-align: center;
+    font-weight: bold;
+    color: #e1dfdb;
+    background-color: #303033;
+    box-shadow: 0 0 0 100vmax #303033; /* spans full width */
+    clip-path: inset(0 -100vmax);      /* ensures full-width background */
 }
 
 .shipping {
