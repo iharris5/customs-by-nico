@@ -244,8 +244,10 @@ p {
 .create-own-section {
 	display: flex;
         align-items: flex-start;
+        max-width: 1050px;
+	margin: 0 auto;
 	width: 100%;
-        gap: 45px;
+	gap: 45px;
 }
 
 .shipping-text {
