@@ -179,7 +179,6 @@ p {
 .create-own {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	max-width: 1050px;
 	margin: 0 auto;
 	gap: 50px;
