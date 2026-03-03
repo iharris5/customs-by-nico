@@ -319,7 +319,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_0006.jpg', categories: ['most-popular'], character: 'Pink Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_2364.jpg', categories: ['floral'], character: 'Blue Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_4295.jpg', categories: ['floral'], character: 'Lilac Blossoms' },
-        { image_url: 'assets/views/main/images/IMG_3553.jpeg', categories: ['floral', 'most-popular'], character: 'Pink Blossoms' },
+        { image_url: 'assets/views/main/images/IMG_3553.jpeg', categories: ['floral'], character: 'Pink Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_0534.jpg', categories: ['floral'], character: 'Gold & Emerald Bling Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_8732.jpg', categories: ['floral'], character: 'Beauty & The Beast' },
 	{ image_url: 'assets/views/main/images/IMG_6161.JPG', categories: ['floral'] },   
