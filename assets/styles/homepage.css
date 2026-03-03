@@ -245,6 +245,13 @@ p {
         max-width: 1050px;
 }
 
+#meet-header {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 38px;
+}
+
 .timeline-item {
 	display: flex;
 	align-items: flex-start;
