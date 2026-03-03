@@ -234,6 +234,11 @@ p {
     	font-size: 38px;
 }
 
+.create-logo {
+	width: clamp(180px, 30vw, 300px);
+        height: auto;
+}
+
 .create-content {
 	display: flex;
 	flex-direction: column;
