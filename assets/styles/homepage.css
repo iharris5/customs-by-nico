@@ -245,6 +245,20 @@ p {
         max-width: 1050px;
 }
 
+.about-intro {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-intro .timeline-pic {
+    flex: 1;
+}
+
 .timeline-item {
 	display: flex;
 	align-items: flex-start;
@@ -298,6 +312,11 @@ p {
 
     .timeline-box {
         text-align: center;
+    }
+
+    .about-intro {
+	    flex-direction: column;
+	    text-align: center;
     }
 }
 
