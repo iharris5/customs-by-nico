@@ -316,7 +316,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8830.jpg', categories: ['most-popular', 'colorways'], character: 'Bad Bunny' },
 	{ image_url: 'assets/views/main/images/IMG_5527.jpeg', categories: ['most-popular', 'colorways'], character: 'Bad Bunny' },		
 	{ image_url: 'assets/views/main/images/IMG_9082_Original.JPEG', categories: ['colorways'], character: 'Blue Tri-Color' },
-	{ image_url: 'assets/views/main/images/IMG_8454.jpg', categories: ['colorways'], 'Raspberry Two-Tone' },	
+	{ image_url: 'assets/views/main/images/IMG_8454.jpg', categories: ['colorways'], character: 'Raspberry Two-Tone' },	
         { image_url: 'assets/views/main/images/IMG_1566.jpeg', categories: ['colorways'], character: 'Brown Two-Tone' },
 	{ image_url: 'assets/views/main/images/IMG_6056.jpeg', categories: ['colorways'], character: 'Mocha Tri-Color' },
         { image_url: 'assets/views/main/images/IMG_9383.jpeg', categories: ['colorways'], 'Black & White Split' },	
