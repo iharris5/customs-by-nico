@@ -358,6 +358,7 @@ p {
     .create-own-section {
 	    flex-direction: column;
 	    gap: 30px;
+	    align-items: center;
     }
 
     .shipping-logo {
