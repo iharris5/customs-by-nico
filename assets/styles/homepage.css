@@ -359,6 +359,17 @@ p {
 	    flex-direction: column;
 	    gap: 30px;
     }
+
+    .shipping-logo {
+	    display: flex;
+	    justify-content: center;
+	    width: 100%;
+	    max-width: 300px;
+    }
+
+    .shipping-logo.second {
+	    display: none;
+    }
 }
 
 .journey h2 {
