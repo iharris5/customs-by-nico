@@ -281,6 +281,18 @@ p {
 	width: fit-content;
 }
 
+.shipping-box a {
+    font-family: 'Merriweather', serif;  /* match paragraph text */
+    font-size: 19px;                     /* match paragraph size */
+    font-weight: bold;                    /* bold */
+    text-decoration: underline;           /* underline */
+    color: white;                         /* keep white to match text */
+    padding: 0;                           /* remove button padding */
+    background: none;                     /* remove any button background */
+    border: none;                         /* remove any border */
+    width: auto;                          /* natural width */
+}
+
 .about-container {
         display: flex;
         flex-direction: column;
