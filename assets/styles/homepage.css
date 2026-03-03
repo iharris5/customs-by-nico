@@ -206,7 +206,7 @@ p {
     box-shadow: 0 0 0 100vmax #303033; /* extends background full width */
     clip-path: inset(0 -100vmax);      /* prevents horizontal cutoff */
 }
-.create-own-header p {
+.create-own-header {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     margin: 0;
