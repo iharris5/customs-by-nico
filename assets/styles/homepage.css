@@ -284,9 +284,8 @@ p {
 .shipping-box a {
     font-family: 'Merriweather', serif;  /* match paragraph text */
     font-size: 19px;                     /* match paragraph size */
-    font-weight: bold;                    /* bold */
+    font-weight: 800;                    /* bold */
     text-decoration: underline;           /* underline */
-    color: white;                         /* keep white to match text */
     padding: 0;                           /* remove button padding */
     background: none;                     /* remove any button background */
     border: none;                         /* remove any border */
