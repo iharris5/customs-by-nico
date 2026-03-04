@@ -1116,6 +1116,9 @@ body {
 }
 
 .logo-slider {
+    position: relative;      /* normal flow */
+    width: 100vw;            /* full viewport width */
+    margin-left: calc(-50vw + 50%); /* neutralize any container centering/padding */
     width: 100%;
     overflow: hidden;   /* hides anything outside the viewport */
     display: flex;
