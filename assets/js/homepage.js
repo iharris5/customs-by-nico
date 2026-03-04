@@ -397,7 +397,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8728.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Dancing Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_3288.jpg', categories: ['cartoons'], tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch' },
 	{ image_url: 'assets/views/main/images/IMG_3312.JPG', categories: ['cartoons'], tags: ['disney'], title: 'Disney', character: 'Lilo & Stitch: Gule Leaves' },
-	{ image_url: 'assets/views/main/images/IMG_9571.JPG', categories: ['cartoons'], tags: ['dc'], title: 'DC', character: 'Batman: The Animated Series: Harley Quinn & The Joker' },
+	{ image_url: 'assets/views/main/images/IMG_9571.jpg', categories: ['cartoons'], tags: ['dc'], title: 'DC', character: 'Batman: The Animated Series: Harley Quinn & The Joker' },
 	{ image_url: 'assets/views/main/images/IMG_3192_Original.JPG', categories: ['cartoons'], tags: ['sanrio'], title: 'Sanrio', character: 'My Melody & Kuromi' },
 	{image_url: 'assets/views/main/images/PinkBratz.jpg', categories: ['cartoons'], title: 'Bratz', character: 'Pink Bratz' },
 	{image_url: 'assets/views/main/images/IMG_8846.jpg', categories: ['cartoons'], title: 'Bratz' },
