@@ -1116,28 +1116,26 @@ body {
 }
 
 .logo-slider {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    overflow: hidden;
-    background: #e1dfdb; /* match your page background or make transparent */
-    padding: 10px 0;
-    z-index: 500; /* above content but below header/footer if needed */
-}
-
-.logo-track {
+    overflow: hidden;   /* hides anything outside the viewport */
     display: flex;
-    gap: 50px; /* space between repeated logos */
-    animation: slide-logo 20s linear infinite; /* speed and looping */
+    justify-content: flex-start;
+    padding: 20px 0;    /* optional spacing */
 }
 
 .slider-logo {
-    width: clamp(80px, 8vw, 120px);
+    width: clamp(180px, 15vw, 300px); /* responsive size */
     height: auto;
+    display: block;
+    animation: slideLogo 8s linear infinite;
 }
 
-@keyframes slide-logo {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* adjust -50% if you have more logos */
+/* Slide from right to left across the full width of the viewport */
+@keyframes slideLogo {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
