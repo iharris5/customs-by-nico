@@ -1119,7 +1119,7 @@ body {
     position: relative;      /* normal flow */
     width: 100vw;            /* full viewport width */
     margin: 0;
-    overflow: hidden;   /* hides anything outside the viewport */
+    overflow: visible;   /* hides anything outside the viewport */
     display: flex;
     justify-content: flex-start;
     padding: 20px 0;    /* optional spacing */
