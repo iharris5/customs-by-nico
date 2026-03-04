@@ -1114,3 +1114,30 @@ body {
 #intro-fallback {
     display: none;
 }
+
+.logo-slider {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: #e1dfdb; /* match your page background or make transparent */
+    padding: 10px 0;
+    z-index: 500; /* above content but below header/footer if needed */
+}
+
+.logo-track {
+    display: flex;
+    gap: 50px; /* space between repeated logos */
+    animation: slide-logo 20s linear infinite; /* speed and looping */
+}
+
+.slider-logo {
+    width: clamp(80px, 8vw, 120px);
+    height: auto;
+}
+
+@keyframes slide-logo {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* adjust -50% if you have more logos */
+}
