@@ -523,18 +523,6 @@ function displayImagesFromResults(results, query = '') {
     if (!container) return;
     container.innerHTML = '';
 
-    // ----- Show main search header -----
-    if (query.trim() !== '') {
-        const headerSection = document.createElement('div');
-        headerSection.classList.add('shoe-group');
-
-        const mainHeader = document.createElement('h2');
-        mainHeader.textContent = `Showing results for: ${query}`;
-        headerSection.appendChild(mainHeader);
-
-        container.appendChild(headerSection);
-    }
-
     // ----- No results case -----
     if (!results.length) {
         const noGroup = document.createElement('div');
@@ -545,6 +533,14 @@ function displayImagesFromResults(results, query = '') {
         container.appendChild(noGroup);
         return;
     }
+
+    const headerSection = document.createElement('div');
+    headerSection.classList.add('shoe-group');
+    const mainHeader = document.createElement('h2');
+    mainHeader.textContent = `Showing results for: ${query}`;
+    headerSection.appendChild(mainHeader);
+    container.appendChild(headerSection);
+
 
     // ----- Group results by character/title -----
     const groups = {};
