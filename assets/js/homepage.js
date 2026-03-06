@@ -519,7 +519,7 @@ if (nextBtn) {
     setupLightbox(); // keep your lightbox working
 }
 
-    function displayImagesFromResults(results) {
+    function displayImagesFromResults(results, query = '') {
 
     if (!container) return;
 
@@ -536,40 +536,61 @@ if (nextBtn) {
         container.appendChild(noGroup);
 	return;
     }
+     // ----- Main header -----
+    if (query.trim() !== '') {
+        const mainHeader = document.createElement('h2');
+        mainHeader.textContent = `Showing results for: ${query}`;
+        mainHeader.classList.add('shoe-group-header'); // optional: style via CSS
+        mainHeader.style.fontFamily = "'Playfair Display', serif";
+        mainHeader.style.fontSize = "32px";
+        mainHeader.style.fontWeight = "bold";
+        mainHeader.style.textAlign = "center";
+        mainHeader.style.color = "#e1dfdb";
+        mainHeader.style.backgroundColor = "#303033";
+        mainHeader.style.margin = "0 0 40px 0";
+        mainHeader.style.padding = "2rem 0";
+        mainHeader.style.boxShadow = "0 0 0 100vmax #303033";
+        mainHeader.style.clipPath = "inset(0 -100vmax)";
+        container.appendChild(mainHeader);
+    }
 
-    const grouped = {};
-
-    // Group images by character/title
+    // ----- Group results by character/title -----
+    const groups = {};
     results.forEach(img => {
-
-        const group = img.character || "Other";
-
-        if (!grouped[group]) {
-            grouped[group] = [];
-        }
-
-        grouped[group].push(img);
+        const groupKey = img.character || "Other";
+        if (!groups[groupKey]) groups[groupKey] = { title: groupKey, images: [] };
+        groups[groupKey].images.push(img);
     });
 
-    Object.keys(grouped).forEach(groupName => {
+    // ----- Custom anime order -----
+    const animeOrder = [
+        'Jujutsu Kaisen',
+        'One Piece',
+        'Hunter X Hunter',
+        "JoJo's Bizarre Adventure",
+        'Naruto',
+        'Other'
+    ];
 
-        const group = document.createElement('div');
-        group.classList.add('shoe-group');
+    const sortedGroups = Object.values(groups).sort((a, b) => {
+        const indexA = animeOrder.indexOf(a.title) !== -1 ? animeOrder.indexOf(a.title) : animeOrder.length;
+        const indexB = animeOrder.indexOf(b.title) !== -1 ? animeOrder.indexOf(b.title) : animeOrder.length;
+        return indexA - indexB;
+    });
 
-        const title = document.createElement('h2');
-        title.textContent = groupName;
-        group.appendChild(title);
+    // ----- Render each group (without extra headers) -----
+    sortedGroups.forEach(group => {
+        const section = document.createElement('div');
+        section.classList.add('shoe-group');
 
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
 
-        grouped[groupName].forEach(img => {
-
+        group.images.forEach(img => {
             const div = document.createElement('div');
             div.classList.add('shoe-pic');
 
             const imageElement = document.createElement('img');
-
             const originalPath = img.image_url;
             const filename = originalPath.split('/').pop();
             const webpFile = filename.replace(/\.(jpg|jpeg|png)$/i, ".webp");
@@ -582,6 +603,7 @@ if (nextBtn) {
             };
 
             imageElement.alt = img.character || '';
+            imageElement.classList.add('shoe-pic');
 
             const caption = document.createElement('div');
             caption.classList.add('shoe-name');
@@ -592,13 +614,12 @@ if (nextBtn) {
             grid.appendChild(div);
         });
 
-        group.appendChild(grid);
-        container.appendChild(group);
+        section.appendChild(grid);
+        container.appendChild(section);
     });
 
     setupLightbox();
 }
-
     // ----- Lightbox -----
     function setupLightbox() {
         const lightbox = document.getElementById('lightbox');
