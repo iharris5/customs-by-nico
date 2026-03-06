@@ -579,6 +579,9 @@ function displayImagesFromResults(results, query) {
             const div = document.createElement('div');
             div.classList.add('shoe-pic');
 
+	    const imgWrapper = document.createElement('div');
+            imgWrapper.classList.add('img-wrapper');
+		
             const imageElement = document.createElement('img');
             const filename = img.image_url.split('/').pop();
             const webpFile = filename.replace(/\.(jpg|jpeg|png)$/i, ".webp");
@@ -586,6 +589,8 @@ function displayImagesFromResults(results, query) {
             imageElement.loading = "lazy";
             imageElement.onerror = () => { imageElement.src = img.image_url; };
             imageElement.alt = img.character || '';
+
+	    imgWrapper.appendChild(imageElement);
 
             const caption = document.createElement('div');
             caption.classList.add('shoe-name');

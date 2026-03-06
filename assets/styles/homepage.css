@@ -885,6 +885,20 @@ body {
     }
 }
 
+/* new wrapper CSS */
+.img-wrapper {
+    width: 100%;
+    aspect-ratio: 560 / 330; /* same as shoe-pic images */
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
 .lightbox {
     display: none;
     position: fixed;
