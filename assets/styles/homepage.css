@@ -47,6 +47,17 @@ p {
 
 .header-search {
     margin-left: 15px; /* small gap from nav */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2; /* stays above the input during animation */
 }
 
 /* The input itself */
@@ -55,14 +66,24 @@ p {
     border-radius: 20px;
     border: 1px solid #ccc;
     font-size: 14px;
-    width: 160px;
-    transition: all 0.2s ease;
+    width: 0;
+    opacity: 0;
+    margin-left: -160px; /* offscreen initially */
+    transition: all 0.35s ease;
+    position: absolute;
+    right: 0; /* slides out to the left */
+    z-index: 1;
 }
 
-#design-search:focus {
+#design-search.active {
+    width: 160px;
+    margin-left: 30px; /* small gap from icon */
+    opacity: 1;
+}
+#design-search.active:focus {
     outline: none;
-    border-color: #ff4d4d;
-    width: 200px; /* expand slightly on focus */
+    border-color: white;
+    width: 200px;
 }
 
 /* Optional: placeholder color */
