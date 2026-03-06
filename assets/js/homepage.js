@@ -1011,18 +1011,12 @@ if (searchInput) {
 
         const query = this.value.toLowerCase().trim();
 
-        // If empty, restore normal gallery
-        if (!query) {
-            displayImages(currentCategory, currentTag);
-            return;
-        }
-
         // Filter images
         const filtered = images.filter(img => {
 
             const character = (img.character || '').toLowerCase();
             const tags = (img.tags || []).join(' ').toLowerCase();
-            const category = (img.category || '').toLowerCase();
+            const categories = (img.categories || []).join(' ').toLowerCase();
 
             return (
                 character.includes(query) ||
