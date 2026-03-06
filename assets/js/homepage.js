@@ -1083,5 +1083,22 @@ if (searchInput) {
         displayImagesFromResults(filtered, searchInput.value.trim());
     });
 }
+
+const searchToggle = document.getElementById("search-toggle");
+const searchInput = document.getElementById("design-search");
+
+if (searchToggle && searchInput) {
+    searchToggle.addEventListener("click", () => {
+        searchInput.classList.toggle("active");
+        if (searchInput.classList.contains("active")) searchInput.focus();
+    });
+
+    // Hide search when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".header-search")) {
+            searchInput.classList.remove("active");
+        }
+    });
+}
 });
 
