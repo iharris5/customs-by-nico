@@ -562,14 +562,14 @@ if (nextBtn) {
         'Other'
     ];
 
-     const sortedGroups = Object.entries(groups).sort(([keyA], [keyB]) => {
-        const indexA = animeOrder.indexOf(keyA) !== -1 ? animeOrder.indexOf(keyA) : animeOrder.length;
-        const indexB = animeOrder.indexOf(keyB) !== -1 ? animeOrder.indexOf(keyB) : animeOrder.length;
+     const sortedGroups = Object.keys(groups).sort((a, b) => {
+        const indexA = animeOrder.indexOf(a) !== -1 ? animeOrder.indexOf(a) : animeOrder.length;
+        const indexB = animeOrder.indexOf(b) !== -1 ? animeOrder.indexOf(b) : animeOrder.length;
         return indexA - indexB;
     });
 
     // ----- Render each group (without extra headers) -----
-    sortedGroups.forEach(key => {
+    sortedGroups.forEach(groupName => {
         const section = document.createElement('div');
         section.classList.add('shoe-group');
 
