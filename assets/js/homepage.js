@@ -526,9 +526,15 @@ if (nextBtn) {
     container.innerHTML = '';
 
     if (!results.length) {
-        container.innerHTML =
-            "<p style='text-align:center;margin-top:40px;'>No designs found.</p>";
-        return;
+        const noGroup = document.createElement('div');
+        noGroup.classList.add('shoe-group');
+
+        const noTitle = document.createElement('h2');
+        noTitle.textContent = 'No designs found';
+        noGroup.appendChild(noTitle);
+
+        container.appendChild(noGroup);
+	return;
     }
 
     const grouped = {};
@@ -547,12 +553,12 @@ if (nextBtn) {
 
     Object.keys(grouped).forEach(groupName => {
 
-        const section = document.createElement('div');
-        section.classList.add('shoe-section');
+        const group = document.createElement('div');
+        group.classList.add('shoe-group');
 
         const title = document.createElement('h2');
         title.textContent = groupName;
-        section.appendChild(title);
+        group.appendChild(title);
 
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
@@ -576,7 +582,6 @@ if (nextBtn) {
             };
 
             imageElement.alt = img.character || '';
-            imageElement.classList.add('shoe-pic');
 
             const caption = document.createElement('div');
             caption.classList.add('shoe-name');
@@ -584,12 +589,11 @@ if (nextBtn) {
 
             div.appendChild(imageElement);
             div.appendChild(caption);
-
             grid.appendChild(div);
         });
 
-        section.appendChild(grid);
-        container.appendChild(section);
+        group.appendChild(grid);
+        container.appendChild(group);
     });
 
     setupLightbox();
