@@ -1011,18 +1011,27 @@ if (searchInput) {
 
         const query = this.value.toLowerCase().trim();
 
+	// Show container and hide intro sections
+        if (container) container.style.display = 'block';
+        if (introSection) introSection.style.display = 'none';
+        if (globeSection) globeSection.style.display = 'none';
+        if (createOwn) createOwn.style.display = 'none';
+        if (aboutUs) aboutUs.style.display = 'none';
+
+        // If query is empty, show "no results" message
+        if (!query) {
+            displayImagesFromResults([]);
+            return;
+        }
+
         // Filter images
         const filtered = images.filter(img => {
 
-            const character = (img.character || '').toLowerCase();
-            const tags = (img.tags || []).join(' ').toLowerCase();
-            const categories = (img.categories || []).join(' ').toLowerCase();
+            const character = (img.character || '';
+            const tags = (img.tags || []).join(' ');
+            const categories = (img.categories || []).join(' ');
 
-            return (
-                character.includes(query) ||
-                tags.includes(query) ||
-                categories.includes(query)
-            );
+	    return regex.test(character) || regex.test(tags) || regex.test(categories);
         });
 
         displayImagesFromResults(filtered);
