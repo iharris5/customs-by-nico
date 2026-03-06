@@ -562,9 +562,9 @@ if (nextBtn) {
         'Other'
     ];
 
-    const sortedGroups = Object.values(groups).sort((a, b) => {
-        const indexA = animeOrder.indexOf(a.title) !== -1 ? animeOrder.indexOf(a.title) : animeOrder.length;
-        const indexB = animeOrder.indexOf(b.title) !== -1 ? animeOrder.indexOf(b.title) : animeOrder.length;
+     const sortedGroups = Object.entries(groups).sort(([keyA], [keyB]) => {
+        const indexA = animeOrder.indexOf(keyA) !== -1 ? animeOrder.indexOf(keyA) : animeOrder.length;
+        const indexB = animeOrder.indexOf(keyB) !== -1 ? animeOrder.indexOf(keyB) : animeOrder.length;
         return indexA - indexB;
     });
 
