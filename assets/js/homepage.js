@@ -1044,9 +1044,18 @@ if (searchInput) {
 
         if (matchedCategoryBtn) {
             matchedCategoryBtn.click(); // simulate clicking the category
-            return;
+            searchInput.value = '';
+	    return;
         }
 
+	// If no category matched, reset category state
+        document.querySelectorAll('[data-category]').forEach(btn => {
+            btn.classList.remove('active'); // remove highlighted category
+        });
+
+        // Reset banner
+        updateBanner(null);       // default banner
+        updateBannerTitle('');    // remove banner title
 	// Show container and hide intro sections
         if (container) container.style.display = 'block';
         if (introSection) introSection.style.display = 'none';
