@@ -589,8 +589,7 @@ function displayImagesFromResults(results, query) {
 
             const caption = document.createElement('div');
             caption.classList.add('shoe-name');
-	    console.log('Caption:', img.character);
-            caption.textContent = img.character || '';
+            caption.innerHTML = img.character || '';
 
             div.append(imageElement, caption);
             grid.appendChild(div);
