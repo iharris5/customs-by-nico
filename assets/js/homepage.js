@@ -1007,7 +1007,7 @@ animateTooltip();
 const searchInput = document.getElementById('design-search');
 
 if (searchInput) {
-    searchInput.addEventListener('input', function (e) {
+    searchInput.addEventListener('keydown', function (e) {
 
 	if (e.key !== 'Enter') return;
         const query = this.value.toLowerCase().trim();
