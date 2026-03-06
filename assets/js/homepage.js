@@ -519,7 +519,7 @@ if (nextBtn) {
     setupLightbox(); // keep your lightbox working
 }
 
-function displayImagesFromResults(results, query = '') {
+function displayImagesFromResults(results, query) {
     if (!container) return;
     container.innerHTML = '';
 
