@@ -1081,6 +1081,8 @@ if (searchInput) {
         });
 
         displayImagesFromResults(filtered, searchInput.value.trim());
+	this.value = "";           // empty the input
+        this.classList.remove("active"); // hide the input again
     });
 }
 
