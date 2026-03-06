@@ -549,7 +549,7 @@ function displayImagesFromResults(results, query = '') {
     // ----- Group results by character/title -----
     const groups = {};
     results.forEach(img => {
-        const key = img.character || "Other";
+        const key = img.title || "Other";
         if (!groups[key]) groups[key] = [];
         groups[key].push(img);
     });
@@ -575,13 +575,6 @@ function displayImagesFromResults(results, query = '') {
     sortedGroupNames.forEach(groupName => {
         const section = document.createElement('div');
         section.classList.add('shoe-group');
-
-        // Add header for each group except 'Other'
-        if (groupName !== 'Other') {
-            const groupHeader = document.createElement('h2');
-            groupHeader.textContent = groupName;
-            section.appendChild(groupHeader);
-        }
 
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
