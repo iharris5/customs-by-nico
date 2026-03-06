@@ -519,12 +519,12 @@ if (nextBtn) {
     setupLightbox(); // keep your lightbox working
 }
 
-    function displayImagesFromResults(results, query = '') {
-
+function displayImagesFromResults(results, query = '') {
     if (!container) return;
 
     container.innerHTML = '';
 
+    // ----- No results case -----
     if (!results.length) {
         const noGroup = document.createElement('div');
         noGroup.classList.add('shoe-group');
@@ -534,16 +534,19 @@ if (nextBtn) {
         noGroup.appendChild(noTitle);
 
         container.appendChild(noGroup);
-	return;
+        return;
     }
-     // ----- Main header -----
+
+    // ----- Main header -----
     if (query.trim() !== '') {
-	const headerSection = document.createElement('div');
-    	headerSection.classList.add('shoe-group');
-	const mainHeader = document.createElement('h2');
+        const headerSection = document.createElement('div');
+        headerSection.classList.add('shoe-group');
+
+        const mainHeader = document.createElement('h2');
         mainHeader.textContent = `Showing results for: ${query}`;
-	headerSection.appendChild(mainHeader);
-    	container.appendChild(headerSection);
+        headerSection.appendChild(mainHeader);
+
+        container.appendChild(headerSection);
     }
 
     // ----- Group results by character/title -----
@@ -564,14 +567,15 @@ if (nextBtn) {
         'Other'
     ];
 
-     const sortedGroups = Object.keys(groups).sort((a, b) => {
+    // ----- Sort groups -----
+    const sortedGroupNames = Object.keys(groups).sort((a, b) => {
         const indexA = animeOrder.indexOf(a) !== -1 ? animeOrder.indexOf(a) : animeOrder.length;
         const indexB = animeOrder.indexOf(b) !== -1 ? animeOrder.indexOf(b) : animeOrder.length;
         return indexA - indexB;
     });
 
-    // ----- Render each group (without extra headers) -----
-    sortedGroups.forEach(groupName => {
+    // ----- Render each group -----
+    sortedGroupNames.forEach(groupName => {
         const section = document.createElement('div');
         section.classList.add('shoe-group');
 
@@ -583,13 +587,11 @@ if (nextBtn) {
             div.classList.add('shoe-pic');
 
             const imageElement = document.createElement('img');
-            const originalPath = img.image_url;
-            const filename = originalPath.split('/').pop();
+            const filename = img.image_url.split('/').pop();
             const webpFile = filename.replace(/\.(jpg|jpeg|png)$/i, ".webp");
-
             imageElement.src = `assets/views/main/webp/${webpFile}`;
             imageElement.loading = "lazy";
-	    imageElement.onerror = () => { imageElement.src = originalPath; };
+            imageElement.onerror = () => { imageElement.src = img.image_url; };
             imageElement.alt = img.character || '';
 
             const caption = document.createElement('div');
@@ -604,7 +606,7 @@ if (nextBtn) {
         container.appendChild(section);
     });
 
-    setupLightbox();
+    setupLightbox(); // keep lightbox working
 }
     // ----- Lightbox -----
     function setupLightbox() {
