@@ -45,6 +45,32 @@ p {
     margin: 0;
 }
 
+.header-search {
+    margin-left: 15px; /* small gap from nav */
+}
+
+/* The input itself */
+#design-search {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 160px;
+    transition: all 0.2s ease;
+}
+
+#design-search:focus {
+    outline: none;
+    border-color: #ff4d4d;
+    width: 200px; /* expand slightly on focus */
+}
+
+/* Optional: placeholder color */
+#design-search::placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
 .main-nav {
     display: flex;
     margin-left: auto;

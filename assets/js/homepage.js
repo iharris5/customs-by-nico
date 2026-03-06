@@ -519,6 +519,87 @@ if (nextBtn) {
     setupLightbox(); // keep your lightbox working
 }
 
+    function displayImagesFromResults(results) {
+
+    if (!container) return;
+    if (introSection) introSection.style.display = 'none';   // hide intro
+    if (reviewsSection) reviewsSection.style.display = 'none';
+    if (createOwn) createOwn.style.display = 'none';
+    if (aboutUs) aboutUs.style.display = 'none';
+    if (globeSection) globeSection.style.display = 'none';
+
+    container.innerHTML = '';
+
+    if (!results.length) {
+        container.innerHTML =
+            "<p style='text-align:center;margin-top:40px;'>No designs found.</p>";
+        return;
+    }
+
+    const grouped = {};
+
+    // Group images by character/title
+    results.forEach(img => {
+
+        const group = img.character || "Other";
+
+        if (!grouped[group]) {
+            grouped[group] = [];
+        }
+
+        grouped[group].push(img);
+    });
+
+    Object.keys(grouped).forEach(groupName => {
+
+        const section = document.createElement('div');
+        section.classList.add('shoe-section');
+
+        const title = document.createElement('h2');
+        title.textContent = groupName;
+        section.appendChild(title);
+
+        const grid = document.createElement('div');
+        grid.classList.add('shoe-grid');
+
+        grouped[groupName].forEach(img => {
+
+            const div = document.createElement('div');
+            div.classList.add('shoe-pic');
+
+            const imageElement = document.createElement('img');
+
+            const originalPath = img.image_url;
+            const filename = originalPath.split('/').pop();
+            const webpFile = filename.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+
+            imageElement.src = `assets/views/main/webp/${webpFile}`;
+            imageElement.loading = "lazy";
+
+            imageElement.onerror = function () {
+                imageElement.src = originalPath;
+            };
+
+            imageElement.alt = img.character || '';
+            imageElement.classList.add('shoe-pic');
+
+            const caption = document.createElement('div');
+            caption.classList.add('shoe-name');
+            caption.innerHTML = img.character || '';
+
+            div.appendChild(imageElement);
+            div.appendChild(caption);
+
+            grid.appendChild(div);
+        });
+
+        section.appendChild(grid);
+        container.appendChild(section);
+    });
+
+    setupLightbox();
+}
+
     // ----- Lightbox -----
     function setupLightbox() {
         const lightbox = document.getElementById('lightbox');
@@ -927,6 +1008,36 @@ animateTooltip();
     globe.controls().autoRotate = true;
     globe.controls().autoRotateSpeed = 0.5;
 }
+	// ----- Search Designs -----
+const searchInput = document.getElementById('design-search');
 
+if (searchInput) {
+    searchInput.addEventListener('input', function () {
+
+        const query = this.value.toLowerCase().trim();
+
+        // If empty, restore normal gallery
+        if (!query) {
+            displayImages(currentCategory, currentTag);
+            return;
+        }
+
+        // Filter images
+        const filtered = images.filter(img => {
+
+            const character = (img.character || '').toLowerCase();
+            const tags = (img.tags || []).join(' ').toLowerCase();
+            const category = (img.category || '').toLowerCase();
+
+            return (
+                character.includes(query) ||
+                tags.includes(query) ||
+                category.includes(query)
+            );
+        });
+
+        displayImagesFromResults(filtered);
+    });
+}
 });
 
