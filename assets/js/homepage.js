@@ -538,28 +538,18 @@ if (nextBtn) {
     }
      // ----- Main header -----
     if (query.trim() !== '') {
-        const mainHeader = document.createElement('h2');
+	const mainHeader = document.createElement('h2');
         mainHeader.textContent = `Showing results for: ${query}`;
-        mainHeader.classList.add('shoe-group-header'); // optional: style via CSS
-        mainHeader.style.fontFamily = "'Playfair Display', serif";
-        mainHeader.style.fontSize = "32px";
-        mainHeader.style.fontWeight = "bold";
-        mainHeader.style.textAlign = "center";
-        mainHeader.style.color = "#e1dfdb";
-        mainHeader.style.backgroundColor = "#303033";
-        mainHeader.style.margin = "0 0 40px 0";
-        mainHeader.style.padding = "2rem 0";
-        mainHeader.style.boxShadow = "0 0 0 100vmax #303033";
-        mainHeader.style.clipPath = "inset(0 -100vmax)";
+        mainHeader.classList.add('shoe-group-header'); // style in CSS same as portfolio
         container.appendChild(mainHeader);
     }
 
     // ----- Group results by character/title -----
     const groups = {};
     results.forEach(img => {
-        const groupKey = img.character || "Other";
-        if (!groups[groupKey]) groups[groupKey] = { title: groupKey, images: [] };
-        groups[groupKey].images.push(img);
+        const key = img.character || "Other";
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(img);
     });
 
     // ----- Custom anime order -----
@@ -579,14 +569,14 @@ if (nextBtn) {
     });
 
     // ----- Render each group (without extra headers) -----
-    sortedGroups.forEach(group => {
+    sortedGroups.forEach(key => {
         const section = document.createElement('div');
         section.classList.add('shoe-group');
 
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
 
-        group.images.forEach(img => {
+        group[key]forEach(img => {
             const div = document.createElement('div');
             div.classList.add('shoe-pic');
 
@@ -597,20 +587,14 @@ if (nextBtn) {
 
             imageElement.src = `assets/views/main/webp/${webpFile}`;
             imageElement.loading = "lazy";
-
-            imageElement.onerror = function () {
-                imageElement.src = originalPath;
-            };
-
+	    imageElement.onerror = () => { imageElement.src = originalPath; };
             imageElement.alt = img.character || '';
-            imageElement.classList.add('shoe-pic');
 
             const caption = document.createElement('div');
             caption.classList.add('shoe-name');
-            caption.innerHTML = img.character || '';
+            caption.textContent = img.character || '';
 
-            div.appendChild(imageElement);
-            div.appendChild(caption);
+            div.append(imageElement, caption);
             grid.appendChild(div);
         });
 
