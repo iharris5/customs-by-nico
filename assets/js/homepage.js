@@ -538,10 +538,12 @@ if (nextBtn) {
     }
      // ----- Main header -----
     if (query.trim() !== '') {
+	const headerSection = document.createElement('div');
+    	headerSection.classList.add('shoe-group');
 	const mainHeader = document.createElement('h2');
         mainHeader.textContent = `Showing results for: ${query}`;
-        mainHeader.classList.add('shoe-group-header'); // style in CSS same as portfolio
-        container.appendChild(mainHeader);
+	headerSection.appendChild(mainHeader);
+    	container.appendChild(headerSection);
     }
 
     // ----- Group results by character/title -----
