@@ -576,13 +576,6 @@ function displayImagesFromResults(results, query = '') {
         const section = document.createElement('div');
         section.classList.add('shoe-group');
 
-        // Optional group header
-        if (groupName !== 'Other') {
-            const groupHeader = document.createElement('h2');
-            groupHeader.textContent = groupName;
-            section.appendChild(groupHeader);
-        }
-
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
 
