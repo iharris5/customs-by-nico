@@ -1024,6 +1024,11 @@ if (searchInput) {
 	if (e.key !== 'Enter') return;
         const query = this.value.toLowerCase().trim();
 
+	// STOP empty searches
+        if (!query) {
+            homeBtn.click();
+            return;
+        }
 	const categoryButtons = document.querySelectorAll('[data-category]');
         let matchedCategoryBtn = null;
 
@@ -1063,12 +1068,6 @@ if (searchInput) {
 	if (reviewsSection) reviewsSection.style.display = 'none';
         if (createOwn) createOwn.style.display = 'none';
         if (aboutUs) aboutUs.style.display = 'none';
-
-        // If query is empty, show "no results" message
-        if (!query) {
-	    homeBtn.click();
-            return;
-        }
 
 	const regex = new RegExp(`\\b${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
         // Filter images
