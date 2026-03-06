@@ -1046,8 +1046,8 @@ if (searchInput) {
             'most-popular': ['most popular'],
             'colorways': ['colorways'],
             'schools-sports': ['schools', 'sports', 'teams'],
-            'custom-text': ['events', 'text']
-            'baby-shoes': ['baby', 'baby shoes']
+            'custom-text': ['events', 'text'],
+            'baby-shoes': ['baby', 'baby shoes'],
             'cleats': ['cleats']
         };
 
