@@ -521,23 +521,9 @@ if (nextBtn) {
 
 function displayImagesFromResults(results, query = '') {
     if (!container) return;
-
     container.innerHTML = '';
 
-    // ----- No results case -----
-    if (!results.length) {
-        const noGroup = document.createElement('div');
-        noGroup.classList.add('shoe-group');
-
-        const noTitle = document.createElement('h2');
-        noTitle.textContent = 'No designs found';
-        noGroup.appendChild(noTitle);
-
-        container.appendChild(noGroup);
-        return;
-    }
-
-    // ----- Main header -----
+    // ----- Header for search query -----
     if (query.trim() !== '') {
         const headerSection = document.createElement('div');
         headerSection.classList.add('shoe-group');
@@ -547,6 +533,17 @@ function displayImagesFromResults(results, query = '') {
         headerSection.appendChild(mainHeader);
 
         container.appendChild(headerSection);
+    }
+
+    // ----- No results -----
+    if (!results.length) {
+        const noGroup = document.createElement('div');
+        noGroup.classList.add('shoe-group');
+        const noTitle = document.createElement('h2');
+        noTitle.textContent = 'No designs found';
+        noGroup.appendChild(noTitle);
+        container.appendChild(noGroup);
+        return;
     }
 
     // ----- Group results by character/title -----
@@ -567,17 +564,24 @@ function displayImagesFromResults(results, query = '') {
         'Other'
     ];
 
-    // ----- Sort groups -----
-    const sortedGroupNames = Object.keys(groups).sort((a, b) => {
+    // ----- Sort group names -----
+    const sortedGroupNames = Object.keys(groups).sort((a,b) => {
         const indexA = animeOrder.indexOf(a) !== -1 ? animeOrder.indexOf(a) : animeOrder.length;
         const indexB = animeOrder.indexOf(b) !== -1 ? animeOrder.indexOf(b) : animeOrder.length;
         return indexA - indexB;
     });
 
-    // ----- Render each group -----
+    // ----- Render groups like displayImages -----
     sortedGroupNames.forEach(groupName => {
         const section = document.createElement('div');
         section.classList.add('shoe-group');
+
+        // Optional group header
+        if (groupName !== 'Other') {
+            const groupHeader = document.createElement('h2');
+            groupHeader.textContent = groupName;
+            section.appendChild(groupHeader);
+        }
 
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
@@ -596,7 +600,7 @@ function displayImagesFromResults(results, query = '') {
 
             const caption = document.createElement('div');
             caption.classList.add('shoe-name');
-            caption.textContent = img.character || '';
+            caption.innerHTML = img.character || '';
 
             div.append(imageElement, caption);
             grid.appendChild(div);
@@ -606,8 +610,9 @@ function displayImagesFromResults(results, query = '') {
         container.appendChild(section);
     });
 
-    setupLightbox(); // keep lightbox working
+    setupLightbox(); // keep your lightbox working
 }
+
     // ----- Lightbox -----
     function setupLightbox() {
         const lightbox = document.getElementById('lightbox');
