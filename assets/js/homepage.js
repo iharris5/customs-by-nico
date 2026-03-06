@@ -1007,14 +1007,16 @@ animateTooltip();
 const searchInput = document.getElementById('design-search');
 
 if (searchInput) {
-    searchInput.addEventListener('input', function () {
+    searchInput.addEventListener('input', function (e) {
 
+	if (e.key !== 'Enter') return;
         const query = this.value.toLowerCase().trim();
 
 	// Show container and hide intro sections
         if (container) container.style.display = 'block';
         if (introSection) introSection.style.display = 'none';
         if (globeSection) globeSection.style.display = 'none';
+	if (reviewsSection) reviewsSection.style.display = 'none';
         if (createOwn) createOwn.style.display = 'none';
         if (aboutUs) aboutUs.style.display = 'none';
 
