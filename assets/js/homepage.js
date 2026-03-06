@@ -591,7 +591,8 @@ function displayImagesFromResults(results, query) {
             caption.classList.add('shoe-name');
             caption.innerHTML = img.character || '';
 
-            div.append(imageElement, caption);
+            div.append(imageElement);
+	    div.append(caption);
             grid.appendChild(div);
         });
 
