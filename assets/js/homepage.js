@@ -522,11 +522,6 @@ if (nextBtn) {
     function displayImagesFromResults(results) {
 
     if (!container) return;
-    if (introSection) introSection.style.display = 'none';   // hide intro
-    if (reviewsSection) reviewsSection.style.display = 'none';
-    if (createOwn) createOwn.style.display = 'none';
-    if (aboutUs) aboutUs.style.display = 'none';
-    if (globeSection) globeSection.style.display = 'none';
 
     container.innerHTML = '';
 
