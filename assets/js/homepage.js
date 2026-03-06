@@ -1085,7 +1085,6 @@ if (searchInput) {
 }
 
 const searchToggle = document.getElementById("search-toggle");
-const searchInput = document.getElementById("design-search");
 
 if (searchToggle && searchInput) {
     searchToggle.addEventListener("click", () => {
