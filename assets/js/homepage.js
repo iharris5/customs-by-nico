@@ -523,7 +523,7 @@ function displayImagesFromResults(results, query = '') {
     if (!container) return;
     container.innerHTML = '';
 
-    // ----- Header for search query -----
+    // ----- Show main search header -----
     if (query.trim() !== '') {
         const headerSection = document.createElement('div');
         headerSection.classList.add('shoe-group');
@@ -535,7 +535,7 @@ function displayImagesFromResults(results, query = '') {
         container.appendChild(headerSection);
     }
 
-    // ----- No results -----
+    // ----- No results case -----
     if (!results.length) {
         const noGroup = document.createElement('div');
         noGroup.classList.add('shoe-group');
@@ -564,17 +564,24 @@ function displayImagesFromResults(results, query = '') {
         'Other'
     ];
 
-    // ----- Sort group names -----
-    const sortedGroupNames = Object.keys(groups).sort((a,b) => {
+    // ----- Sort groups according to animeOrder -----
+    const sortedGroupNames = Object.keys(groups).sort((a, b) => {
         const indexA = animeOrder.indexOf(a) !== -1 ? animeOrder.indexOf(a) : animeOrder.length;
         const indexB = animeOrder.indexOf(b) !== -1 ? animeOrder.indexOf(b) : animeOrder.length;
         return indexA - indexB;
     });
 
-    // ----- Render groups like displayImages -----
+    // ----- Render each group -----
     sortedGroupNames.forEach(groupName => {
         const section = document.createElement('div');
         section.classList.add('shoe-group');
+
+        // Add header for each group except 'Other'
+        if (groupName !== 'Other') {
+            const groupHeader = document.createElement('h2');
+            groupHeader.textContent = groupName;
+            section.appendChild(groupHeader);
+        }
 
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
@@ -593,7 +600,7 @@ function displayImagesFromResults(results, query = '') {
 
             const caption = document.createElement('div');
             caption.classList.add('shoe-name');
-            caption.innerHTML = img.character || '';
+            caption.textContent = img.character || '';
 
             div.append(imageElement, caption);
             grid.appendChild(div);
@@ -603,9 +610,8 @@ function displayImagesFromResults(results, query = '') {
         container.appendChild(section);
     });
 
-    setupLightbox(); // keep your lightbox working
+    setupLightbox(); // Keep lightbox working
 }
-
     // ----- Lightbox -----
     function setupLightbox() {
         const lightbox = document.getElementById('lightbox');
