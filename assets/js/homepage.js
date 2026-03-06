@@ -1024,6 +1024,29 @@ if (searchInput) {
 	if (e.key !== 'Enter') return;
         const query = this.value.toLowerCase().trim();
 
+	const categoryButtons = document.querySelectorAll('[data-category]');
+        let matchedCategoryBtn = null;
+
+         categoryButtons.forEach(btn => {
+            const cat = btn.getAttribute('data-category').toLowerCase();
+
+            // Convert slug to readable version
+            const normalizedCat = cat.replace(/-/g, ' ');
+
+            if (
+                query === normalizedCat ||        // exact match ("most popular")
+                normalizedCat.includes(query) || // partial match ("popular")
+                query.includes(normalizedCat)    // reverse partial
+            ) {
+                matchedCategoryBtn = btn;
+            }  
+        });
+
+        if (matchedCategoryBtn) {
+            matchedCategoryBtn.click(); // simulate clicking the category
+            return;
+        }
+
 	// Show container and hide intro sections
         if (container) container.style.display = 'block';
         if (introSection) introSection.style.display = 'none';
@@ -1038,36 +1061,6 @@ if (searchInput) {
             return;
         }
 
-	// Map user-friendly input to internal category keys
-        const categoryMap = {
-            'anime': ['anime'],
-            'cartoons': ['cartoons'],
-            'floral': ['floral'],
-            'most-popular': ['most popular'],
-            'colorways': ['colorways'],
-            'schools-sports': ['schools', 'sports', 'teams'],
-            'custom-text': ['events', 'text'],
-            'baby-shoes': ['baby', 'baby shoes'],
-            'cleats': ['cleats']
-        };
-
-        // Normalize input (remove extra spaces, lowercase)
-        const normalizedQuery = query.replace(/\s+/g, ' ').toLowerCase();
-
-	// Check if query matches any category keywords
-        let matchedCategory = null;
-        for (const [category, keywords] of Object.entries(categoryMap)) {
-            if (keywords.some(keyword => normalizedQuery.includes(keyword))) {
-                matchedCategory = category;
-                break;
-    	    }
-	}
-        if (matchedCategory) {
-            // Treat as category click
-            showImages(matchedCategory);
-            return;
-        }
-	    
 	const regex = new RegExp(`\\b${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
         // Filter images
         const filtered = images.filter(img => {
