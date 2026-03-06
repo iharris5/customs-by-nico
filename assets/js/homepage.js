@@ -576,7 +576,7 @@ if (nextBtn) {
         const grid = document.createElement('div');
         grid.classList.add('shoe-grid');
 
-        groups[key].forEach(img => {
+        groups[groupName].forEach(img => {
             const div = document.createElement('div');
             div.classList.add('shoe-pic');
 
