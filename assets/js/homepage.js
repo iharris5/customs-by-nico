@@ -1066,7 +1066,7 @@ if (searchInput) {
 
         // If query is empty, show "no results" message
         if (!query) {
-            displayImagesFromResults([]);
+	    homeBtn.click();
             return;
         }
 
