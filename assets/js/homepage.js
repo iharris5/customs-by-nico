@@ -1021,7 +1021,7 @@ if (searchInput) {
             return (
                 character.includes(query) ||
                 tags.includes(query) ||
-                category.includes(query)
+                categories.includes(query)
             );
         });
 
