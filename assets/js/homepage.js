@@ -1024,10 +1024,11 @@ if (searchInput) {
             return;
         }
 
+	const regex = new RegExp(`\\b${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
         // Filter images
         const filtered = images.filter(img => {
 
-            const character = (img.character || '';
+            const character = img.character || '';
             const tags = (img.tags || []).join(' ');
             const categories = (img.categories || []).join(' ');
 
