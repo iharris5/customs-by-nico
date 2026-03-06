@@ -519,7 +519,7 @@ if (nextBtn) {
     setupLightbox(); // keep your lightbox working
 }
 
-function displayImagesFromResults(results, searchInput.value) {
+function displayImagesFromResults(results, query) {
     if (!container) return;
     container.innerHTML = '';
 
@@ -1043,7 +1043,7 @@ if (searchInput) {
 	    return regex.test(character) || regex.test(tags) || regex.test(categories);
         });
 
-        displayImagesFromResults(filtered);
+        displayImagesFromResults(filtered, searchInput.value.trim());
     });
 }
 });
