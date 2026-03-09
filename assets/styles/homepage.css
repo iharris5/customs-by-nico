@@ -821,6 +821,7 @@ body {
 	height: 100%;
 	display: block;
 	object-fit: contain;
+	aspect-ratio: 560 / 330;
 	transition: transform 0.2s ease;
 }
 
