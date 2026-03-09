@@ -379,7 +379,7 @@ if (nextBtn) {
         { image_url: 'assets/views/main/images/IMG_7970.jpg', categories: ['anime'], tags: ['hunter'], title: 'Hunter X Hunter', character: 'Meruem' },
         { image_url: 'assets/views/main/images/IMG_5384.jpg', categories: ['anime'], tags: ['one-piece'], title: 'One Piece', character: 'Monkey D. Luffy & Roronoa Zoro' },
 	{ image_url: 'assets/views/main/images/IMG_2407.jpg', categories: ['anime'], tags: ['one-piece'], title: 'One Piece', character: 'Monkey D. Luffy Gear 5' },
-	{ image_url: 'assets/views/main/images/IMG_2417.jpg', categories: ['anime'], tags: ['one-piece'], title: 'One Piece', character: "Luffy's Devil Fruit, Hito Hito no Mi" },
+	{ image_url: 'assets/views/main/images/IMG_2417.jpg', categories: ['anime'], tags: ['one-piece'], title: 'One Piece', character: "Luffy's Devil Fruit, Hito Hito no Mi, Model: Nika" },
         { image_url: 'assets/views/main/images/IMG_8818.jpg', categories: ['anime'], tags: ['hunter'], title: 'Hunter X Hunter', character: 'Illumi Zoldyck' },
         { image_url: 'assets/views/main/images/IMG_9464.jpg', categories: ['schools-sports'], title: 'Schools', character: 'Texas State' },
 	{ image_url: 'assets/views/main/images/IMG_5067_Original.JPEG', categories: ['schools-sports'], title: 'Schools', character: 'North Carolina A&T' },
