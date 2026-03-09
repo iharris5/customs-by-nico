@@ -874,7 +874,6 @@ body {
 .shoe-grid .shoe-pic img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
 	border-radius: 10px 10px 0 0;
 }
 
@@ -909,6 +908,7 @@ body {
     width: 100%;
     aspect-ratio: 560 / 330; /* same as shoe-pic images */
     overflow: hidden;
+    border-radius: 10px 10px 0 0;
 }
 
 .img-wrapper img {
@@ -916,7 +916,7 @@ body {
     height: 100%;
     object-fit: contain;
     object-position: center;
-    border-radius: 10px 10px 0 0;
+    border-radius: inherit;
 }
 
 .lightbox {
