@@ -508,6 +508,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     gap: 10px;
 }
 
@@ -525,7 +526,7 @@ p {
 .featured-link {
     font-family: 'Merriweather', serif;
     font-size: 40px;
-    color: red;
+    color: #990000;
     text-decoration: underline;
     font-weight: 700;
 }
