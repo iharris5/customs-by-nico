@@ -717,7 +717,7 @@ body.with-header {
 	display: flex;
 	justify-content: center;
 	gap: 16px;
-	padding-bottom: 32px;
+	padding-bottom: 48px;
 }
 
 .social-logo {
