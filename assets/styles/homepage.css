@@ -403,6 +403,18 @@ p {
         font-size: 39px;
 }
 
+.featured-pic {
+        display: block;
+        justify-content: center;
+        width: clamp(260px, 45vw, 460px);
+        height: auto;
+}
+
+.featured-pic img {
+    width: 100%;
+    height: auto;
+}
+
 @media (max-width: 768px) {
     .timeline-item {
         flex-direction: column !important;
