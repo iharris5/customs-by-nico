@@ -426,9 +426,9 @@ p {
 
 .featured-item img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 590 / 320;
     object-fit: cover;
-    object-position: center;
+    display: block;
 }
 
 .feature-name {
