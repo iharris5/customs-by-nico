@@ -456,6 +456,80 @@ p {
     }
 }
 
+.recently-featured {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.recently-featured .section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.featured-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.featured-left, .featured-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.featured-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.featured-left .featured-logo {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    object-fit: contain;
+}
+
+.featured-left .featured-article-img {
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 590 / 320;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.featured-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.featured-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.featured-authors {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.featured-link {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    color: red;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
 @media (max-width: 768px) {
     .timeline-item {
         flex-direction: column !important;
@@ -888,6 +962,19 @@ body {
 }
 
 .shoe-group h2 {
+    font-family: 'Playfair Display', serif; /* Playfair Display font */
+    font-size: 32px;                         /* Equivalent to Word 24pt */
+    margin-bottom: 50px;
+    padding: 2rem 0;
+    text-align: center;
+    font-weight: bold;
+    color: #e1dfdb;
+    background-color: #303033;
+    box-shadow: 0 0 0 100vmax #303033;
+    clip-path: inset(0 -100vmax);
+}
+
+.intro-headers {
     font-family: 'Playfair Display', serif; /* Playfair Display font */
     font-size: 32px;                         /* Equivalent to Word 24pt */
     margin-bottom: 50px;
