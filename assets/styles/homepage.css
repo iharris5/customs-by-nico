@@ -1095,10 +1095,11 @@ body {
 	margin: 20px auto;
 	text-align: center;
 	position: relative;
-	display: inline-block;
+	width: 220px;
 }
 
 #title-filter {
+    width: 220px;
     padding: 10px 40px 10px 14px;
     border-radius: 2px;
     border: 1px solid #333;
@@ -1111,8 +1112,6 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    position: relative;
-    z-index: 1;
 }
 
 /* your custom arrow */
