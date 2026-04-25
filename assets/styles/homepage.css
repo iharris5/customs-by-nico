@@ -1123,6 +1123,7 @@ body {
     transform: translateY(-50%);
     color: white;
     z-index: 2;
+    font-size: 12px;
     pointer-events: none;
     transition: transform 0.2s ease;
 }
