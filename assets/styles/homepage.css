@@ -1114,18 +1114,20 @@ body {
 }
 
 /* your custom arrow */
-#title-filter-wrapper .caret {
+.filter-caret {
     position: absolute;
     right: 12px;
     top: 50%;
-    transform: translateY(-50%);
+    width: 7px; 
+    height: 7px;
+    transform: translateY(-50%) rotate(45deg);
     pointer-events: none;
     transition: transform 0.2s ease;
 }
 
 /* rotated state */
-#title-filter-wrapper.open .caret {
-    transform: translateY(-50%) rotate(180deg);
+#title-filter-wrapper.open .filter-caret {
+    transform: translateY(-50%) rotate(225deg);
 }
 
 .btn-container {
