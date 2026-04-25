@@ -1111,6 +1111,8 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    position: relative;
+    z-index: 1;
 }
 
 /* your custom arrow */
@@ -1118,9 +1120,9 @@ body {
     position: absolute;
     right: 12px;
     top: 50%;
-    width: 7px; 
-    height: 7px;
-    transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%);
+    color: white;
+    z-index: 2;
     pointer-events: none;
     transition: transform 0.2s ease;
 }
