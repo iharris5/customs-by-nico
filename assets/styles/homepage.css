@@ -353,6 +353,7 @@ p {
         font-weight: 700;
         font-style: normal;
         font-size: 38px;
+	text-align: left;
 }
 
 #meet-text {

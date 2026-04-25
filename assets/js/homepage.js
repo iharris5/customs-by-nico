@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const createOwn = document.getElementById('create-own');
     const aboutUs = document.getElementById('about-us');
     const globeSection = document.querySelector('.globe-section');
+    const wrapper = document.getElementById('title-filter-wrapper');
+    const dropdown = document.getElementById('title-filter');
 
     // ----- Active State Handling -----
     function setActive(element) {
@@ -121,7 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (createOwn) createOwn.style.display = 'none';
         if (aboutUs) aboutUs.style.display = 'none';
 	if (globeSection) globeSection.style.display = 'none';
-
+	
+	if (dropdown) dropdown.value = 'all';
 	container.style.display = 'grid';                        // show container
         displayImages(category, tag);                             // populate images
         console.log(`Displaying images for category "${category}"${tag ? ' with tag "' + tag + '"' : ''}`);
@@ -139,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (container) container.style.display = 'none';
 	if (createOwn) createOwn.style.display = 'none';
 	if (aboutUs) aboutUs.style.display = 'none';
+	if (wrapper) wrapper.style.display = 'none';
 
         console.log('Showing intro section');
     }
@@ -176,6 +180,7 @@ function showSection(section) {
     if (container) container.style.display = 'none';
     if (createOwn) createOwn.style.display = 'none';
     if (aboutUs) aboutUs.style.display = 'none';
+    if (wrapper) wrapper.style.display = 'none';
 
     if (section === 'create' && createOwn) {
         createOwn.style.display = 'flex';
@@ -241,6 +246,27 @@ document.querySelectorAll('.section-btn').forEach(btn => {
         });
     });
     
+    const titleDropdown = document.getElementById('title-filter');
+    if (titleDropdown) {
+	    titleDropdown.addEventListener('change', function () {
+		    const selectedTitle = this.value;
+		    const activeBtn = document.querySelector('.nav-item.active, .category-list li.active');
+		    if (!activeBtn) return;
+
+		    const category = activeBtn.dataset.category;
+		    if (!category) return;
+		    let filtered = images.filter(img =>
+			    img.categories && img.categories.includes(category)
+		    );
+
+		    if (selectedTitle !== 'all') {
+			    filtered = filtered.filter(img => img.title === selectedTitle);
+		    }
+
+		    displayImagesFromResults(filtered, selectedTitle === 'all' ? category : selectedTitle);
+	    });
+    }
+
     document.addEventListener('click', (e) => {
         const sidebar = document.getElementById('sidebar');
         const menuToggle = document.getElementById('menu-toggle');
@@ -424,7 +450,25 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_0447.jpg', categories: ['cleats'], title: 'Football', character: 'Bengals' },
 	{ image_url: 'assets/views/main/images/IMG_8797.jpg', categories: ['cleats'], title: 'Football', character: 'Custom Jordans' }
     ];
-    
+   
+    // ----- Filter images by title ----- 
+    function populateTitleFilter(filteredImages) {
+	    if (!wrapper || !dropdown) return;
+	    dropdown.innerHTML = `<option value="all">All Designs</option>`;
+	    const titles = new Set();
+	    filteredImages.forEach(img => {
+		    if (img.title) titles.add(img.title);
+	    });
+	    titles.forEach(title => {
+		    const option = document.createElement('option');
+		    option.value = title;
+		    option.textContent = title;
+		    dropdown.appendChild(option);
+	    });
+
+	    wrapper.style.display = titles.size ? 'block' : 'none';
+    }
+
     // ----- Display images -----
     function displayImages(category, tag = null) {
     if (!container) return;
@@ -434,9 +478,11 @@ if (nextBtn) {
     let filtered = images.filter(img => 
 	    img.categories && img.categories.includes(category)
     );
-
+   
     // ----- Filter by tag if present -----
     if (tag) filtered = filtered.filter(img => img.tags && img.tags.includes(tag));
+
+    populateTitleFilter(filtered);
 
     if (filtered.length === 0) {
         container.innerHTML = `<p>No images found for "${category}"</p>`;
