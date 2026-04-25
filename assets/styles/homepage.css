@@ -1091,6 +1091,26 @@ body {
     cursor: pointer;
 }
 
+#title-filter-wrapper {
+	margin: 20px auto;
+	text-align: center;
+}
+
+#title-filter {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #303033;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 .btn-container {
 	text-align: center;
 }
