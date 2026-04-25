@@ -9,6 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const globeSection = document.querySelector('.globe-section');
     const wrapper = document.getElementById('title-filter-wrapper');
     const dropdown = document.getElementById('title-filter');
+   
+    if (dropdown && wrapper) {	
+    	dropdown.addEventListener('focus', () => {
+    		wrapper.classList.add('open');
+   	});
+
+	dropdown.addEventListener('blur', () => {
+    		wrapper.classList.remove('open');
+    	});
+    }
 
     // ----- Active State Handling -----
     function setActive(element) {
@@ -460,7 +470,7 @@ if (nextBtn) {
     	    // First real option = All
     	    const allOption = document.createElement('option');
     	    allOption.value = 'all';
-    	    allOption.textContent = 'All';
+    	    allOption.textContent = 'All Designs';
     	    dropdown.appendChild(allOption);
 
 	    const titles = new Set();
