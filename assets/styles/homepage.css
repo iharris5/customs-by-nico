@@ -1098,12 +1098,12 @@ body {
 
 #title-filter {
     padding: 10px 14px;
-    border-radius: 8px;
+    border-radius: 2px;
     border: 1px solid #333;
     background-color: #303033;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
 
     appearance: none;

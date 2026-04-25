@@ -454,7 +454,23 @@ if (nextBtn) {
     // ----- Filter images by title ----- 
     function populateTitleFilter(filteredImages) {
 	    if (!wrapper || !dropdown) return;
-	    dropdown.innerHTML = `<option value="all">All Designs</option>`;
+	    
+	    dropdown.innerHTML = '';
+
+    	    // "Filter" label (non-selectable placeholder)
+    	    const placeholder = document.createElement('option');
+    	    placeholder.value = '';
+    	    placeholder.textContent = 'Filter';
+    	    placeholder.disabled = true;
+    	    placeholder.selected = true;
+     	    dropdown.appendChild(placeholder);
+
+    	    // First real option = All
+    	    const allOption = document.createElement('option');
+    	    allOption.value = 'all';
+    	    allOption.textContent = 'All';
+    	    dropdown.appendChild(allOption);
+
 	    const titles = new Set();
 	    filteredImages.forEach(img => {
 		    if (img.title) titles.add(img.title);
