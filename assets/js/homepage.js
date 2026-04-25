@@ -10,16 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const wrapper = document.getElementById('title-filter-wrapper');
     const dropdown = document.getElementById('title-filter');
    
-    if (dropdown && wrapper) {	
-    	dropdown.addEventListener('focus', () => {
-    		wrapper.classList.add('open');
-   	});
+    if (dropdown && wrapper) {
 
-	dropdown.addEventListener('blur', () => {
-    		wrapper.classList.remove('open');
-    	});
+    const close = () => wrapper.classList.remove('open');
+
+    dropdown.addEventListener('focus', () => {
+        wrapper.classList.add('open');
+    });
+
+    dropdown.addEventListener('change', close);
+    dropdown.addEventListener('blur', close);
     }
-
     // ----- Active State Handling -----
     function setActive(element) {
     if (!element) return;

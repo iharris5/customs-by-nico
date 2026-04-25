@@ -1095,11 +1095,13 @@ body {
 	margin: 20px auto;
 	text-align: center;
 	position: relative;
-	width: 220px;
+	display: flex;
+	justify-content: center;
+	width: 250px;
 }
 
 #title-filter {
-    width: 220px;
+    width: 250px;
     padding: 10px 40px 10px 14px;
     border-radius: 2px;
     border: 1px solid #333;
@@ -1129,7 +1131,7 @@ body {
 
 /* rotated state */
 #title-filter-wrapper.open .filter-caret {
-    transform: translateY(-50%) rotate(225deg);
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .btn-container {
