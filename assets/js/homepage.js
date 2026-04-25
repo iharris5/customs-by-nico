@@ -445,6 +445,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8723.jpeg', categories: ['anime'], tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Ryomen Sukuna' },
 	{ image_url: 'assets/views/main/images/IMG_8721.jpg', categories: ['anime'], tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo (Red)' },
 	{ image_url: 'assets/views/main/images/IMG_8720.jpg', categories: ['anime'], tags: ['jujutsu'], title: 'Jujutsu Kaisen', character: 'Satoru Gojo & Suguru Geto Betta Fish' },
+	{ image_url: 'assets/views/main/images/IMG_3529.jpg', categories: ['custom-text'], title: 'Special Occasions', character: 'Wedding: Rhinestone "<i>Mrs.</i>"' },
 	{ image_url: 'assets/views/main/images/IMG_8741.jpeg', categories: ['custom-text'], title: 'Special Occasions', character: 'Wedding: Emerald "<i>Mr.</i>"' },
 	{ image_url: 'assets/views/main/images/IMG_8740.jpeg', categories: ['custom-text'], title: 'Special Occasions', character: 'Wedding: Pearl "<i>Mrs.</i>"' },
 	{ image_url: 'assets/views/main/images/IMG_8739.jpg', categories: ['custom-text'], title: 'Special Occasions', character: 'Custom Message<br>"<i>4lifers</i>"' },
