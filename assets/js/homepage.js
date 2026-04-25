@@ -476,10 +476,19 @@ if (nextBtn) {
     	    dropdown.appendChild(allOption);
 
 	    const titles = new Set();
+	    let hasOther = false;
 	    filteredImages.forEach(img => {
-		    if (img.title) titles.add(img.title);
+		    if (img.title === 'Other') {
+			    hasOther = true;
+		    } else if (img.title) {
+			    titles.add(img.title);
+	 	    }
 	    });
-	    titles.forEach(title => {
+
+	    const sortedTitles = [...titles];
+	    if (hasOther) sortedTitles.push('Other');
+
+	    sortedTitles.forEach(title => {
 		    const option = document.createElement('option');
 		    option.value = title;
 		    option.textContent = title;
