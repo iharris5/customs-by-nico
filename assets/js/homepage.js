@@ -457,14 +457,6 @@ if (nextBtn) {
 	    
 	    dropdown.innerHTML = '';
 
-    	    // "Filter" label (non-selectable placeholder)
-    	    const placeholder = document.createElement('option');
-    	    placeholder.value = '';
-    	    placeholder.textContent = 'Filter';
-    	    placeholder.disabled = true;
-    	    placeholder.selected = true;
-     	    dropdown.appendChild(placeholder);
-
     	    // First real option = All
     	    const allOption = document.createElement('option');
     	    allOption.value = 'all';
