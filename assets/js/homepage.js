@@ -118,7 +118,11 @@ document.addEventListener("DOMContentLoaded", function () {
             updateBannerTitle('Most Popular');
     	} else if (category === 'colorways') {
     	    updateBannerTitle('Colorways');
-    	} else if (category === 'schools-sports') {
+    	} else if (category === 'pop-culture') {
+	    updateBannerTitle('Pop Culture');
+	} else if (category === 'restorations') {
+	    updateBannerTitle('Restorations');
+	} else if (category === 'schools-sports') {
 	    updateBannerTitle('Schools, Sports, & Teams');
         } else if (category === 'custom-text') {
 	    updateBannerTitle('Events'); 
@@ -350,6 +354,10 @@ if (nextBtn) {
 
     // ----- All images -----
     const images = [
+	{ image_url: 'assets/views/main/images/IMG_8380.jpg', categories: ['colorways'], character: 'Pink Hearts' },
+	{ image_url: 'assets/views/main/images/IMG_8302.jpg', categories: ['colorways'], character: 'Pastel' },
+	{ image_url: 'assets/views/main/images/IMG_6534.jpg', categories: ['colorways'], character: 'Petal Pink Swoosh' },
+	{ image_url: 'assets/views/main/images/IMG_3722.jpg', categories: ['most-popular'], character: "Teacher's First Day of School" },
 	{ image_url: 'assets/views/main/images/IMG_8830.jpg', categories: ['most-popular', 'colorways'], character: 'Bad Bunny' },
 	{ image_url: 'assets/views/main/images/IMG_5527.jpeg', categories: ['most-popular', 'colorways'], character: 'Bad Bunny' },		
 	{ image_url: 'assets/views/main/images/IMG_9082_Original.JPEG', categories: ['colorways'], character: 'Blue Tri-Color' },
@@ -376,6 +384,7 @@ if (nextBtn) {
         { image_url: 'assets/views/main/images/IMG_1626.jpg', categories: ['colorways'], character: 'Black & Yellow Swoosh'},
 	{ image_url: 'assets/views/main/images/IMG_8725.JPG', categories: ['cartoons', 'most-popular'], tags: ['snoopy'], title: 'Snoopy', character: 'Snoopy, Joe Cool, & Woodstock' },
 	{ image_url: 'assets/views/main/images/IMG_0006.jpg', categories: ['most-popular'], character: 'Pink Blossoms' },
+	{ image_url: 'assets/views/main/images/IMG_3787.jpg', categories: ['floral'], character: 'Red Blossoms w/ Rhinestones' },
 	{ image_url: 'assets/views/main/images/IMG_2364.jpg', categories: ['floral'], character: 'Blue Blossoms' },
 	{ image_url: 'assets/views/main/images/IMG_4295.jpg', categories: ['floral'], character: 'Lilac Blossoms' },
         { image_url: 'assets/views/main/images/IMG_3553.jpg', categories: ['floral'], character: 'Pink Blossoms' },
@@ -430,6 +439,11 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8734.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Club de Guadalajara' },
 	{ image_url: 'assets/views/main/images/IMG_1954.jpeg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid' },
 	{ image_url: 'assets/views/main/images/IMG_2282.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid CF' },
+	{ image_url: 'assets/views/main/images/IMG_8548.jpg', categories: ['cartoons'], title: 'Rugrats', character: '<i>Rugrats</i>: Chuckie' },
+	{ image_url: 'assets/views/main/images/IMG_8227.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Autumn Snoopy' },
+	{ image_url: 'assets/views/main/images/IMG_6761.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Pink Snoopy Dunks' },
+	{ image_url: 'assets/views/main/images/IMG_6792.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Cherry Blossom Snoopy w/ Custom Name' },
+	{ image_url: 'assets/views/main/images/IMG_6144.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Summer Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8724.JPG', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'DJ Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8726.JPG', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Ninja 400 & Gromm Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8729.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy' },
@@ -455,6 +469,9 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8745.JPG', categories: ['baby-shoes'], character: 'Pink Split Swoosh' },
 	{ image_url: 'assets/views/main/images/IMG_8744.jpg', categories: ['baby-shoes'], character: 'Red Split Swoosh' },
 	{ image_url: 'assets/views/main/images/IMG_3951.jpeg', categories: ['baby-shoes'], character: '<i>Sesame Street</i>:<br>Elmo & Cookie Monster' },
+	{ image_url: 'assets/views/main/images/IMG_7791.jpg', categories: ['pop-culture'], character: 'MBDTF' },
+	{ image_url: 'assets/views/main/images/IMG_3951.jpg', categories: ['pop-culture'], character: 'HD' },
+	{ image_url: 'assets/views/main/images/IMG_4917.jpg', categories: ['restorations'], character: '<i>Blue Lock</i> Yoichi Isagi' },
 	{ image_url: 'assets/views/main/images/IMG_8798.jpg', categories: ['cleats'], title: 'Football' },
 	{ image_url: 'assets/views/main/images/IMG_7648.jpg', categories: ['cleats'], title: 'Football', character: 'Bengals' },
 	{ image_url: 'assets/views/main/images/IMG_7846.jpg', categories: ['cleats'], title: 'Football', character: 'Bengals' },
