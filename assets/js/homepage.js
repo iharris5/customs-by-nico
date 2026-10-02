@@ -470,7 +470,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_8744.jpg', categories: ['baby-shoes'], character: 'Red Split Swoosh' },
 	{ image_url: 'assets/views/main/images/IMG_3951.jpeg', categories: ['baby-shoes'], character: '<i>Sesame Street</i>:<br>Elmo & Cookie Monster' },
 	{ image_url: 'assets/views/main/images/IMG_7791.jpg', categories: ['pop-culture'], character: 'MBDTF' },
-	{ image_url: 'assets/views/main/images/IMG_3951.jpg', categories: ['pop-culture'], character: 'HD' },
+	{ image_url: 'assets/views/main/images/IMG_7446.jpg', categories: ['pop-culture'], character: 'HD' },
 	{ image_url: 'assets/views/main/images/IMG_4917.jpg', categories: ['restorations'], character: '<i>Blue Lock</i> Yoichi Isagi' },
 	{ image_url: 'assets/views/main/images/IMG_8798.jpg', categories: ['cleats'], title: 'Football' },
 	{ image_url: 'assets/views/main/images/IMG_7648.jpg', categories: ['cleats'], title: 'Football', character: 'Bengals' },
