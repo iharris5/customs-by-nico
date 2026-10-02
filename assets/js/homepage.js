@@ -444,7 +444,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_6761.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Pink Snoopy Dunks' },
 	{ image_url: 'assets/views/main/images/IMG_8227.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Autumn Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_6144.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Summer Snoopy' },
-	{ image_url: 'assets/views/main/images/IMG_8724.JPG', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'DJ Snoopy' },
+	{ image_url: 'assets/views/main/images/IMG_6445.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'DJ Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8726.JPG', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Ninja 400 & Gromm Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8729.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_8728.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Dancing Snoopy' },
