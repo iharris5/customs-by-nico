@@ -440,7 +440,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_1954.jpeg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid' },
 	{ image_url: 'assets/views/main/images/IMG_2282.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid CF' },
 	{ image_url: 'assets/views/main/images/IMG_8548.jpg', categories: ['cartoons'], title: 'Rugrats', character: '<i>Rugrats</i>: Chuckie' },
-	{ image_url: 'assets/views/main/images/IMG_6792.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Cherry Blossom Snoopy w/ Custom Name' },
+	{ image_url: 'assets/views/main/images/IMG_6792.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Cherry Blossom Snoopy w/ Custom Name', shopifyUrl: 'https://customsbynico-store.myshopify.com/products/pink-cherry-blossoms-snoopy-custom-af1s' },
 	{ image_url: 'assets/views/main/images/IMG_6761.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Pink Snoopy Dunks' },
 	{ image_url: 'assets/views/main/images/IMG_8227.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Autumn Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_6144.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Summer Snoopy' },
@@ -604,7 +604,17 @@ if (nextBtn) {
 
             div.appendChild(imageElement);
             div.appendChild(caption);
-            grid.appendChild(div);
+            
+	    if (img.shopifyUrl) {
+    		const buyButton = document.createElement('a');
+    		buyButton.classList.add('shopify-buy-btn');
+    		buyButton.href = img.shopifyUrl;
+    		buyButton.textContent = 'View/Buy Shoe';
+    		buyButton.target = '_blank';
+    		buyButton.rel = 'noopener noreferrer';
+		div.appendChild(buyButton);
+	    }
+	    grid.appendChild(div);
         });
 
         section.appendChild(grid);
@@ -693,6 +703,16 @@ function displayImagesFromResults(results, query) {
 
             div.append(imgWrapper);
 	    div.append(caption);
+	    
+	    if (img.shopifyUrl) {
+	        const buyButton = document.createElement('a');
+    		buyButton.classList.add('shopify-buy-btn');
+    		buyButton.href = img.shopifyUrl;
+    		buyButton.textContent = 'View / Buy';
+    		buyButton.target = '_blank';
+    		buyButton.rel = 'noopener noreferrer';
+		div.appendChild(buyButton);
+	    }
             grid.appendChild(div);
         });
 

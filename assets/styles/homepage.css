@@ -1035,6 +1035,26 @@ body {
 	gap: 5px;
 }
 
+.shopify-buy-btn {
+    display: inline-block;
+    align-self: center;
+    margin-top: 10px;
+    padding: 9px 18px;
+    background-color: #303033;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.shopify-buy-btn:hover {
+    background-color: #000;
+    color: white;
+    transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
     .shoe-grid {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
