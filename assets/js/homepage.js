@@ -609,7 +609,7 @@ if (nextBtn) {
     		const buyButton = document.createElement('a');
     		buyButton.classList.add('shopify-buy-btn');
     		buyButton.href = img.shopifyUrl;
-    		buyButton.textContent = 'View/Buy Shoe';
+    		buyButton.textContent = 'Buy';
     		buyButton.target = '_blank';
     		buyButton.rel = 'noopener noreferrer';
 		div.appendChild(buyButton);
@@ -708,7 +708,7 @@ function displayImagesFromResults(results, query) {
 	        const buyButton = document.createElement('a');
     		buyButton.classList.add('shopify-buy-btn');
     		buyButton.href = img.shopifyUrl;
-    		buyButton.textContent = 'View / Buy';
+    		buyButton.textContent = 'Buy';
     		buyButton.target = '_blank';
     		buyButton.rel = 'noopener noreferrer';
 		div.appendChild(buyButton);
