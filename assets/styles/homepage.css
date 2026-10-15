@@ -1519,14 +1519,14 @@ body {
 }
 
 .shoe-size-option:hover {
-    border-color: #287f80;
+    border-color: black;
     background: #3b3b3b;
 }
 
 .shoe-size-option.selected {
-    background: #287f80;
-    border-color: #287f80;
-    color: #ffffff;
+    background: black;
+    border-color: black;
+    color: white;
 }
 
 /* Checkout button */
@@ -1543,8 +1543,9 @@ body {
 }
 
 #confirm-shoe-size:hover:not(:disabled) {
-    background: #287f80;
-    border-color: #287f80;
+    background: black;
+    border-color: black;
+    color: white
 }
 
 #confirm-shoe-size:disabled {
