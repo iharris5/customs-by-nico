@@ -425,6 +425,69 @@
                <img src="assets/views/main/webp/Sliding-nico.webp" alt="CustomsByNico" class="slider-logo">
     </div>
 </main>
+
+
+<!-- Shopify shoe size selector -->
+<div id="shoe-size-modal" class="shoe-size-modal" aria-hidden="true">
+    <div class="shoe-size-modal__backdrop" data-close-size-modal></div>
+
+    <div
+        class="shoe-size-modal__content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="shoe-size-modal-title"
+    >
+        <button
+            type="button"
+            class="shoe-size-modal__close"
+            aria-label="Close size selector"
+            data-close-size-modal
+        >&times;</button>
+
+        <h2 id="shoe-size-modal-title">Select Your Shoe Size</h2>
+        <p id="shoe-size-product-name">Choose your size below.</p>
+
+        <form
+            id="shoe-size-form"
+            action="https://customsbynico-store.myshopify.com/cart/add"
+            method="POST"
+            target="_blank"
+        >
+            <input type="hidden" name="id" id="shopify-variant-id">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="return_to" value="/checkout">
+
+            <input
+                type="hidden"
+                name="properties[Selected Shoe Size]"
+                id="selected-shoe-size-property"
+            >
+
+            <div id="shoe-size-groups"></div>
+
+            <p
+                id="shoe-size-error"
+                class="shoe-size-error"
+                role="alert"
+                hidden
+            >Please select a shoe size.</p>
+
+            <button
+                type="submit"
+                id="confirm-shoe-size"
+                class="shoe-size-confirm-btn"
+                disabled
+            >
+                Add to Cart &amp; Checkout
+            </button>
+
+            <p class="shoe-size-modal__note">
+                Your selected size will be included with your order.
+            </p>
+        </form>
+    </div>
+</div>
+<script src="assets/js/shoe-size-selector.js"></script>
 </body>
 </html>
 

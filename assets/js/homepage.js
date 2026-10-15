@@ -442,7 +442,7 @@ if (nextBtn) {
 	{ image_url: 'assets/views/main/images/IMG_1954.jpeg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid' },
 	{ image_url: 'assets/views/main/images/IMG_2282.jpg', categories: ['schools-sports'], title: 'Soccer', character: 'Real Madrid CF' },
 	{ image_url: 'assets/views/main/images/IMG_8548.jpg', categories: ['cartoons'], title: 'Rugrats', character: '<i>Rugrats</i>: Chuckie' },
-	{ image_url: 'assets/views/main/images/IMG_6792.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Cherry Blossom Snoopy w/ Custom Name', shopifyUrl: 'https://customsbynico-store.myshopify.com/products/pink-cherry-blossoms-snoopy-custom-af1s' },
+	{ image_url: 'assets/views/main/images/IMG_6792.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Cherry Blossom Snoopy w/ Custom Name', shopifyUrl: 'https://customsbynico-store.myshopify.com/products/pink-cherry-blossoms-snoopy-custom-af1s', shopifyVariantId: '67698977177760' },
 	{ image_url: 'assets/views/main/images/IMG_6761.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Pink Snoopy Dunks' },
 	{ image_url: 'assets/views/main/images/IMG_8227.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Autumn Snoopy' },
 	{ image_url: 'assets/views/main/images/IMG_6144.jpg', categories: ['cartoons'], tags: ['snoopy'], title: 'Snoopy', character: 'Summer Snoopy' },
@@ -612,9 +612,18 @@ if (nextBtn) {
     		const buyButton = document.createElement('a');
     		buyButton.classList.add('shopify-buy-btn');
     		buyButton.href = img.shopifyUrl;
-    		buyButton.textContent = 'Buy';
-    		buyButton.target = '_blank';
-    		buyButton.rel = 'noopener noreferrer';
+    		buyButton.textContent = 'Add to Cart';
+		buyButton.addEventListener('click', (event) => {
+        		event.preventDefault();
+
+        		if (typeof window.openShoeSizePicker === 'function') {
+            			window.openShoeSizePicker({
+                			character: img.character
+           		 	});
+        		} else {
+            			console.error('Shoe size selector has not loaded.');
+        		}
+    		});
 		div.appendChild(buyButton);
 	    }
 	    grid.appendChild(div);
@@ -711,9 +720,18 @@ function displayImagesFromResults(results, query) {
 	        const buyButton = document.createElement('a');
     		buyButton.classList.add('shopify-buy-btn');
     		buyButton.href = img.shopifyUrl;
-    		buyButton.textContent = 'Buy';
-    		buyButton.target = '_blank';
-    		buyButton.rel = 'noopener noreferrer';
+    		buyButton.textContent = 'Add to Cart';
+		buyButton.addEventListener('click', (event) => {
+        		event.preventDefault();
+
+        		if (typeof window.openShoeSizePicker === 'function') {
+            		window.openShoeSizePicker({
+                		character: img.character
+            		});
+        		} else {
+            		console.error('Shoe size selector has not loaded.');
+        		}
+    		});
 		div.appendChild(buyButton);
 	    }
             grid.appendChild(div);
