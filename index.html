@@ -484,6 +484,43 @@
         </form>
     </div>
 </div>
+
+<!-- Header cart button -->
+<button id="shop-cart-toggle" type="button" aria-label="Open shopping cart">
+    Cart (<span id="shop-cart-count">0</span>)
+</button>
+
+<!-- Drawer backdrop -->
+<div id="shop-cart-backdrop" class="shop-cart-backdrop"></div>
+
+<!-- Slide-out cart -->
+<aside id="shop-cart-drawer"
+       class="shop-cart-drawer"
+       aria-label="Shopping cart"
+       aria-hidden="true">
+
+    <div class="shop-cart-header">
+        <h2>Your Cart (<span id="shop-cart-count-drawer">0</span>)</h2>
+        <button id="shop-cart-close" type="button"
+                aria-label="Close cart">&times;</button>
+    </div>
+
+    <div id="shop-cart-items" class="shop-cart-items">
+        <p>Your cart is empty.</p>
+    </div>
+
+    <div class="shop-cart-footer">
+        <div class="shop-cart-subtotal">
+            <span>Subtotal</span>
+            <strong id="shop-cart-subtotal">$0.00</strong>
+        </div>
+        <p>Shipping and taxes calculated at checkout.</p>
+        <button id="shop-cart-checkout" type="button">
+            Checkout
+        </button>
+    </div>
+</aside>
+<script src="assets/js/shopify-cart.js" defer></script>
 <script src="assets/js/shoe-size-selector.js"></script>
 </body>
 </html>

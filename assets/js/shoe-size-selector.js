@@ -154,19 +154,33 @@
     button.addEventListener("click", closeShoeSizePicker);
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
     if (!selectedSize || !currentShoe) {
-      event.preventDefault();
       error.hidden = false;
       return;
     }
-
-    variantInput.value = currentShoe.variantId;
-    sizeInput.value = selectedSize;
-
-    // Submit the existing Shopify form to add the item
-    // and send the customer to checkout.
-    form.action = `${SHOPIFY_STORE}/cart/add`;
+    continueButton.disabled = true;
+    continueButton.textContent = "Adding to cart...";
+   
+    try {
+	    await window.addShoeToCart({
+		    variantId: currentShoe.variantId,
+		    character: productName.textContent,
+		    imageUrl: currentShoe.imageUrl || "",
+		    size: selectedSize
+	    });
+  
+        closeShoeSizePicker();
+  } catch (err) {
+    console.error("Could not add shoe to cart:", err);
+    error.textContent =
+      "Unable to add this shoe to your cart. Please try again.";
+    error.hidden = false;
+  } finally {
+    continueButton.disabled = false;
+    continueButton.textContent = "Continue";
+  }
   });
 
   window.openShoeSizePicker = openShoeSizePicker;
