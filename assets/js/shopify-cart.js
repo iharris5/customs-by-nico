@@ -183,11 +183,6 @@
         details.appendChild(size);
       }
 
-      const variantTitle = document.createElement("p");
-      variantTitle.textContent =
-        variant.title === "Default Title" ? "" : variant.title;
-      details.appendChild(variantTitle);
-
       const quantityControls = document.createElement("div");
       quantityControls.className = "shop-cart-quantity";
 
