@@ -1670,3 +1670,36 @@ body.cart-open {
     overflow: hidden;
 }
 
+
+/* Persistent shopping cart button */
+#shop-cart-toggle {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1000;
+
+    padding: 12px 18px;
+    border: 1px solid #222;
+    border-radius: 30px;
+
+    background: #fff;
+    color: #222;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+#shop-cart-toggle:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* Keep the cart button above the page content */
+#shop-cart-toggle:focus-visible {
+    outline: 3px solid #78c8c4;
+    outline-offset: 3px;
+}
+
